@@ -1,0 +1,13 @@
+{
+  "name": "manosabiertas-optimizacion",
+  "version": "1.0.0",
+  "description": "Este directorio contiene el plan de acción, recursos y ejemplos de código para mejorar las puntuaciones de Lighthouse del sitio https://mismanosabiertas.netlify.app y alcanzar el 100% en todas las categorías.",
+  "main": "optimization-script.js",
+  "scripts": {
+    "test": "node verify.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
