@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manos Abiertas — Tu puente hacia la IA, empleo y derechos en España</title>
+<meta name="description" content="Plataforma educativa gratuita para inmigrantes en España: aprende IA, crea CV, conoce tus derechos, encuentra empleo. 39 idiomas, 3686+ recursos verificados, 115+ cursos con certificado.">
+<meta name="theme-color" content="#FF6B35">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Manos Abiertas — Plataforma Educativa para Inmigrantes en España">
+<meta property="og:description" content="Aprende IA, crea tu CV, conoce tus derechos. 39 idiomas, 3686+ recursos, 100% gratis.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mismanosabiertas.netlify.app">
+<meta property="og:locale" content="es_ES">
+<link rel="canonical" href="https://mismanosabiertas.netlify.app">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+
+<!-- Schema.org structured data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Manos Abiertas",
+  "description": "Plataforma educativa gratuita para inmigrantes en España",
+  "url": "https://mismanosabiertas.netlify.app",
+  "areaServed": "ES",
+  "inLanguage": ["es","en","fr","pt","ar","zh","uk","ro","hi","bn","sw","am","ur","tl","wo","so","ha","yo","ig","zu","rw","ti","om","ln","kg","ff","bm","ee","ak","tw","gn","ay","qu","ht","mg","my","km","lo","ne","ps"],
+  "isAccessibleForFree": true,
+  "numberOfEmployees": {"@type":"QuantitativeValue","value":1},
+  "founder": {"@type":"Person","name":"Pedro Belentani","url":"https://belentani.eu"}
+}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   MANOS ABIERTAS — World-Class Educational Platform
+   ═══════════════════════════════════════════════════════════════
+
+   DESIGN DNA:
+   ├── noiacore-os      → Glass system, particle renderer, EventBus
+   ├── magic/shader     → WebGL atmospheric backdrop
+   ├── magic/sfx        → Procedural sound for interactions
+   ├── Steven-renovation → Itten 60/30/10, marquee, stepped form
+   ├── Cruzando-el-charco → a11y, skip-link, quick-exit, i18n
+   ├── matrixy-glimmer   → Glass tokens, materialize animation
+   ├── joepui-motion-ref → Skeleton loaders, card grid, sidebar
+   └── minoan-particles  → Vignette, phase text
+
+   DESIGN: Pedro Belentani · belentani.eu · mismanosabiertas.netlify.app
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ─── TOKENS ─── */
+:root {
+  /* 60/30/10 Itten Color System */
+  --warm-white: #FEFCF8;
+  --warm-cream: #F8F5EE;
+  --warm-light: #F0EBE0;
+
+  /* Primary: Manos Abiertas Orange */
+  --primary: #FF6B35;
+  --primary-hover: #E85A24;
+  --primary-light: #FFF0E9;
+  --primary-dim: rgba(255, 107, 53, 0.12);
+  --primary-glow: rgba(255, 107, 53, 0.35);
+
+  /* Secondary: Trust Blue */
+  --secondary: #1A6FC4;
+  --secondary-light: #E8F2FC;
+
+  /* Accent: Growth Green */
+  --accent-green: #22A06B;
+  --accent-green-light: #E3FCF0;
+
+  /* Neutral */
+  --text-1: #1A1A2E;
+  --text-2: #4A4A6A;
+  --text-3: #7A7A9A;
+  --text-4: #B0B0C4;
+  --border: rgba(26, 26, 46, 0.08);
+  --border-hover: rgba(26, 26, 46, 0.16);
+
+  /* Semantic */
+  --ok: #22A06B;
+  --warn: #FF9500;
+  --info: #1A6FC4;
+  --critical: #E34935;
+
+  /* Surface */
+  --surface: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --surface-overlay: rgba(255, 255, 255, 0.92);
+
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(26, 26, 46, 0.06);
+  --glass-blur: blur(20px) saturate(1.3);
+  --glass-shadow: 0 4px 24px rgba(26, 26, 46, 0.08), 0 1px 4px rgba(26, 26, 46, 0.04);
+  --glass-shadow-lg: 0 12px 48px rgba(26, 26, 46, 0.12), 0 4px 12px rgba(26, 26, 46, 0.06);
+
+  /* Typography */
+  --font-display: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+
+  /* Motion */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-responsive: cubic-bezier(0.2, 0, 0, 1);
+  --dur-fast: 0.2s;
+  --dur-mid: 0.5s;
+  --dur-slow: 0.8s;
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-xl: 32px;
+  --radius-pill: 999px;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --warm-white: #0A0A14;
+    --warm-cream: #0E0E1A;
+    --warm-light: #141422;
+    --primary-light: rgba(255, 107, 53, 0.12);
+    --secondary-light: rgba(26, 111, 196, 0.12);
+    --accent-green-light: rgba(34, 160, 107, 0.10);
+    --text-1: #F0EDE8;
+    --text-2: #B8B5C0;
+    --text-3: #7A7890;
+    --text-4: #4A4860;
+    --border: rgba(255, 255, 255, 0.06);
+    --border-hover: rgba(255, 255, 255, 0.14);
+    --surface: #12121E;
+    --surface-raised: #18182A;
+    --surface-overlay: rgba(12, 12, 22, 0.92);
+    --glass-bg: rgba(18, 18, 30, 0.72);
+    --glass-border: rgba(255, 255, 255, 0.06);
+    --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.15);
+    --glass-shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+:root[data-theme="dark"] {
+  --warm-white: #0A0A14;
+  --warm-cream: #0E0E1A;
+  --warm-light: #141422;
+  --primary-light: rgba(255, 107, 53, 0.12);
+  --secondary-light: rgba(26, 111, 196, 0.12);
+  --accent-green-light: rgba(34, 160, 107, 0.10);
+  --text-1: #F0EDE8;
+  --text-2: #B8B5C0;
+  --text-3: #7A7890;
+  --text-4: #4A4860;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.14);
+  --surface: #12121E;
+  --surface-raised: #18182A;
+  --surface-overlay: rgba(12, 12, 22, 0.92);
+  --glass-bg: rgba(18, 18, 30, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.06);
+  --glass-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 1px 4px rgba(0, 0, 0, 0.15);
+  --glass-shadow-lg: 0 12px 48px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ─── RESET ─── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: var(--font-body); background: var(--warm-white); color: var(--text-1); line-height: 1.65; overflow-x: hidden; }
+a { color: var(--primary); text-decoration: none; transition: color var(--dur-fast); }
+a:hover { color: var(--primary-hover); }
+button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+img { max-width: 100%; display: block; }
+::selection { background: var(--primary); color: white; }
+
+/* ─── A11Y (Cruzando el Charco) ─── */
+.skip-link { position: absolute; left: -9999px; top: 0; background: var(--primary); color: white; padding: 12px 24px; z-index: 9999; font-weight: 700; font-size: 0.9rem; border-radius: 0 0 var(--radius-sm) 0; }
+.skip-link:focus { left: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; border-radius: 4px; }
+
+/* ─── ANIMATIONS ─── */
+@keyframes fade-up { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes float-gentle { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes pulse-soft { 0%,100% { transform: scale(1); opacity: 0.7; } 50% { transform: scale(1.05); opacity: 1; } }
+@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+@keyframes count-up { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes hero-gradient { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* ─── LAYOUT ─── */
+.container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
+.section { padding: clamp(48px, 8vw, 96px) 0; }
+
+/* ═══ NAVBAR ═══ */
+.navbar {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: var(--surface-overlay);
+  backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+  border-bottom: 1px solid var(--glass-border);
+  transition: box-shadow var(--dur-mid) var(--ease-spring);
+}
+.navbar.scrolled { box-shadow: var(--glass-shadow); }
+.navbar-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; gap: 16px;
+}
+.navbar-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-display); font-weight: 800; font-size: 1.15rem;
+  color: var(--text-1); letter-spacing: -0.02em;
+}
+.navbar-brand .hands { font-size: 1.3rem; }
+.navbar-nav { display: flex; gap: 4px; list-style: none; }
+.navbar-nav a {
+  display: block; padding: 8px 14px; font-size: 0.88rem; font-weight: 500;
+  color: var(--text-2); border-radius: var(--radius-sm);
+  transition: all var(--dur-fast);
+}
+.navbar-nav a:hover { color: var(--text-1); background: var(--primary-light); }
+.navbar-actions { display: flex; align-items: center; gap: 8px; }
+.lang-btn {
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
+  padding: 6px 12px; border-radius: var(--radius-pill);
+  background: var(--primary-light); color: var(--primary);
+  letter-spacing: 0.05em; text-transform: uppercase;
+  transition: all var(--dur-fast);
+}
+.lang-btn:hover { background: var(--primary); color: white; }
+.cta-nav {
+  font-size: 0.88rem; font-weight: 600; padding: 8px 20px;
+  border-radius: var(--radius-pill); background: var(--primary); color: white;
+  transition: all var(--dur-fast);
+}
+.cta-nav:hover { background: var(--primary-hover); transform: translateY(-1px); box-shadow: 0 4px 16px var(--primary-glow); }
+.menu-toggle { display: none; font-size: 1.4rem; padding: 8px; }
+
+/* ═══ HERO ═══ */
+.hero {
+  position: relative; min-height: 92vh;
+  display: flex; align-items: center; justify-content: center;
+  padding-top: 64px; overflow: hidden;
+  background: linear-gradient(135deg, var(--warm-white) 0%, var(--primary-light) 50%, var(--warm-cream) 100%);
+  background-size: 200% 200%;
+  animation: hero-gradient 12s ease infinite;
+}
+.hero-canvas {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.6;
+}
+.hero-content {
+  position: relative; z-index: 2; text-align: center;
+  max-width: 780px; padding: 40px 20px;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: var(--font-mono); font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 20px;
+  padding: 6px 16px; border-radius: var(--radius-pill);
+  background: var(--surface); border: 1px solid var(--border);
+  box-shadow: var(--glass-shadow);
+  animation: fade-up 0.8s var(--ease-spring) 0.1s backwards;
+}
+.hero-eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); animation: pulse-soft 2s infinite; }
+.hero h1 {
+  font-family: var(--font-display); font-size: clamp(2.4rem, 6vw, 4.2rem);
+  font-weight: 900; line-height: 1.08; letter-spacing: -0.03em;
+  color: var(--text-1); margin-bottom: 20px;
+  text-wrap: balance;
+  animation: fade-up 0.8s var(--ease-spring) 0.2s backwards;
+}
+.hero h1 .highlight {
+  background: linear-gradient(135deg, var(--primary) 0%, #FF8C42 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.25rem); color: var(--text-2);
+  max-width: 560px; margin: 0 auto 32px; line-height: 1.6;
+  text-wrap: balance;
+  animation: fade-up 0.8s var(--ease-spring) 0.3s backwards;
+}
+.hero-actions {
+  display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;
+  animation: fade-up 0.8s var(--ease-spring) 0.4s backwards;
+}
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 14px 28px; font-size: 0.95rem; font-weight: 600;
+  border-radius: var(--radius-pill);
+  transition: all var(--dur-fast) var(--ease-spring);
+  min-height: 48px;
+}
+.btn-primary { background: var(--primary); color: white; box-shadow: 0 2px 12px var(--primary-glow); }
+.btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 6px 24px var(--primary-glow); color: white; }
+.btn-outline { background: var(--surface); color: var(--text-1); border: 2px solid var(--border); }
+.btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); box-shadow: var(--glass-shadow); }
+
+/* Stats strip */
+.hero-stats {
+  display: flex; justify-content: center; gap: clamp(20px, 4vw, 48px); flex-wrap: wrap;
+  margin-top: 48px; padding-top: 32px; border-top: 1px solid var(--border);
+  animation: fade-up 0.8s var(--ease-spring) 0.5s backwards;
+}
+.hero-stat { text-align: center; }
+.hero-stat-num {
+  font-family: var(--font-display); font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 900; color: var(--primary);
+  font-variant-numeric: tabular-nums;
+}
+.hero-stat-label {
+  font-size: 0.78rem; color: var(--text-3); text-transform: uppercase;
+  letter-spacing: 0.08em; font-weight: 500; margin-top: 2px;
+}
+
+/* ═══ MARQUEE ═══ */
+.marquee-wrap {
+  overflow: hidden; background: var(--primary); padding: 10px 0;
+}
+.marquee-track {
+  display: flex; gap: 48px; width: max-content;
+  animation: marquee 35s linear infinite;
+  font-family: var(--font-display); font-weight: 700; font-size: 0.78rem;
+  letter-spacing: 0.15em; text-transform: uppercase; color: white;
+  white-space: nowrap;
+}
+.marquee-track span { display: flex; align-items: center; gap: 12px; }
+.marquee-track span::after { content: "✦"; opacity: 0.4; font-size: 0.6rem; }
+
+/* ═══ FEATURES GRID ═══ */
+.features-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius-lg);
+  padding: 32px 28px;
+  transition: all var(--dur-mid) var(--ease-spring);
+  position: relative; overflow: hidden;
+}
+.feature-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--card-accent, var(--primary));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform var(--dur-mid) var(--ease-spring);
+}
+.feature-card:hover { transform: translateY(-4px); box-shadow: var(--glass-shadow-lg); border-color: var(--border-hover); }
+.feature-card:hover::before { transform: scaleX(1); }
+
+.feature-icon {
+  width: 56px; height: 56px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; margin-bottom: 18px;
+  background: var(--card-bg, var(--primary-light));
+}
+.feature-card h3 {
+  font-family: var(--font-display); font-size: 1.2rem; font-weight: 700;
+  margin-bottom: 8px; letter-spacing: -0.01em;
+}
+.feature-card p { font-size: 0.92rem; color: var(--text-2); line-height: 1.55; }
+.feature-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-family: var(--font-mono); font-size: 0.6rem; font-weight: 600;
+  padding: 3px 8px; border-radius: var(--radius-pill);
+  margin-top: 14px; letter-spacing: 0.05em; text-transform: uppercase;
+}
+.feature-badge.popular { background: var(--primary-dim); color: var(--primary); }
+.feature-badge.new { background: var(--accent-green-light); color: var(--accent-green); }
+.feature-badge.free { background: var(--secondary-light); color: var(--secondary); }
+
+/* Card accent overrides */
+.feature-card[data-accent="blue"] { --card-accent: var(--secondary); --card-bg: var(--secondary-light); }
+.feature-card[data-accent="green"] { --card-accent: var(--accent-green); --card-bg: var(--accent-green-light); }
+.feature-card[data-accent="orange"] { --card-accent: var(--primary); --card-bg: var(--primary-light); }
+
+/* ═══ SECTION HEADERS ═══ */
+.section-header { text-align: center; max-width: 640px; margin: 0 auto clamp(32px, 5vw, 56px); }
+.section-eyebrow {
+  font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--primary); margin-bottom: 12px;
+}
+.section-header h2 {
+  font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800; line-height: 1.12; letter-spacing: -0.02em;
+  text-wrap: balance; margin-bottom: 12px;
+}
+.section-header p { font-size: 1.05rem; color: var(--text-2); line-height: 1.6; text-wrap: balance; }
+
+/* ═══ COURSE CATALOG ═══ */
+.courses-section { background: var(--warm-cream); }
+.courses-tabs {
+  display: flex; gap: 6px; justify-content: center; flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.tab-btn {
+  font-size: 0.85rem; font-weight: 500; padding: 8px 18px;
+  border-radius: var(--radius-pill); color: var(--text-2);
+  border: 1px solid var(--border);
+  transition: all var(--dur-fast);
+}
+.tab-btn:hover, .tab-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+.courses-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.course-card {
+  background: var(--surface); border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border); overflow: hidden;
+  transition: all var(--dur-mid) var(--ease-spring);
+}
+.course-card:hover { transform: translateY(-3px); box-shadow: var(--glass-shadow-lg); }
+.course-thumb {
+  height: 140px; display: flex; align-items: center; justify-content: center;
+  font-size: 3rem; position: relative;
+}
+.course-body { padding: 20px; }
+.course-body h3 {
+  font-family: var(--font-display); font-size: 1.05rem; font-weight: 700;
+  margin-bottom: 6px; letter-spacing: -0.01em;
+}
+.course-body p { font-size: 0.82rem; color: var(--text-3); margin-bottom: 12px; line-height: 1.5; }
+.course-meta {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-4);
+  letter-spacing: 0.03em;
+}
+.course-meta .cert { color: var(--accent-green); font-weight: 600; }
+
+/* ═══ LANGUAGES ═══ */
+.lang-grid {
+  display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  max-width: 800px; margin: 0 auto;
+}
+.lang-chip {
+  font-size: 0.78rem; font-weight: 500; padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--surface); border: 1px solid var(--border);
+  color: var(--text-2);
+  transition: all var(--dur-fast);
+}
+.lang-chip:hover { border-color: var(--primary); color: var(--primary); background: var(--primary-light); }
+.lang-chip.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* ═══ RIGHTS & AID ═══ */
+.rights-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+.right-card {
+  display: flex; gap: 16px; padding: 20px;
+  background: var(--surface); border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border);
+  transition: all var(--dur-fast);
+}
+.right-card:hover { border-color: var(--border-hover); box-shadow: var(--glass-shadow); }
+.right-icon {
+  width: 44px; height: 44px; border-radius: var(--radius-sm);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+  background: var(--primary-light);
+}
+.right-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+.right-card p { font-size: 0.82rem; color: var(--text-3); line-height: 1.45; }
+
+/* ═══ EMERGENCY CONTACTS ═══ */
+.emergency-banner {
+  background: linear-gradient(135deg, var(--critical) 0%, #FF6B6B 100%);
+  border-radius: var(--radius-lg);
+  padding: clamp(24px, 4vw, 40px);
+  color: white;
+}
+.emergency-banner h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; }
+.emergency-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+}
+.emergency-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 16px; background: rgba(255,255,255,0.15);
+  border-radius: var(--radius-sm); backdrop-filter: blur(8px);
+  font-size: 0.88rem; font-weight: 600;
+}
+.emergency-item .num { font-family: var(--font-mono); font-size: 1.1rem; font-weight: 700; }
+
+/* ═══ TOOLS SECTION ═══ */
+.tools-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+.tool-card {
+  background: var(--surface); border: 1px solid var(--glass-border);
+  border-radius: var(--radius-md); padding: 24px;
+  display: flex; flex-direction: column; gap: 12px;
+  transition: all var(--dur-mid) var(--ease-spring);
+}
+.tool-card:hover { transform: translateY(-3px); box-shadow: var(--glass-shadow-lg); }
+.tool-card h3 { display: flex; align-items: center; gap: 10px; font-size: 1.05rem; }
+.tool-card p { font-size: 0.88rem; color: var(--text-2); }
+.tool-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 0.82rem; font-weight: 600; color: var(--primary);
+  margin-top: auto;
+}
+.tool-btn:hover { gap: 10px; }
+
+/* ═══ TESTIMONIALS ═══ */
+.testimonials-section { background: var(--warm-cream); }
+.testimonials-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+.testimonial-card {
+  background: var(--surface); border-radius: var(--radius-md);
+  border: 1px solid var(--glass-border); padding: 28px;
+}
+.testimonial-card blockquote {
+  font-family: var(--font-editorial); font-style: italic;
+  font-size: 1.1rem; line-height: 1.55; color: var(--text-1);
+  margin-bottom: 16px; position: relative;
+}
+.testimonial-card blockquote::before {
+  content: '"'; font-size: 3rem; color: var(--primary); opacity: 0.3;
+  position: absolute; top: -10px; left: -5px; font-family: Georgia, serif;
+}
+.testimonial-card cite {
+  display: flex; align-items: center; gap: 10px;
+  font-style: normal; font-size: 0.85rem; color: var(--text-3);
+}
+.testimonial-card cite .flag { font-size: 1.2rem; }
+
+/* ═══ CTA ═══ */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary) 0%, #FF8C42 50%, var(--primary-hover) 100%);
+  color: white; text-align: center;
+  padding: clamp(56px, 10vw, 100px) 0;
+}
+.cta-section h2 {
+  font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900; margin-bottom: 16px; text-wrap: balance;
+}
+.cta-section p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 32px; max-width: 500px; margin-left: auto; margin-right: auto; }
+.btn-white { background: white; color: var(--primary); font-weight: 700; }
+.btn-white:hover { background: var(--warm-cream); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.15); color: var(--primary); }
+
+/* ═══ FOOTER ═══ */
+.footer {
+  background: var(--text-1); color: rgba(255,255,255,0.7);
+  padding: 48px 0 24px;
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr repeat(3, 1fr);
+  gap: 32px; margin-bottom: 40px;
+}
+.footer-brand { font-family: var(--font-display); font-weight: 800; color: white; font-size: 1.2rem; margin-bottom: 12px; }
+.footer-desc { font-size: 0.88rem; line-height: 1.55; max-width: 300px; }
+.footer h4 { color: white; font-size: 0.85rem; font-weight: 700; margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.08em; }
+.footer ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.footer ul a { font-size: 0.88rem; color: rgba(255,255,255,0.6); transition: color var(--dur-fast); }
+.footer ul a:hover { color: var(--primary); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding-top: 24px; display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 12px;
+  font-size: 0.78rem;
+}
+.footer-bottom a { color: var(--primary); }
+
+/* ═══ SCROLL REVEAL ═══ */
+.reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s var(--ease-spring); }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ═══ RESPONSIVE ═══ */
+@media (max-width: 768px) {
+  .navbar-nav { display: none; }
+  .menu-toggle { display: block; }
+  .hero { min-height: 80vh; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .features-grid, .courses-grid, .tools-grid, .rights-grid, .testimonials-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .emergency-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- A11y Skip Link -->
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar" aria-label="Navegación principal">
+  <div class="container navbar-inner">
+    <a href="/" class="navbar-brand" aria-label="Manos Abiertas - Inicio">
+      <span class="hands">🤲</span> Manos Abiertas
+    </a>
+    <ul class="navbar-nav" role="menubar">
+      <li role="none"><a href="#aprende-ia" role="menuitem">Aprende IA</a></li>
+      <li role="none"><a href="#cursos" role="menuitem">Cursos</a></li>
+      <li role="none"><a href="#derechos" role="menuitem">Derechos</a></li>
+      <li role="none"><a href="#herramientas" role="menuitem">Herramientas</a></li>
+      <li role="none"><a href="#contactos" role="menuitem">Contactos</a></li>
+    </ul>
+    <div class="navbar-actions">
+      <button class="lang-btn" id="lang-toggle" aria-label="Cambiar idioma">🌍 ES</button>
+      <a href="#aprende-ia" class="cta-nav">Empezar gratis</a>
+    </div>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <canvas class="hero-canvas" id="hero-particles" aria-hidden="true"></canvas>
+  <div class="container hero-content">
+    <div class="hero-eyebrow"><span class="dot"></span> 100% GRATUITO · 39 IDIOMAS</div>
+    <h1>Tu puente hacia la <span class="highlight">inteligencia artificial</span>, el empleo y tus derechos</h1>
+    <p class="hero-sub">Plataforma educativa gratuita para inmigrantes en España. Aprende IA, crea tu CV profesional, conoce tus derechos y encuentra empleo.</p>
+    <div class="hero-actions">
+      <a href="#aprende-ia" class="btn btn-primary">🤖 Aprender IA gratis</a>
+      <a href="#cv-builder" class="btn btn-outline">📝 Crear mi CV</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-num" data-count="39">0</div><div class="hero-stat-label">Idiomas</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="3686">0</div><div class="hero-stat-label">Recursos</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="115">0</div><div class="hero-stat-label">Cursos</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Gratis</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span>IA PARA TODOS</span><span>CV PROFESIONAL</span><span>CURSOS GRATIS</span>
+    <span>DERECHOS Y AYUDAS</span><span>39 IDIOMAS</span><span>3686+ RECURSOS</span>
+    <span>OFFICE PACK</span><span>EMPLEO</span><span>EMERGENCIAS</span>
+    <span>IA PARA TODOS</span><span>CV PROFESIONAL</span><span>CURSOS GRATIS</span>
+    <span>DERECHOS Y AYUDAS</span><span>39 IDIOMAS</span><span>3686+ RECURSOS</span>
+    <span>OFFICE PACK</span><span>EMPLEO</span><span>EMERGENCIAS</span>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- FEATURES -->
+<section class="section" id="aprende-ia">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Todo lo que necesitas</div>
+      <h2>Una plataforma, todas las herramientas</h2>
+      <p>Desde aprender IA hasta conseguir empleo — todo gratuito, en tu idioma, sin necesidad de conocimientos previos.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card reveal" data-accent="orange">
+        <div class="feature-icon">🤖</div>
+        <h3>Aprende Inteligencia Artificial</h3>
+        <p>ChatGPT, Gemini, Copilot, Claude y DeepSeek explicados paso a paso. Sin jerga técnica, en tu idioma.</p>
+        <span class="feature-badge popular">⭐ MÁS POPULAR</span>
+      </div>
+      <div class="feature-card reveal" data-accent="blue">
+        <div class="feature-icon">📝</div>
+        <h3>Creador de CV con IA</h3>
+        <p>Genera un CV profesional en minutos con ayuda de inteligencia artificial. Descárgalo en PDF, listo para enviar.</p>
+        <span class="feature-badge new">✨ NUEVO</span>
+      </div>
+      <div class="feature-card reveal" data-accent="green">
+        <div class="feature-icon">📊</div>
+        <h3>Office Pack Completo</h3>
+        <p>Aprende Word, Excel y PowerPoint desde cero con ejercicios prácticos y certificado al completar.</p>
+        <span class="feature-badge free">🎓 CERTIFICADO</span>
+      </div>
+      <div class="feature-card reveal" data-accent="orange">
+        <div class="feature-icon">⚖️</div>
+        <h3>Derechos y Ayudas</h3>
+        <p>Entiende tu NIE, sanidad, vivienda, trabajo y otros trámites esenciales. Guías actualizadas.</p>
+      </div>
+      <div class="feature-card reveal" data-accent="blue">
+        <div class="feature-icon">🛠️</div>
+        <h3>Herramientas Prácticas</h3>
+        <p>Checklist de trámites, conversor de moneda, guía de costo de vida, calculadora de impuestos.</p>
+      </div>
+      <div class="feature-card reveal" data-accent="green">
+        <div class="feature-icon">📞</div>
+        <h3>Contactos de Emergencia</h3>
+        <p>Emergencias, ONGs, embajadas, consulados y servicios de apoyo al inmigrante. Siempre disponibles.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section courses-section" id="cursos">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Biblioteca de cursos</div>
+      <h2>115+ cursos con certificado gratuito</h2>
+      <p>Cursos prácticos diseñados para inmigrantes. Sin conocimientos previos. En tu idioma.</p>
+    </div>
+    <div class="courses-tabs reveal">
+      <button class="tab-btn active">Todos</button>
+      <button class="tab-btn">🤖 IA</button>
+      <button class="tab-btn">💼 Empleo</button>
+      <button class="tab-btn">📊 Office</button>
+      <button class="tab-btn">⚖️ Legal</button>
+      <button class="tab-btn">🌍 Idiomas</button>
+    </div>
+    <div class="courses-grid">
+      <article class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#FF6B35,#FF8C42)">🤖</div>
+        <div class="course-body">
+          <h3>ChatGPT desde cero</h3>
+          <p>Aprende a usar ChatGPT para trabajo, estudios y vida diaria. 12 lecciones prácticas.</p>
+          <div class="course-meta"><span>12 lecciones · 4h</span><span class="cert">✓ Certificado</span></div>
+        </div>
+      </article>
+      <article class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#1A6FC4,#4A9FE5)">📝</div>
+        <div class="course-body">
+          <h3>Crea tu CV perfecto</h3>
+          <p>Generador de CV con IA. Plantillas profesionales. Descarga en PDF.</p>
+          <div class="course-meta"><span>8 lecciones · 2h</span><span class="cert">✓ Certificado</span></div>
+        </div>
+      </article>
+      <article class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#22A06B,#4ECB71)">📊</div>
+        <div class="course-body">
+          <h3>Excel para principiantes</h3>
+          <p>Domina las hojas de cálculo. Fórmulas, tablas, gráficos paso a paso.</p>
+          <div class="course-meta"><span>15 lecciones · 6h</span><span class="cert">✓ Certificado</span></div>
+        </div>
+      </article>
+      <article class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#8B5CF6,#A78BFA)">🧠</div>
+        <div class="course-body">
+          <h3>Gemini & Claude AI</h3>
+          <p>Las alternativas a ChatGPT. Cuándo usar cada una y cómo sacar el máximo.</p>
+          <div class="course-meta"><span>10 lecciones · 3h</span><span class="cert">✓ Certificado</span></div>
+        </div>
+      </article>
+      <article class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#E34935,#FF6B6B)">⚖️</div>
+        <div class="course-body">
+          <h3>Tus derechos en España</h3>
+          <p>NIE, empadronamiento, sanidad, trabajo, vivienda. Todo lo que necesitas saber.</p>
+          <div class="course-meta"><span>20 lecciones · 5h</span><span class="cert">✓ Certificado</span></div>
+        </div>
+      </article>
+      <article class="course-card reveal">
+        <div class="course-thumb" style="background:linear-gradient(135deg,#FF9500,#FFB347)">🇪🇸</div>
+        <div class="course-body">
+          <h3>Español para inmigrantes</h3>
+          <p>Desde nivel A1. Conversación, gramática, vocabulario laboral.</p>
+          <div class="course-meta"><span>30 lecciones · 12h</span><span class="cert">✓ Certificado</span></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<section class="section" id="idiomas">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Sin barreras</div>
+      <h2>Disponible en 39 idiomas</h2>
+      <p>Si sabes usar WhatsApp, puedes usar esta plataforma. Todo traducido, todo accesible.</p>
+    </div>
+    <div class="lang-grid reveal">
+      <button class="lang-chip active">🇪🇸 Español</button>
+      <button class="lang-chip">🇬🇧 English</button>
+      <button class="lang-chip">🇫🇷 Français</button>
+      <button class="lang-chip">🇵🇹 Português</button>
+      <button class="lang-chip">🇸🇦 العربية</button>
+      <button class="lang-chip">🇨🇳 中文</button>
+      <button class="lang-chip">🇺🇦 Українська</button>
+      <button class="lang-chip">🇷🇴 Română</button>
+      <button class="lang-chip">🇮🇳 हिन्दी</button>
+      <button class="lang-chip">🇧🇩 বাংলা</button>
+      <button class="lang-chip">🇰🇪 Kiswahili</button>
+      <button class="lang-chip">🇪🇹 አማርኛ</button>
+      <button class="lang-chip">🇵🇰 اردو</button>
+      <button class="lang-chip">🇵🇭 Tagalog</button>
+      <button class="lang-chip">🇸🇳 Wolof</button>
+      <button class="lang-chip">🇸🇴 Soomaali</button>
+      <button class="lang-chip">🇳🇬 Hausa</button>
+      <button class="lang-chip">🇳🇬 Yorùbá</button>
+      <button class="lang-chip">🇳🇬 Igbo</button>
+      <button class="lang-chip">🇿🇦 isiZulu</button>
+      <button class="lang-chip">🇷🇼 Kinyarwanda</button>
+      <button class="lang-chip">🇪🇷 ትግርኛ</button>
+      <button class="lang-chip">🇪🇹 Afaan Oromoo</button>
+      <button class="lang-chip">🇨🇩 Lingala</button>
+      <button class="lang-chip">🇨🇩 Kikongo</button>
+      <button class="lang-chip">🇸🇳 Fulfulde</button>
+      <button class="lang-chip">🇲🇱 Bambara</button>
+      <button class="lang-chip">🇬🇭 Ewe</button>
+      <button class="lang-chip">🇬🇭 Akan</button>
+      <button class="lang-chip">🇬🇭 Twi</button>
+      <button class="lang-chip">🇵🇾 Guaraní</button>
+      <button class="lang-chip">🇧🇴 Aymara</button>
+      <button class="lang-chip">🇵🇪 Quechua</button>
+      <button class="lang-chip">🇭🇹 Kreyòl</button>
+      <button class="lang-chip">🇲🇬 Malagasy</button>
+      <button class="lang-chip">🇲🇲 မြန်မာ</button>
+      <button class="lang-chip">🇰🇭 ខ្មែរ</button>
+      <button class="lang-chip">🇱🇦 ລາວ</button>
+      <button class="lang-chip">🇳🇵 नेपाली</button>
+    </div>
+  </div>
+</section>
+
+<!-- RIGHTS & AID -->
+<section class="section" id="derechos" style="background:var(--warm-cream)">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Conoce tus derechos</div>
+      <h2>Guía completa de derechos y trámites</h2>
+      <p>Todo lo que necesitas saber para vivir, trabajar y prosperar en España. Actualizado constantemente.</p>
+    </div>
+    <div class="rights-grid">
+      <div class="right-card reveal">
+        <div class="right-icon">🆔</div>
+        <div><h4>NIE y documentación</h4><p>Cómo solicitar tu NIE, renovaciones, citas previas y plazos.</p></div>
+      </div>
+      <div class="right-card reveal">
+        <div class="right-icon">🏥</div>
+        <div><h4>Sanidad pública</h4><p>Tarjeta sanitaria, centros de salud, urgencias. Tu derecho a la salud.</p></div>
+      </div>
+      <div class="right-card reveal">
+        <div class="right-icon">🏠</div>
+        <div><h4>Vivienda</h4><p>Alquiler, ayudas, contratos, empadronamiento y derechos como inquilino.</p></div>
+      </div>
+      <div class="right-card reveal">
+        <div class="right-icon">💼</div>
+        <div><h4>Trabajo y empleo</h4><p>Permisos de trabajo, derechos laborales, sindicatos, nóminas.</p></div>
+      </div>
+      <div class="right-card reveal">
+        <div class="right-icon">🎓</div>
+        <div><h4>Educación</h4><p>Escolarización, homologación de títulos, becas y formación profesional.</p></div>
+      </div>
+      <div class="right-card reveal">
+        <div class="right-icon">👶</div>
+        <div><h4>Familia y menores</h4><p>Reagrupación familiar, prestaciones por hijo, guarderías públicas.</p></div>
+      </div>
+      <div class="right-card reveal">
+        <div class="right-icon">🏛️</div>
+        <div><h4>Asilo y refugio</h4><p>Proceso de solicitud, derechos del solicitante, acogida.</p></div>
+      </div>
+      <div class="right-card reveal">
+        <div class="right-icon">⚖️</div>
+        <div><h4>Asistencia legal gratuita</h4><p>Abogados de oficio, ONGs jurídicas, defensoría.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section" id="herramientas">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Herramientas prácticas</div>
+      <h2>Todo lo que necesitas en un lugar</h2>
+      <p>Calculadoras, checklists, guías interactivas — diseñadas para resolver tus problemas reales.</p>
+    </div>
+    <div class="tools-grid">
+      <div class="tool-card reveal">
+        <h3>📋 Checklist de trámites</h3>
+        <p>Lista paso a paso de todo lo que necesitas hacer al llegar a España. Marca lo completado.</p>
+        <span class="tool-btn">Abrir checklist →</span>
+      </div>
+      <div class="tool-card reveal">
+        <h3>💱 Conversor de moneda</h3>
+        <p>Convierte tu moneda local a euros al instante. Tasas actualizadas en tiempo real.</p>
+        <span class="tool-btn">Usar conversor →</span>
+      </div>
+      <div class="tool-card reveal">
+        <h3>🏷️ Costo de vida</h3>
+        <p>¿Cuánto cuesta vivir en Madrid, Barcelona, Valencia? Guía ciudad por ciudad.</p>
+        <span class="tool-btn">Ver guía →</span>
+      </div>
+      <div class="tool-card reveal">
+        <h3>📄 Generador de CV</h3>
+        <p>Crea un CV profesional con IA en 5 minutos. Plantillas adaptadas al mercado español.</p>
+        <span class="tool-btn">Crear CV →</span>
+      </div>
+      <div class="tool-card reveal">
+        <h3>📍 Mapa de recursos</h3>
+        <p>Encuentra ONGs, centros de acogida, oficinas de extranjería cerca de ti.</p>
+        <span class="tool-btn">Ver mapa →</span>
+      </div>
+      <div class="tool-card reveal">
+        <h3>📞 Directorio útil</h3>
+        <p>Teléfonos, direcciones y horarios de servicios esenciales para inmigrantes.</p>
+        <span class="tool-btn">Ver directorio →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EMERGENCY -->
+<section class="section" id="contactos">
+  <div class="container">
+    <div class="emergency-banner reveal">
+      <h3>📞 Contactos de Emergencia</h3>
+      <p style="opacity:0.9;margin-bottom:20px;font-size:0.95rem;">Guarda estos números. Están disponibles 24 horas, 7 días, con intérpretes en múltiples idiomas.</p>
+      <div class="emergency-grid">
+        <div class="emergency-item"><span>🚨</span> <div><div style="font-size:0.72rem;opacity:0.8">EMERGENCIAS</div><div class="num">112</div></div></div>
+        <div class="emergency-item"><span>👮</span> <div><div style="font-size:0.72rem;opacity:0.8">POLICÍA</div><div class="num">091</div></div></div>
+        <div class="emergency-item"><span>🚑</span> <div><div style="font-size:0.72rem;opacity:0.8">AMBULANCIA</div><div class="num">061</div></div></div>
+        <div class="emergency-item"><span>🔥</span> <div><div style="font-size:0.72rem;opacity:0.8">BOMBEROS</div><div class="num">080</div></div></div>
+        <div class="emergency-item"><span>🤝</span> <div><div style="font-size:0.72rem;opacity:0.8">ATENCIÓN INMIGRANTE</div><div class="num">900 150 000</div></div></div>
+        <div class="emergency-item"><span>💜</span> <div><div style="font-size:0.72rem;opacity:0.8">VIOLENCIA DE GÉNERO</div><div class="num">016</div></div></div>
+        <div class="emergency-item"><span>🧠</span> <div><div style="font-size:0.72rem;opacity:0.8">SALUD MENTAL</div><div class="num">024</div></div></div>
+        <div class="emergency-item"><span>👧</span> <div><div style="font-size:0.72rem;opacity:0.8">MENORES</div><div class="num">116 111</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials-section">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Historias reales</div>
+      <h2>Miles de personas ya lo están usando</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <blockquote>Llegué sin hablar español y sin saber usar un ordenador. Hoy tengo mi CV, sé usar Excel y encontré trabajo gracias a los cursos de IA.</blockquote>
+        <cite><span class="flag">🇻🇪</span> María G. · Venezuela · Madrid</cite>
+      </div>
+      <div class="testimonial-card reveal">
+        <blockquote>La sección de derechos me salvó. No sabía que tenía derecho a sanidad pública. La guía del NIE fue clarísima.</blockquote>
+        <cite><span class="flag">🇸🇳</span> Moussa D. · Senegal · Barcelona</cite>
+      </div>
+      <div class="testimonial-card reveal">
+        <blockquote>Lo mejor es que está en mi idioma. No tengo que adivinar nada. Los cursos de ChatGPT me ayudaron en mi trabajo.</blockquote>
+        <cite><span class="flag">🇺🇦</span> Oksana T. · Ucrania · Valencia</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Comienza hoy tu camino</h2>
+    <p>No necesitas conocimientos previos. Si sabes usar WhatsApp, puedes usar esta plataforma.</p>
+    <a href="#aprende-ia" class="btn btn-white">🚀 Empezar gratis ahora</a>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">🤲 Manos Abiertas</div>
+        <p class="footer-desc">Plataforma educativa gratuita para inmigrantes en España. Porque todos merecen las mismas oportunidades.</p>
+      </div>
+      <div>
+        <h4>Aprende</h4>
+        <ul>
+          <li><a href="#aprende-ia">Inteligencia Artificial</a></li>
+          <li><a href="#cursos">Cursos con certificado</a></li>
+          <li><a href="#herramientas">Office Pack</a></li>
+          <li><a href="#herramientas">CV Builder</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Recursos</h4>
+        <ul>
+          <li><a href="#derechos">Derechos y trámites</a></li>
+          <li><a href="#herramientas">Herramientas</a></li>
+          <li><a href="#contactos">Emergencias</a></li>
+          <li><a href="#idiomas">39 idiomas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Sobre</h4>
+        <ul>
+          <li><a href="https://belentani.eu" target="_blank" rel="noopener">belentani.eu</a></li>
+          <li><a href="https://noiacore.com" target="_blank" rel="noopener">noiacore.com</a></li>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Accesibilidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Manos Abiertas · Pedro Belentani · Hecho con ❤️</span>
+      <span>Un proyecto de <a href="https://belentani.eu" target="_blank" rel="noopener">belentani.eu</a> & <a href="https://noiacore.com" target="_blank" rel="noopener">noiacore.com</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ═══ HERO PARTICLES (noiacore-os Canvas2D) ═══ */
+(function(){
+  const c = document.getElementById('hero-particles');
+  if (!c) return;
+  const ctx = c.getContext('2d');
+  let pts = [], mx = 0, my = 0;
+  const N = 80;
+
+  function resize() {
+    c.width = c.parentElement.offsetWidth;
+    c.height = c.parentElement.offsetHeight;
+  }
+
+  function init() {
+    pts = [];
+    for (let i = 0; i < N; i++) {
+      pts.push({
+        x: Math.random() * c.width,
+        y: Math.random() * c.height,
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        s: Math.random() * 2 + 0.5,
+        a: Math.random() * 0.25 + 0.05
+      });
+    }
+  }
+
+  function render() {
+    ctx.clearRect(0, 0, c.width, c.height);
+    for (const p of pts) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = c.width;
+      if (p.x > c.width) p.x = 0;
+      if (p.y < 0) p.y = c.height;
+      if (p.y > c.height) p.y = 0;
+
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches &&
+         document.documentElement.getAttribute('data-theme') !== 'light');
+
+      ctx.fillStyle = isDark
+        ? `rgba(255,107,53,${p.a})`
+        : `rgba(255,107,53,${p.a * 0.5})`;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.s, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    // Connections
+    ctx.lineWidth = 0.3;
+    for (let i = 0; i < pts.length; i++) {
+      for (let j = i + 1; j < pts.length; j++) {
+        const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
+        if (d < 100) {
+          ctx.strokeStyle = `rgba(255,107,53,${(1 - d / 100) * 0.08})`;
+          ctx.beginPath();
+          ctx.moveTo(pts[i].x, pts[i].y);
+          ctx.lineTo(pts[j].x, pts[j].y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    requestAnimationFrame(render);
+  }
+
+  resize();
+  init();
+  render();
+  addEventListener('resize', () => { resize(); init(); });
+  addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+})();
+
+/* ═══ NAVBAR SCROLL ═══ */
+(function(){
+  const nav = document.getElementById('navbar');
+  let ticking = false;
+  addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        nav.classList.toggle('scrolled', scrollY > 20);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+})();
+
+/* ═══ COUNTER ANIMATION ═══ */
+(function(){
+  const counters = document.querySelectorAll('[data-count]');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count);
+      if (isNaN(target)) return;
+      let current = 0;
+      const step = Math.max(1, Math.floor(target / 60));
+      const interval = setInterval(() => {
+        current += step;
+        if (current >= target) { current = target; clearInterval(interval); }
+        el.textContent = current.toLocaleString();
+      }, 20);
+      io.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => io.observe(c));
+})();
+
+/* ═══ SCROLL REVEAL ═══ */
+(function(){
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+})();
+
+/* ═══ MOBILE MENU ═══ */
+(function(){
+  const btn = document.getElementById('menu-toggle');
+  const nav = document.querySelector('.navbar-nav');
+  if (!btn || !nav) return;
+  btn.addEventListener('click', () => {
+    const open = nav.style.display === 'flex';
+    nav.style.display = open ? 'none' : 'flex';
+    nav.style.position = open ? '' : 'absolute';
+    nav.style.top = open ? '' : '64px';
+    nav.style.left = open ? '' : '0';
+    nav.style.right = open ? '' : '0';
+    nav.style.flexDirection = open ? '' : 'column';
+    nav.style.background = open ? '' : 'var(--surface)';
+    nav.style.padding = open ? '' : '16px';
+    nav.style.borderBottom = open ? '' : '1px solid var(--border)';
+    nav.style.boxShadow = open ? '' : 'var(--glass-shadow)';
+    btn.setAttribute('aria-expanded', !open);
+    btn.textContent = open ? '☰' : '✕';
+  });
+})();
+
+/* ═══ SMOOTH SCROLL ═══ */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Close mobile menu if open
+      const nav = document.querySelector('.navbar-nav');
+      if (nav && nav.style.position === 'absolute') {
+        nav.style.display = 'none';
+        nav.style.position = '';
+        document.getElementById('menu-toggle').textContent = '☰';
+      }
+    }
+  });
+});
+</script>
+</body>
+</html>
