@@ -1,0 +1,169 @@
+{
+  "meta": { "code": "zh", "name": "中文", "flag": "🇨🇳", "dir": "ltr" },
+  "nav": {
+    "brand": "敞开双手",
+    "courses": "课程",
+    "rights": "权利",
+    "tools": "工具",
+    "contacts": "联系方式",
+    "theme": "🌙",
+    "sfx": "🔊",
+    "start": "免费开始"
+  },
+  "hero": {
+    "eyebrow": "免费教育平台",
+    "title_1": "通往",
+    "title_highlight": "人工智能、就业与权利",
+    "title_2": "在西班牙的桥梁",
+    "subtitle": "学习人工智能，创建专业简历，了解您的权利，找到经过验证的资源。全部免费，使用您的语言。",
+    "cta_primary": "探索课程",
+    "cta_secondary": "查看工具",
+    "stat_courses": "课程",
+    "stat_resources": "资源",
+    "stat_languages": "语言",
+    "stat_cost": "费用"
+  },
+  "marquee": {
+    "items": ["人工智能", "专业简历", "劳动权利", "39种语言", "100%免费", "认证课程", "资源地图", "在西班牙就业"]
+  },
+  "features": {
+    "eyebrow": "您将找到什么",
+    "title": "在西班牙开始新生活所需的一切",
+    "subtitle": "实用工具、真实课程和经过验证的资源——由移民为移民设计。",
+    "cards": [
+      { "icon": "🤖", "title": "从零开始学习AI", "desc": "ChatGPT、Gemini、Copilot、DeepSeek。实用课程，在工作和日常生活中使用AI。", "badge": "热门" },
+      { "icon": "📝", "title": "创建完美简历", "desc": "智能生成器配备专业模板。导出为PDF格式，即刻发送。", "badge": "免费" },
+      { "icon": "⚖️", "title": "了解您的权利", "desc": "NIE、登记、医疗、工作、住房。最新的分步指南。", "badge": "" },
+      { "icon": "🗺️", "title": "资源地图", "desc": "在您的城市定位NGO、移民办公室、医疗中心。", "badge": "新功能" },
+      { "icon": "💼", "title": "找到工作", "desc": "就业平台、面试技巧、招聘行业、劳动权利。", "badge": "" },
+      { "icon": "🌍", "title": "使用您的语言", "desc": "39种语言的完整界面。阿拉伯语、中文、印地语、乌克兰语、法语等。", "badge": "39种语言" }
+    ]
+  },
+  "courses": {
+    "eyebrow": "课程目录",
+    "title": "115+免费认证课程",
+    "subtitle": "AI、就业、语言、法律程序和数字技能的实用培训。",
+    "search_placeholder": "搜索课程...",
+    "search_btn": "搜索",
+    "tabs": {
+      "all": "全部",
+      "ia": "🤖 AI",
+      "empleo": "💼 就业",
+      "office": "📊 Office",
+      "legal": "⚖️ 法律",
+      "idiomas": "🌍 语言",
+      "digital": "💻 数字",
+      "habilidades": "🧠 技能",
+      "finanzas": "💰 财务"
+    },
+    "no_results": "未找到课程。请尝试其他搜索。",
+    "lessons": "课时",
+    "certificate": "✓ 证书",
+    "prev": "← 上一页",
+    "next": "下一页 →",
+    "page_info": "{current} / {total}（{count}门课程）"
+  },
+  "languages": {
+    "eyebrow": "多语言",
+    "title": "支持39种语言",
+    "subtitle": "因为信息应该传达给每一个人，无论您说什么语言。"
+  },
+  "rights": {
+    "eyebrow": "您的权利",
+    "title": "移民的权利与援助",
+    "subtitle": "关于西班牙可用程序和服务的清晰、最新信息。",
+    "cards": [
+      { "icon": "🆔", "title": "NIE与居留", "desc": "申请、续期、预约、所需文件。" },
+      { "icon": "🏥", "title": "公共医疗", "desc": "医疗卡、医疗中心、急诊、儿科。" },
+      { "icon": "🏠", "title": "住房", "desc": "租赁、合同、押金、租户权利、援助。" },
+      { "icon": "💼", "title": "就业", "desc": "合同、工资单、SEPE、劳动权利、解雇。" },
+      { "icon": "📚", "title": "教育", "desc": "学校注册、奖学金、学历认证。" },
+      { "icon": "👨‍👩‍👧‍👦", "title": "家庭团聚", "desc": "要求、流程、文件、期限。" },
+      { "icon": "🛡️", "title": "保护", "desc": "庇护、性别暴力、免费法律援助。" },
+      { "icon": "📜", "title": "国籍", "desc": "要求、CCSE、DELE A2、文件、期限。" }
+    ]
+  },
+  "tools": {
+    "eyebrow": "实用工具",
+    "title": "6个免费日常工具",
+    "subtitle": "清单、货币转换器、简历生成器、资源地图等。",
+    "cards": [
+      { "icon": "✅", "title": "到达清单", "desc": "到达西班牙的15个必要步骤。", "btn": "打开清单 →" },
+      { "icon": "💱", "title": "货币转换器", "desc": "即时将您的货币转换为欧元。50+种货币。", "btn": "打开转换器 →" },
+      { "icon": "📄", "title": "简历生成器", "desc": "几分钟内创建专业简历。导出PDF。", "btn": "创建我的简历 →" },
+      { "icon": "🗺️", "title": "资源地图", "desc": "NGO、办事处、医疗中心。按类型筛选。", "btn": "打开地图 →" },
+      { "icon": "📞", "title": "联系人目录", "desc": "所有重要电话：急救、NGO、政府。", "btn": "查看目录 →" },
+      { "icon": "🏙️", "title": "生活成本", "desc": "按城市比较开支：租金、交通、食品。", "btn": "比较城市 →" }
+    ]
+  },
+  "emergency": {
+    "title": "📞 急救电话——请保存这些号码",
+    "items": [
+      { "label": "紧急情况", "number": "112" },
+      { "label": "警察", "number": "091" },
+      { "label": "国民警卫队", "number": "062" },
+      { "label": "急救车", "number": "061" },
+      { "label": "消防", "number": "080" },
+      { "label": "性别暴力", "number": "016" },
+      { "label": "儿童求助", "number": "116 111" },
+      { "label": "心理健康", "number": "024" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "用户见证",
+    "title": "已经开始的人的故事",
+    "cards": [
+      { "quote": "AI课程帮助我在马德里一家创业公司找到了工作。我不知道怎么用ChatGPT，现在我每天都在用。", "name": "María", "origin": "哥伦比亚", "flag": "🇨🇴" },
+      { "quote": "清单救了我。没有它，我会忘记登记过程中的重要步骤。资源地图直接带我去了红十字会。", "name": "Ahmed", "origin": "摩洛哥", "flag": "🇲🇦" },
+      { "quote": "我在这里5分钟内做好了简历，收到了3个面试邀请。劳动权利部分帮我谈判了第一份合同。", "name": "Olena", "origin": "乌克兰", "flag": "🇺🇦" }
+    ]
+  },
+  "cta": {
+    "title": "您在西班牙的未来从这里开始",
+    "subtitle": "加入数千名正在通过敞开双手学习、工作和成长的人。",
+    "button": "立即免费开始"
+  },
+  "footer": {
+    "brand": "🤲 敞开双手",
+    "desc": "面向西班牙移民的免费教育平台。由Pedro Belentani在巴塞罗那用❤️制作。",
+    "col1_title": "平台",
+    "col1_links": ["课程", "工具", "资源地图", "目录"],
+    "col2_title": "资源",
+    "col2_links": ["权利与程序", "就业", "语言", "财务"],
+    "col3_title": "项目",
+    "col3_links": ["关于我们", "联系方式", "贡献", "GitHub"],
+    "copyright": "© 2026 敞开双手 · Pedro Belentani",
+    "made_with": "在巴塞罗那用❤️制作"
+  },
+  "tools_modal": {
+    "checklist_title": "✅ 西班牙到达清单",
+    "checklist_reset": "重置清单",
+    "checklist_progress": "进度：{done}/{total} 已完成",
+    "conv_title": "💱 货币兑欧元转换器",
+    "conv_amount": "金额",
+    "conv_from": "源货币",
+    "conv_result": "结果（€）",
+    "cv_title": "📄 专业简历生成器",
+    "cv_name": "您的全名",
+    "cv_role": "目标职位",
+    "cv_exp": "您的工作经验...",
+    "cv_preview_title": "预览",
+    "cv_export": "📥 导出PDF",
+    "map_title": "🗺️ 西班牙资源地图",
+    "map_filters": { "all": "全部", "ong": "NGO", "gobierno": "政府", "social": "社会" },
+    "dir_title": "📞 重要联系人目录",
+    "dir_filters": { "all": "全部", "emergencia": "急救", "ong": "NGO", "gobierno": "政府", "social": "社会" },
+    "cost_title": "🏙️ 各城市生活成本",
+    "close": "关闭"
+  },
+  "toast": {
+    "welcome": "🤲 欢迎来到敞开双手——{count}门课程可用",
+    "tool_opened": "工具已打开：{name}",
+    "checklist_done": "✓ {item}",
+    "checklist_reset": "清单已重置",
+    "number_copied": "号码已复制：{number}",
+    "cv_exported": "简历已导出为PDF",
+    "map_loaded": "地图已加载{count}个资源",
+    "lang_changed": "语言已更改为{lang}"
+  }
+}

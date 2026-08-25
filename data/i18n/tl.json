@@ -1,0 +1,46 @@
+{
+  "meta": { "code": "tl", "name": "Filipino", "flag": "🇵🇭", "dir": "ltr" },
+  "nav": { "brand": "Bukas na Kamay", "courses": "Mga Kurso", "rights": "Mga Karapatan", "tools": "Mga Kasangkapan", "contacts": "Mga Kontak", "theme": "🌙", "sfx": "🔊", "start": "Magsimula nang libre" },
+  "hero": { "eyebrow": "LIBRENG PLATAPORMA NG EDUKASYON", "title_1": "Ang iyong tulay patungo sa", "title_highlight": "AI, trabaho at mga karapatan", "title_2": "sa Espanya", "subtitle": "Matuto ng artificial intelligence, gumawa ng propesyonal na CV, alamin ang iyong mga karapatan at maghanap ng mga verified na mapagkukunan. Lahat libre, sa iyong wika.", "cta_primary": "Tuklasin ang mga kurso", "cta_secondary": "Tingnan ang mga kasangkapan", "stat_courses": "Mga Kurso", "stat_resources": "Mga Mapagkukunan", "stat_languages": "Mga Wika", "stat_cost": "Gastos" },
+  "marquee": { "items": ["ARTIFICIAL INTELLIGENCE", "PROPESYONAL NA CV", "KARAPATAN SA TRABAHO", "39 WIKA", "100% LIBRE", "MGA KURSO NA MAY SERTIPIKO", "MAPA NG MGA MAPAGKUKUNAN", "TRABAHO SA ESPANYA"] },
+  "features": { "eyebrow": "ANO ANG MAHAHANAP MO", "title": "Lahat ng kailangan mo para magsimula sa Espanya", "subtitle": "Mga praktikal na kasangkapan, tunay na mga kurso at verified na mga mapagkukunan — dinisenyo ng at para sa mga imigrante.", "cards": [
+    { "icon": "🤖", "title": "Matuto ng AI mula sa simula", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Mga praktikal na kurso para gamitin ang AI sa trabaho at pang-araw-araw.", "badge": "POPULAR" },
+    { "icon": "📝", "title": "Gumawa ng perpektong CV", "desc": "Smart generator na may propesyonal na template. I-export bilang PDF.", "badge": "LIBRE" },
+    { "icon": "⚖️", "title": "Alamin ang iyong mga karapatan", "desc": "NIE, rehistrasyon, kalusugan, trabaho, pabahay. Updated na hakbang-hakbang na gabay.", "badge": "" },
+    { "icon": "🗺️", "title": "Mapa ng mga mapagkukunan", "desc": "Mga NGO, opisina ng imigrasyon, health center sa iyong lungsod.", "badge": "BAGO" },
+    { "icon": "💼", "title": "Maghanap ng trabaho", "desc": "Mga portal ng trabaho, interview, sektor na nag-hire, karapatan sa trabaho.", "badge": "" },
+    { "icon": "🌍", "title": "Sa iyong wika", "desc": "Kumpletong interface sa 39 wika. Arabic, Chinese, Hindi, Ukrainian, French at iba pa.", "badge": "39 WIKA" }
+  ]},
+  "courses": { "eyebrow": "KATALOGO NG MGA KURSO", "title": "115+ libreng kurso na may sertipiko", "subtitle": "Praktikal na pagsasanay sa AI, trabaho, wika, legal na proseso at digital na kasanayan.", "search_placeholder": "Maghanap ng mga kurso...", "search_btn": "Hanapin", "tabs": { "all": "Lahat", "ia": "🤖 AI", "empleo": "💼 Trabaho", "office": "📊 Office", "legal": "⚖️ Legal", "idiomas": "🌍 Mga Wika", "digital": "💻 Digital", "habilidades": "🧠 Kasanayan", "finanzas": "💰 Pananalapi" }, "no_results": "Walang nahanap na kurso. Subukan ang ibang paghahanap.", "lessons": "aralin", "certificate": "✓ Sertipiko", "prev": "← Nakaraan", "next": "Susunod →", "page_info": "{current} / {total} ({count} kurso)" },
+  "languages": { "eyebrow": "MARAMING WIKA", "title": "Available sa 39 na wika", "subtitle": "Dahil ang impormasyon ay dapat makarating sa lahat, anuman ang wika mo." },
+  "rights": { "eyebrow": "MGA KARAPATAN MO", "title": "Mga karapatan at tulong para sa mga imigrante", "subtitle": "Malinaw at updated na impormasyon tungkol sa mga proseso at serbisyong available sa Espanya.", "cards": [
+    { "icon": "🆔", "title": "NIE at residensya", "desc": "Aplikasyon, renewal, appointment, kinakailangang dokumento." },
+    { "icon": "🏥", "title": "Pampublikong kalusugan", "desc": "Health card, medical center, emergency, pediatrics." },
+    { "icon": "🏠", "title": "Pabahay", "desc": "Upa, kontrata, deposito, karapatan ng nangungupahan, tulong." },
+    { "icon": "💼", "title": "Trabaho", "desc": "Kontrata, payslip, SEPE, karapatan sa trabaho, pagtanggal." },
+    { "icon": "📚", "title": "Edukasyon", "desc": "Pag-enroll sa paaralan, iskolarship, pagkilala sa diploma." },
+    { "icon": "👨‍👩‍👧‍👦", "title": "Reunification ng pamilya", "desc": "Mga kinakailangan, proseso, dokumento, deadline." },
+    { "icon": "🛡️", "title": "Proteksyon", "desc": "Asylum, gender violence, libreng legal na tulong." },
+    { "icon": "📜", "title": "Pagkamamamayan", "desc": "Mga kinakailangan, CCSE, DELE A2, dokumento, deadline." }
+  ]},
+  "tools": { "eyebrow": "MGA PRAKTIKAL NA KASANGKAPAN", "title": "6 na libreng kasangkapan para sa pang-araw-araw", "subtitle": "Checklist, currency converter, CV builder, mapa ng mapagkukunan at iba pa.", "cards": [
+    { "icon": "✅", "title": "Checklist ng pagdating", "desc": "Ang 15 mahahalagang hakbang pagdating sa Espanya.", "btn": "Buksan ang checklist →" },
+    { "icon": "💱", "title": "Currency converter", "desc": "I-convert ang iyong pera sa euro agad. 50+ currency.", "btn": "Buksan ang converter →" },
+    { "icon": "📄", "title": "CV builder", "desc": "Gumawa ng propesyonal na CV sa ilang minuto. PDF export.", "btn": "Gumawa ng CV →" },
+    { "icon": "🗺️", "title": "Mapa ng mapagkukunan", "desc": "Mga NGO, opisina, health center. I-filter ayon sa uri.", "btn": "Buksan ang mapa →" },
+    { "icon": "📞", "title": "Direktoryo ng kontak", "desc": "Lahat ng importanteng numero: emergency, NGO, gobyerno.", "btn": "Tingnan ang direktoryo →" },
+    { "icon": "🏙️", "title": "Gastos sa pamumuhay", "desc": "Paghahambing ng gastos ayon sa lungsod: upa, transportasyon, pagkain.", "btn": "Ihambing ang mga lungsod →" }
+  ]},
+  "emergency": { "title": "📞 Mga numero ng emergency — i-save ang mga contact na ito", "items": [
+    { "label": "Emergency", "number": "112" }, { "label": "Pulis", "number": "091" }, { "label": "Civil Guard", "number": "062" }, { "label": "Ambulansya", "number": "061" }, { "label": "Bumbero", "number": "080" }, { "label": "Gender violence", "number": "016" }, { "label": "Tulong sa mga bata", "number": "116 111" }, { "label": "Mental health", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "MGA TESTIMONYA", "title": "Mga kwento ng mga nagsimula na", "cards": [
+    { "quote": "Tinulungan ako ng mga AI course na makakuha ng trabaho sa isang startup sa Madrid. Hindi ko alam gamitin ang ChatGPT noon, ngayon ginagamit ko araw-araw.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Nailigtas ako ng checklist. Kung wala iyon, nakalimutan ko na sana ang mahahalagang hakbang.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+    { "quote": "Ginawa ko ang CV ko dito sa 5 minuto at tinawag ako para sa 3 interview.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Ang iyong kinabukasan sa Espanya ay nagsisimula dito", "subtitle": "Sumali sa libu-libong tao na natututo, nagtatrabaho at lumalago sa Bukas na Kamay.", "button": "Magsimula nang libre ngayon" },
+  "footer": { "brand": "🤲 Bukas na Kamay", "desc": "Libreng plataporma ng edukasyon para sa mga imigrante sa Espanya. Ginawa nang may ❤️ ni Pedro Belentani mula Barcelona.", "col1_title": "Plataporma", "col1_links": ["Mga Kurso", "Mga Kasangkapan", "Mapa", "Direktoryo"], "col2_title": "Mga Mapagkukunan", "col2_links": ["Karapatan at proseso", "Trabaho", "Mga Wika", "Pananalapi"], "col3_title": "Proyekto", "col3_links": ["Tungkol sa amin", "Kontak", "Mag-ambag", "GitHub"], "copyright": "© 2026 Bukas na Kamay · Pedro Belentani", "made_with": "Ginawa nang may ❤️ sa Barcelona" },
+  "tools_modal": { "checklist_title": "✅ Checklist ng pagdating sa Espanya", "checklist_reset": "I-reset ang checklist", "checklist_progress": "Progreso: {done}/{total} tapos na", "conv_title": "💱 Euro currency converter", "conv_amount": "Halaga", "conv_from": "Mula sa currency", "conv_result": "Resulta sa €", "cv_title": "📄 Propesyonal na CV builder", "cv_name": "Buong pangalan", "cv_role": "Target na posisyon", "cv_exp": "Ang iyong propesyonal na karanasan...", "cv_preview_title": "Preview", "cv_export": "📥 I-export PDF", "map_title": "🗺️ Mapa ng mapagkukunan sa Espanya", "map_filters": { "all": "Lahat", "ong": "NGO", "gobierno": "Gobyerno", "social": "Social" }, "dir_title": "📞 Direktoryo ng mahahalagang kontak", "dir_filters": { "all": "Lahat", "emergencia": "Emergency", "ong": "NGO", "gobierno": "Gobyerno", "social": "Social" }, "cost_title": "🏙️ Gastos sa pamumuhay ayon sa lungsod", "close": "Isara" },
+  "toast": { "welcome": "🤲 Maligayang pagdating sa Bukas na Kamay — {count} kurso available", "tool_opened": "Nabuksan ang kasangkapan: {name}", "checklist_done": "✓ {item}", "checklist_reset": "Na-reset ang checklist", "number_copied": "Nakopya ang numero: {number}", "cv_exported": "Na-export ang CV bilang PDF", "map_loaded": "Na-load ang mapa na may {count} mapagkukunan", "lang_changed": "Nabago ang wika sa {lang}" }
+}

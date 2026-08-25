@@ -1,0 +1,46 @@
+{
+  "meta": { "code": "zu", "name": "isiZulu", "flag": "🇿🇦", "dir": "ltr" },
+  "nav": { "brand": "Izandla Ezivulekile", "courses": "Izifundo", "rights": "Amalungelo", "tools": "Amathuluzi", "contacts": "Oxhumana Nabo", "theme": "🌙", "sfx": "🔊", "start": "Qala mahhala" },
+  "hero": { "eyebrow": "INKUNDLA YEMFUNDO YAMAHHALA", "title_1": "Ibhuloho lakho eliya", "title_highlight": "ku-AI, umsebenzi namalungelo", "title_2": "eSpain", "subtitle": "Funda i-artificial intelligence, yakha i-CV yakho yobuchwepheshe, yazi amalungelo akho futhi thola izinsiza eziqinisekisiwe. Konke mahhala, ngolimi lwakho.", "cta_primary": "Hlola izifundo", "cta_secondary": "Buka amathuluzi", "stat_courses": "Izifundo", "stat_resources": "Izinsiza", "stat_languages": "Izilimi", "stat_cost": "Izindleko" },
+  "marquee": { "items": ["I-ARTIFICIAL INTELLIGENCE", "I-CV YOBUCHWEPHESHE", "AMALUNGELO OMSEBENZI", "IZILIMI EZINGU-39", "MAHHALA 100%", "IZIFUNDO EZINESITIFIKETI", "IBALAZWE LEZINSIZA", "UMSEBENZI ESPAIN"] },
+  "features": { "eyebrow": "UZOTHOLA INI", "title": "Konke okudingayo ukuqala eSpain", "subtitle": "Amathuluzi asebenzayo, izifundo zangempela nezinsiza eziqinisekisiwe — ezenziwe abafuduki kubafuduki.", "cards": [
+    { "icon": "🤖", "title": "Funda i-AI kusukela ekuqaleni", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Izifundo ezisebenzayo zokusebenzisa i-AI emsebenzini nasempilweni.", "badge": "OKUDUMILE" },
+    { "icon": "📝", "title": "Yakha i-CV yakho ephelele", "desc": "Isakhiwo esihlakaniphile esinezifanekiso zobuchwepheshe. Thumela nge-PDF.", "badge": "MAHHALA" },
+    { "icon": "⚖️", "title": "Yazi amalungelo akho", "desc": "I-NIE, ukubhalisa, ezempilo, umsebenzi, izindlu. Imihlahlandlela ebuyekeziwe.", "badge": "" },
+    { "icon": "🗺️", "title": "Ibalazwe lezinsiza", "desc": "Ama-NGO, amahhovisi okufuduka, izikhungo zempilo edolobheni lakho.", "badge": "OKUSHA" },
+    { "icon": "💼", "title": "Thola umsebenzi", "desc": "Amakhasi omsebenzi, izingxoxo, imikhakha eqashayo.", "badge": "" },
+    { "icon": "🌍", "title": "Ngolimi lwakho", "desc": "Ubuso obuphelele ngezilimi ezingu-39.", "badge": "IZILIMI 39" }
+  ]},
+  "courses": { "eyebrow": "UHLU LWEZIFUNDO", "title": "Izifundo ezingaphezu kwe-115 zamahhala ezinosestifiketi", "subtitle": "Uqeqesho olusebenzayo ku-AI, umsebenzi, izilimi, izinqubo zomthetho namakhono edijithali.", "search_placeholder": "Sesha izifundo...", "search_btn": "Sesha", "tabs": { "all": "Konke", "ia": "🤖 AI", "empleo": "💼 Umsebenzi", "office": "📊 Office", "legal": "⚖️ Ezomthetho", "idiomas": "🌍 Izilimi", "digital": "💻 Idijithali", "habilidades": "🧠 Amakhono", "finanzas": "💰 Izezimali" }, "no_results": "Azitholakalanga izifundo. Zama ukusesha okunye.", "lessons": "izifundo", "certificate": "✓ Isitifiketi", "prev": "← Okwedlule", "next": "Okulandelayo →", "page_info": "{current} / {total} (izifundo {count})" },
+  "languages": { "eyebrow": "IZILIMI EZININGI", "title": "Iyatholakala ngezilimi ezingu-39", "subtitle": "Ngoba ulwazi kumele lufike kuwo wonke umuntu, noma ngabe ukhuluma lulimi luni." },
+  "rights": { "eyebrow": "AMALUNGELO AKHO", "title": "Amalungelo nosizo kwabafuduki", "subtitle": "Ulwazi olucacile nolubuyekeziwe ngezinqubo nezinsizakalo ezitholakalayo eSpain.", "cards": [
+    { "icon": "🆔", "title": "I-NIE nokuhlala", "desc": "Isicelo, ukuvuselela, isithembiso, amadokhumenti adingekayo." },
+    { "icon": "🏥", "title": "Ezempilo zomphakathi", "desc": "Ikhadi lezempilo, izikhungo zezokwelapha, izimo eziphuthumayo, ezabantwana." },
+    { "icon": "🏠", "title": "Izindlu", "desc": "Ukuqasha, izinkontileka, idiphozithi, amalungelo omqashi, usizo." },
+    { "icon": "💼", "title": "Umsebenzi", "desc": "Izinkontileka, amasliphu omholo, i-SEPE, amalungelo omsebenzi, ukuxoshwa." },
+    { "icon": "📚", "title": "Imfundo", "desc": "Ukubhalisa esikoleni, imifundaze, ukwamukelwa kweziqu." },
+    { "icon": "👨‍👩‍👧‍👦", "title": "Ukuhlanganiswa komndeni", "desc": "Izidingo, inqubo, amadokhumenti, izikhathi zokugcina." },
+    { "icon": "🛡️", "title": "Ukuvikelwa", "desc": "Ukukhosela, udlame lobulili, usizo lwezomthetho lwamahhala." },
+    { "icon": "📜", "title": "Ubuzwe", "desc": "Izidingo, i-CCSE, i-DELE A2, amadokhumenti, izikhathi." }
+  ]},
+  "tools": { "eyebrow": "AMATHULUZI ASEBENZAYO", "title": "Amathuluzi angu-6 amahhala empilo yansuku zonke", "subtitle": "Uhlu lokuhlola, isiguquli semali, umakhi we-CV, ibalazwe lezinsiza nokunye.", "cards": [
+    { "icon": "✅", "title": "Uhlu lokufika", "desc": "Izinyathelo ezingu-15 ezibalulekile uma ufika eSpain.", "btn": "Vula uhlu →" },
+    { "icon": "💱", "title": "Isiguquli semali", "desc": "Guqula imali yakho ibe ama-Euro ngokushesha. Izimali ezingaphezu kwe-50.", "btn": "Vula isiguquli →" },
+    { "icon": "📄", "title": "Umakhi we-CV", "desc": "Yakha i-CV yobuchwepheshe ngemizuzu. PDF.", "btn": "Yakha i-CV →" },
+    { "icon": "🗺️", "title": "Ibalazwe lezinsiza", "desc": "Ama-NGO, amahhovisi, izikhungo zempilo. Hlunga ngohlobo.", "btn": "Vula ibalazwe →" },
+    { "icon": "📞", "title": "Uhlu lokuxhumana", "desc": "Zonke izinombolo ezibalulekile: eziphuthumayo, ama-NGO, uhulumeni.", "btn": "Buka uhlu →" },
+    { "icon": "🏙️", "title": "Izindleko zokuphila", "desc": "Uqhathaniso lwezindleko ngasedolobheni: ukuqasha, ukuhamba, ukudla.", "btn": "Qhathanisa amadolobha →" }
+  ]},
+  "emergency": { "title": "📞 Izinombolo zezimo eziphuthumayo — gcina lezi zinsiza", "items": [
+    { "label": "Izimo eziphuthumayo", "number": "112" }, { "label": "Amaphoyisa", "number": "091" }, { "label": "I-Civil Guard", "number": "062" }, { "label": "I-Ambulensi", "number": "061" }, { "label": "Umlilo", "number": "080" }, { "label": "Udlame lobulili", "number": "016" }, { "label": "Usizo lwabantwana", "number": "116 111" }, { "label": "Impilo yengqondo", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "UBUFAKAZI", "title": "Izindaba zalabo asebeqalile", "cards": [
+    { "quote": "Izifundo ze-AI zingisizile ukuthola umsebenzi ku-startup eMadrid.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Uhlu lokuhlola lungisindisile. Ngaphandle kwalo bengizokhohlwa izinyathelo ezibalulekile.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+    { "quote": "Ngenze i-CV yami lapha ngemizuzu emi-5 ngabizwa kwezingxoxo ezi-3.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Ikusasa lakho eSpain liqala lapha", "subtitle": "Hlangana nezinkulungwane zabantu abafundayo, abasebenzayo futhi abakhulayo ne-Izandla Ezivulekile.", "button": "Qala mahhala manje" },
+  "footer": { "brand": "🤲 Izandla Ezivulekile", "desc": "Inkundla yemfundo yamahhala yabafuduki eSpain. Yenziwe ngo-❤️ nguPedro Belentani eBarcelona.", "col1_title": "Inkundla", "col1_links": ["Izifundo", "Amathuluzi", "Ibalazwe", "Uhlu"], "col2_title": "Izinsiza", "col2_links": ["Amalungelo nezinqubo", "Umsebenzi", "Izilimi", "Izezimali"], "col3_title": "Iphrojekthi", "col3_links": ["Ngathi", "Xhumana nathi", "Faka isandla", "GitHub"], "copyright": "© 2026 Izandla Ezivulekile · Pedro Belentani", "made_with": "Yenziwe ngo-❤️ eBarcelona" },
+  "tools_modal": { "checklist_title": "✅ Uhlu lokufika eSpain", "checklist_reset": "Setha kabusha uhlu", "checklist_progress": "Inqubekelaphambili: {done}/{total} kuqediwe", "conv_title": "💱 Isiguquli semali ku-Euro", "conv_amount": "Inani", "conv_from": "Kusuka emali", "conv_result": "Umphumela nge-€", "cv_title": "📄 Umakhi we-CV yobuchwepheshe", "cv_name": "Igama lakho eliphelele", "cv_role": "Isikhundla esihlosiwe", "cv_exp": "Ulwazi lwakho lomsebenzi...", "cv_preview_title": "Ukubuka kuqala", "cv_export": "📥 Thumela i-PDF", "map_title": "🗺️ Ibalazwe lezinsiza eSpain", "map_filters": { "all": "Konke", "ong": "Ama-NGO", "gobierno": "Uhulumeni", "social": "Kwezenhlalo" }, "dir_title": "📞 Uhlu lokuxhumana okubalulekile", "dir_filters": { "all": "Konke", "emergencia": "Eziphuthumayo", "ong": "Ama-NGO", "gobierno": "Uhulumeni", "social": "Kwezenhlalo" }, "cost_title": "🏙️ Izindleko zokuphila ngasedolobheni", "close": "Vala" },
+  "toast": { "welcome": "🤲 Siyakwamukela ku-Izandla Ezivulekile — izifundo ezingu-{count} ziyatholakala", "tool_opened": "Ithuluzi livuliwe: {name}", "checklist_done": "✓ {item}", "checklist_reset": "Uhlu lusethwe kabusha", "number_copied": "Inombolo ikopishiwe: {number}", "cv_exported": "I-CV ithunyelwe nge-PDF", "map_loaded": "Ibalazwe lifakiwe nezinsiza ezingu-{count}", "lang_changed": "Ulimi lushintshwe lwaba ngu-{lang}" }
+}

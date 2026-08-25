@@ -1,0 +1,46 @@
+{
+  "meta": { "code": "sw", "name": "Kiswahili", "flag": "🇰🇪", "dir": "ltr" },
+  "nav": { "brand": "Mikono Wazi", "courses": "Kozi", "rights": "Haki", "tools": "Zana", "contacts": "Mawasiliano", "theme": "🌙", "sfx": "🔊", "start": "Anza bure" },
+  "hero": { "eyebrow": "JUKWAA LA ELIMU BURE", "title_1": "Daraja lako kwenda", "title_highlight": "AI, ajira na haki", "title_2": "nchini Uhispania", "subtitle": "Jifunze akili bandia, tengeneza CV yako ya kitaalamu, fahamu haki zako na upate rasilimali zilizothibitishwa. Yote bure, kwa lugha yako.", "cta_primary": "Gundua kozi", "cta_secondary": "Tazama zana", "stat_courses": "Kozi", "stat_resources": "Rasilimali", "stat_languages": "Lugha", "stat_cost": "Gharama" },
+  "marquee": { "items": ["AKILI BANDIA", "CV YA KITAALAMU", "HAKI ZA KAZI", "LUGHA 39", "BURE 100%", "KOZI ZENYE VYETI", "RAMANI YA RASILIMALI", "KAZI UHISPANIA"] },
+  "features": { "eyebrow": "UTAPATA NINI", "title": "Kila unachohitaji kuanza Uhispania", "subtitle": "Zana za vitendo, kozi halisi na rasilimali zilizothibitishwa — zilizoundwa na wahamiaji kwa wahamiaji.", "cards": [
+    { "icon": "🤖", "title": "Jifunze AI kutoka mwanzo", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Kozi za vitendo za kutumia AI kazini na maishani.", "badge": "MAARUFU" },
+    { "icon": "📝", "title": "Tengeneza CV yako bora", "desc": "Jenereta ya kisasa na violezo vya kitaalamu. Hamisha kwa PDF.", "badge": "BURE" },
+    { "icon": "⚖️", "title": "Fahamu haki zako", "desc": "NIE, usajili, afya, kazi, makazi. Mwongozo wa hatua kwa hatua.", "badge": "" },
+    { "icon": "🗺️", "title": "Ramani ya rasilimali", "desc": "NGOs, ofisi za uhamiaji, vituo vya afya katika mji wako.", "badge": "MPYA" },
+    { "icon": "💼", "title": "Pata kazi", "desc": "Portali za kazi, mahojiano, sekta zinazoajiri, haki za kazi.", "badge": "" },
+    { "icon": "🌍", "title": "Kwa lugha yako", "desc": "Kiolesura kamili kwa lugha 39. Kiarabu, Kichina, Kihindi, Kiukreni, Kifaransa na zaidi.", "badge": "LUGHA 39" }
+  ]},
+  "courses": { "eyebrow": "KATALOGI YA KOZI", "title": "Kozi 115+ bure zenye vyeti", "subtitle": "Mafunzo ya vitendo katika AI, ajira, lugha, taratibu za kisheria na ujuzi wa kidijitali.", "search_placeholder": "Tafuta kozi...", "search_btn": "Tafuta", "tabs": { "all": "Zote", "ia": "🤖 AI", "empleo": "💼 Kazi", "office": "📊 Office", "legal": "⚖️ Sheria", "idiomas": "🌍 Lugha", "digital": "💻 Dijitali", "habilidades": "🧠 Ujuzi", "finanzas": "💰 Fedha" }, "no_results": "Hakuna kozi zilizopatikana. Jaribu utafutaji mwingine.", "lessons": "masomo", "certificate": "✓ Cheti", "prev": "← Iliyotangulia", "next": "Inayofuata →", "page_info": "{current} / {total} (kozi {count})" },
+  "languages": { "eyebrow": "LUGHA NYINGI", "title": "Inapatikana kwa lugha 39", "subtitle": "Kwa sababu taarifa lazima ifikie kila mtu, bila kujali lugha yako." },
+  "rights": { "eyebrow": "HAKI ZAKO", "title": "Haki na msaada kwa wahamiaji", "subtitle": "Taarifa wazi na za kisasa kuhusu taratibu na huduma zinazopatikana Uhispania.", "cards": [
+    { "icon": "🆔", "title": "NIE na makazi", "desc": "Maombi, upya, miadi, hati zinazohitajika." },
+    { "icon": "🏥", "title": "Afya ya umma", "desc": "Kadi ya afya, vituo vya matibabu, dharura, watoto." },
+    { "icon": "🏠", "title": "Makazi", "desc": "Kodi, mikataba, amana, haki za mpangaji, misaada." },
+    { "icon": "💼", "title": "Ajira", "desc": "Mikataba, risiti za mshahara, SEPE, haki za kazi, kufukuzwa." },
+    { "icon": "📚", "title": "Elimu", "desc": "Usajili wa shule, ufadhili, utambuzi wa vyeti." },
+    { "icon": "👨‍👩‍👧‍👦", "title": "Kuunganisha familia", "desc": "Mahitaji, mchakato, hati, tarehe za mwisho." },
+    { "icon": "🛡️", "title": "Ulinzi", "desc": "Hifadhi, unyanyasaji wa kijinsia, msaada wa kisheria bure." },
+    { "icon": "📜", "title": "Uraia", "desc": "Mahitaji, CCSE, DELE A2, hati, tarehe za mwisho." }
+  ]},
+  "tools": { "eyebrow": "ZANA ZA VITENDO", "title": "Zana 6 bure kwa maisha yako ya kila siku", "subtitle": "Orodha ya ukaguzi, kibadilishaji fedha, mtengenezaji wa CV, ramani ya rasilimali na zaidi.", "cards": [
+    { "icon": "✅", "title": "Orodha ya kuwasili", "desc": "Hatua 15 muhimu unapofika Uhispania.", "btn": "Fungua orodha →" },
+    { "icon": "💱", "title": "Kibadilishaji fedha", "desc": "Badilisha fedha yako kuwa euro mara moja. Fedha 50+.", "btn": "Fungua kibadilishaji →" },
+    { "icon": "📄", "title": "Mtengenezaji CV", "desc": "Tengeneza CV yako ya kitaalamu kwa dakika. PDF.", "btn": "Tengeneza CV →" },
+    { "icon": "🗺️", "title": "Ramani ya rasilimali", "desc": "NGOs, ofisi, vituo vya afya. Chuja kwa aina.", "btn": "Fungua ramani →" },
+    { "icon": "📞", "title": "Saraka ya mawasiliano", "desc": "Nambari zote muhimu: dharura, NGOs, serikali.", "btn": "Tazama saraka →" },
+    { "icon": "🏙️", "title": "Gharama ya maisha", "desc": "Ulinganisho wa gharama kwa mji: kodi, usafiri, chakula.", "btn": "Linganisha miji →" }
+  ]},
+  "emergency": { "title": "📞 Nambari za dharura — hifadhi mawasiliano haya", "items": [
+    { "label": "Dharura", "number": "112" }, { "label": "Polisi", "number": "091" }, { "label": "Walinzi wa Kiraia", "number": "062" }, { "label": "Ambulensi", "number": "061" }, { "label": "Zimamoto", "number": "080" }, { "label": "Unyanyasaji wa kijinsia", "number": "016" }, { "label": "Msaada wa watoto", "number": "116 111" }, { "label": "Afya ya akili", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "USHUHUDA", "title": "Hadithi za wale walioanza tayari", "cards": [
+    { "quote": "Kozi za AI zilinisaidia kupata kazi katika startup Madrid. Sikujua kutumia ChatGPT na sasa ninaitumia kila siku.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Orodha ya ukaguzi ilinisaidia. Bila hiyo ningalikusahau hatua muhimu. Ramani ya rasilimali ilinipeleka moja kwa moja kwa Msalaba Mwekundu.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+    { "quote": "Nilitengeneza CV yangu hapa kwa dakika 5 na niliitwa kwa mahojiano 3.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Mustakabali wako Uhispania unaanza hapa", "subtitle": "Jiunge na maelfu ya watu wanaojifunza, kufanya kazi na kukua na Mikono Wazi.", "button": "Anza bure sasa" },
+  "footer": { "brand": "🤲 Mikono Wazi", "desc": "Jukwaa la elimu bure kwa wahamiaji Uhispania. Limetengenezwa kwa ❤️ na Pedro Belentani kutoka Barcelona.", "col1_title": "Jukwaa", "col1_links": ["Kozi", "Zana", "Ramani", "Saraka"], "col2_title": "Rasilimali", "col2_links": ["Haki na taratibu", "Ajira", "Lugha", "Fedha"], "col3_title": "Mradi", "col3_links": ["Kuhusu sisi", "Wasiliana", "Changia", "GitHub"], "copyright": "© 2026 Mikono Wazi · Pedro Belentani", "made_with": "Imetengenezwa kwa ❤️ Barcelona" },
+  "tools_modal": { "checklist_title": "✅ Orodha ya kuwasili Uhispania", "checklist_reset": "Weka upya orodha", "checklist_progress": "Maendeleo: {done}/{total} kamili", "conv_title": "💱 Kibadilishaji fedha Euro", "conv_amount": "Kiasi", "conv_from": "Kutoka fedha", "conv_result": "Matokeo kwa €", "cv_title": "📄 Mtengenezaji CV wa kitaalamu", "cv_name": "Jina lako kamili", "cv_role": "Nafasi lengwa", "cv_exp": "Uzoefu wako wa kitaalamu...", "cv_preview_title": "Hakikisha", "cv_export": "📥 Hamisha PDF", "map_title": "🗺️ Ramani ya rasilimali Uhispania", "map_filters": { "all": "Zote", "ong": "NGOs", "gobierno": "Serikali", "social": "Jamii" }, "dir_title": "📞 Saraka ya mawasiliano muhimu", "dir_filters": { "all": "Zote", "emergencia": "Dharura", "ong": "NGOs", "gobierno": "Serikali", "social": "Jamii" }, "cost_title": "🏙️ Gharama ya maisha kwa mji", "close": "Funga" },
+  "toast": { "welcome": "🤲 Karibu Mikono Wazi — kozi {count} zinapatikana", "tool_opened": "Zana imefunguliwa: {name}", "checklist_done": "✓ {item}", "checklist_reset": "Orodha imewekwa upya", "number_copied": "Nambari imenakiliwa: {number}", "cv_exported": "CV imehamishwa PDF", "map_loaded": "Ramani imepakiwa rasilimali {count}", "lang_changed": "Lugha imebadilishwa kuwa {lang}" }
+}

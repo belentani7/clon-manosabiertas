@@ -1,0 +1,34 @@
+{
+  "meta": { "code": "wo", "name": "Wolof", "flag": "🇸🇳", "dir": "ltr" },
+  "nav": { "brand": "Loxo Yu Ubbeeku", "courses": "Jàng", "rights": "Sañ-sañ", "tools": "Jumtukaay", "contacts": "Xëtu Jokko", "theme": "🌙", "sfx": "🔊", "start": "Tambalee jàmm" },
+  "hero": { "eyebrow": "PLATEFORME JÀNG BU JÀMM", "title_1": "Sa ponta jëm ci", "title_highlight": "AI, liggéey ak sañ-sañ", "title_2": "ci Espagne", "subtitle": "Jàng xam-xamu kompiiter, defal sa CV bu baax, xam sa sañ-sañ te gis li ngay soxla. Lépp jàmm, ci sa làkk.", "cta_primary": "Seeti jàng yi", "cta_secondary": "Xoolal jumtukaay yi", "stat_courses": "Jàng", "stat_resources": "Njëlben", "stat_languages": "Làkk", "stat_cost": "Njëg" },
+  "marquee": { "items": ["XAM-XAM KOMPIITER", "CV BU BAAX", "SAÑ-SAÑU LIGGÉEY", "39 LÀKK", "100% JÀMM", "JÀNG YU AM PAPIYE", "KARTU NJËLBEN", "LIGGÉEY CI ESPAGNE"] },
+  "features": { "eyebrow": "LU NGAY GISE", "title": "Lépp lu la soxla ngir tambali ci Espagne", "subtitle": "Jumtukaay yu baax, jàng yu dëgg ak njëlben yu wóor — ndax agsikatu ñu defal ko.", "cards": [
+    { "icon": "🤖", "title": "Jàng AI", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Jàng yu baax.", "badge": "POPULAIRE" },
+    { "icon": "📝", "title": "Defal sa CV", "desc": "PDF bu baax.", "badge": "JÀMM" },
+    { "icon": "⚖️", "title": "Xam sa sañ-sañ", "desc": "NIE, lejistër, wér-gi-yaram, liggéey, dëkk.", "badge": "" },
+    { "icon": "🗺️", "title": "Kartu njëlben", "desc": "NGOs, biro yi, santeru wér-gi-yaram.", "badge": "BES" },
+    { "icon": "💼", "title": "Wut liggéey", "desc": "Portalu liggéey, entërvyu, sektër yi.", "badge": "" },
+    { "icon": "🌍", "title": "Ci sa làkk", "desc": "Interface bu mat ci 39 làkk.", "badge": "39 LÀKK" }
+  ]},
+  "courses": { "eyebrow": "LISTU JÀNG YI", "title": "115+ jàng yu jàmm ak papiye", "subtitle": "Jàng yu baax ci AI, liggéey, làkk, droit ak xam-xam numérique.", "search_placeholder": "Wut jàng...", "search_btn": "Wut", "tabs": { "all": "Yépp", "ia": "🤖 AI", "empleo": "💼 Liggéey", "office": "📊 Office", "legal": "⚖️ Droit", "idiomas": "🌍 Làkk", "digital": "💻 Numérique", "habilidades": "🧠 Xam-xam", "finanzas": "💰 Xaalis" }, "no_results": "Amul jàng. Jéemaat beneen.", "lessons": "jàng", "certificate": "✓ Papiye", "prev": "← Ci jiitu", "next": "Ci ginnaaw →", "page_info": "{current} / {total} (jàng {count})" },
+  "languages": { "eyebrow": "LÀKK YU BARI", "title": "Am na ci 39 làkk", "subtitle": "Ndax xam-xam war nañu koy jot ku nekk, boppam ci sa làkk." },
+  "rights": { "eyebrow": "SA SAÑ-SAÑ", "title": "Sañ-sañ ak ndimbal ndax agsikatu", "subtitle": "Xam-xam bu leer te bees ci njël yi ak sërwisu yi ci Espagne.", "cards": [
+    { "icon": "🆔", "title": "NIE ak dëkk", "desc": "Laaj, yeesal, randevù, papiye yi." }, { "icon": "🏥", "title": "Wér-gi-yaram", "desc": "Kartu wér-gi-yaram, santeru, urgence." }, { "icon": "🏠", "title": "Dëkk", "desc": "Loye, kontra, garansi, sañ-sañu loyekatu." }, { "icon": "💼", "title": "Liggéey", "desc": "Kontra, bulletin, SEPE, sañ-sañu liggéey." }, { "icon": "📚", "title": "Jàng", "desc": "Bindu ci ekol, bourse, wóor diplom." }, { "icon": "👨‍👩‍👧‍👦", "title": "Bokk mbokk", "desc": "Njëk yi, njël bi, papiye yi." }, { "icon": "🛡️", "title": "Kaarange", "desc": "Asile, violence, ndimbal juridique." }, { "icon": "📜", "title": "Nationalité", "desc": "Njëk yi, CCSE, DELE A2." }
+  ]},
+  "tools": { "eyebrow": "JUMTUKAAY YU BAAX", "title": "6 jumtukaay yu jàmm", "subtitle": "Checklist, convertisseur, CV, kartu njëlben.", "cards": [
+    { "icon": "✅", "title": "Listi agsi", "desc": "15 étape yi.", "btn": "Ubbi listi →" }, { "icon": "💱", "title": "Sopi xaalis", "desc": "Sopi sa xaalis ci Euro.", "btn": "Ubbi sopi →" }, { "icon": "📄", "title": "Defal CV", "desc": "CV bu baax ci minute.", "btn": "Defal CV →" }, { "icon": "🗺️", "title": "Kartu njëlben", "desc": "NGOs, biro, santé.", "btn": "Ubbi kartu →" }, { "icon": "📞", "title": "Annuaire", "desc": "Numéro yi.", "btn": "Xoolal →" }, { "icon": "🏙️", "title": "Coût ci dëkk", "desc": "Comparer.", "btn": "Comparer →" }
+  ]},
+  "emergency": { "title": "📞 Numéro urgence — enregistral leen", "items": [
+    { "label": "Urgence", "number": "112" }, { "label": "Poliss", "number": "091" }, { "label": "Garde civile", "number": "062" }, { "label": "Ambulance", "number": "061" }, { "label": "Pompiye", "number": "080" }, { "label": "Violence", "number": "016" }, { "label": "Ndimbal xale", "number": "116 111" }, { "label": "Santé mentale", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "TÉMOIGNAGE", "title": "Lépp ñu tambali", "cards": [
+    { "quote": "Jàng AI ñu dimbal ma am liggéey ci Madrid.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Checklist bi yor na ma. Kartu njëlben bi yóbbu ma Croix-Rouge.", "name": "Ahmed", "origin": "Maroc", "flag": "🇲🇦" },
+    { "quote": "Ma def sama CV fii ci 5 minute, ñu wootal ma 3 entërvyu.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Sa kanam ci Espagne daldi fii", "subtitle": "Bokk ak ñetti junniy nit ñu ngiy jàng, liggéey, mujj ak Loxo Yu Ubbeeku.", "button": "Tambali jàmm leegi" },
+  "footer": { "brand": "🤲 Loxo Yu Ubbeeku", "desc": "Plateforme jàng bu jàmm ndax agsikatu ci Espagne. Pedro Belentani def ko ak ❤️ ci Barcelona.", "col1_title": "Plateforme", "col1_links": ["Jàng", "Jumtukaay", "Kartu", "Annuaire"], "col2_title": "Njëlben", "col2_links": ["Sañ-sañ", "Liggéey", "Làkk", "Xaalis"], "col3_title": "Projet", "col3_links": ["Nu", "Jokko", "Ndimbal", "GitHub"], "copyright": "© 2026 Loxo Yu Ubbeeku · Pedro Belentani", "made_with": "Def na ko ak ❤️ ci Barcelona" },
+  "tools_modal": { "checklist_title": "✅ Listi agsi Espagne", "checklist_reset": "Sopi listi", "checklist_progress": "{done}/{total} jot", "conv_title": "💱 Sopi xaalis Euro", "conv_amount": "Diggante", "conv_from": "Xaalis", "conv_result": "€", "cv_title": "📄 CV", "cv_name": "Sa tur", "cv_role": "Post", "cv_exp": "Sa liggéey...", "cv_preview_title": "Xool", "cv_export": "📥 PDF", "map_title": "🗺️ Kartu Espagne", "map_filters": { "all": "Yépp", "ong": "NGOs", "gobierno": "Gouvernement", "social": "Social" }, "dir_title": "📞 Annuaire", "dir_filters": { "all": "Yépp", "emergencia": "Urgence", "ong": "NGOs", "gobierno": "Gouvernement", "social": "Social" }, "cost_title": "🏙️ Coût dëkk", "close": "Tëj" },
+  "toast": { "welcome": "🤲 Dalal jàmm ci Loxo Yu Ubbeeku — {count} jàng", "tool_opened": "{name} ubbi na", "checklist_done": "✓ {item}", "checklist_reset": "Listi sopi na", "number_copied": "Numéro copié: {number}", "cv_exported": "CV PDF", "map_loaded": "Kartu ak {count} njëlben", "lang_changed": "Làkk sopi na: {lang}" }
+}

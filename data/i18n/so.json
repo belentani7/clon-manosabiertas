@@ -1,0 +1,46 @@
+{
+  "meta": { "code": "so", "name": "Soomaali", "flag": "🇸🇴", "dir": "ltr" },
+  "nav": { "brand": "Gacmo Furan", "courses": "Koorsooyin", "rights": "Xuquuqda", "tools": "Qalabka", "contacts": "Xiriirka", "theme": "🌙", "sfx": "🔊", "start": "Bilow lacag la'aan" },
+  "hero": { "eyebrow": "MADAL WAXBARASHO OO LACAG LA'AAN AH", "title_1": "Buundadaada", "title_highlight": "AI, shaqo iyo xuquuqda", "title_2": "ee Isbayn", "subtitle": "Baro maskaxda macmalka ah, samee CV xirfadeed, ogow xuquuqdaada oo raadi ilo la xaqiijiyay. Dhamaan lacag la'aan, luqaddaada.", "cta_primary": "Raadi koorsooyin", "cta_secondary": "Arag qalabka", "stat_courses": "Koorsooyin", "stat_resources": "Ilo", "stat_languages": "Luqadaha", "stat_cost": "Qiimaha" },
+  "marquee": { "items": ["MASKAXDA MACMALKA", "CV XIRFADEED", "XUQUUQDA SHAQAALAHA", "39 LUQADOOD", "100% LACAG LA'AAN", "KOORSOOYIN SHAHAADO LEH", "KHARIIDADDA ILAHA", "SHAQO ISBAYN"] },
+  "features": { "eyebrow": "MAXAAD HELI DOONTAA", "title": "Wax kasta oo aad u baahan tahay si aad uga bilowdo Isbayn", "subtitle": "Qalab wax ku ool ah, koorsooyin dhab ah iyo ilo la xaqiijiyay — loo sameeyay muhaajiriinta.", "cards": [
+    { "icon": "🤖", "title": "AI ka baro eber", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Koorsooyin wax ku ool ah.", "badge": "CAANKA" },
+    { "icon": "📝", "title": "Samee CV-gaaga", "desc": "Soo saare casri ah oo leh qaababka xirfadeed. PDF u dhig.", "badge": "LACAG LA'AAN" },
+    { "icon": "⚖️", "title": "Ogow xuquuqdaada", "desc": "NIE, diiwaangelin, caafimaad, shaqo, guryo. Hagid talaabo talaabo ah.", "badge": "" },
+    { "icon": "🗺️", "title": "Khariidadda ilaha", "desc": "NGOs, xafiisyada socdaalka, xarumaha caafimaadka.", "badge": "CUSUB" },
+    { "icon": "💼", "title": "Shaqo raadi", "desc": "Baabuurtada shaqada, waraysiyo, qaybaha shaqo siinaya.", "badge": "" },
+    { "icon": "🌍", "title": "Luqaddaada", "desc": "Muuqaal buuxa 39 luqadood. Carabi, Shiineys, Hindi, Yukreeniyaan, Faransiis iyo wax badan.", "badge": "39 LUQADOOD" }
+  ]},
+  "courses": { "eyebrow": "LIISKA KOORSADA", "title": "115+ koorsooyin lacag la'aan ah oo shahaado leh", "subtitle": "Tababar wax ku ool ah AI, shaqo, luqadaha, hab-maamuuska sharci iyo xirfadaha dijitaalka.", "search_placeholder": "Raadi koorsooyin...", "search_btn": "Raadi", "tabs": { "all": "Dhammaan", "ia": "🤖 AI", "empleo": "💼 Shaqo", "office": "📊 Office", "legal": "⚖️ Sharci", "idiomas": "🌍 Luqadaha", "digital": "💻 Dijitaal", "habilidades": "🧠 Xirfadaha", "finanzas": "💰 Maaliyadda" }, "no_results": "Koorsooyin lama helin. Isku day raadin kale.", "lessons": "casharro", "certificate": "✓ Shahaado", "prev": "← Hore", "next": "Xiga →", "page_info": "{current} / {total} ({count} koorsooyin)" },
+  "languages": { "eyebrow": "LUQADO BADAN", "title": "Waxaa lagu helaa 39 luqadood", "subtitle": "Sababtoo ah macluumaadka waa in uu gaaraa qof kasta." },
+  "rights": { "eyebrow": "XUQUUQDAADA", "title": "Xuquuq iyo caawimo muhaajiriinta", "subtitle": "Macluumaad cad oo cusub oo ku saabsan hab-maamuuska iyo adeegyada la heli karo Isbayn.", "cards": [
+    { "icon": "🆔", "title": "NIE iyo degganaansho", "desc": "Codsi, cusboonaysiin, ballan, dukumiintiyada loo baahan yahay." },
+    { "icon": "🏥", "title": "Caafimaadka dadweynaha", "desc": "Kaarka caafimaadka, xarumaha caafimaad, degdeg, ilmaha." },
+    { "icon": "🏠", "title": "Guryo", "desc": "Kiro, qandaraas, dammaanad, xuquuqda kiraysta, caawimo." },
+    { "icon": "💼", "title": "Shaqo", "desc": "Qandaraasyo, mushaharka, SEPE, xuquuqda shaqaalaha, xilgelin." },
+    { "icon": "📚", "title": "Waxbarasho", "desc": "Diiwaangalinta dugsiga, deeq waxbarasho, aqoonsiga shahaadada." },
+    { "icon": "👨‍👩‍👧‍👦", "title": "Isku keenista qoyska", "desc": "Shuruudaha, habka, dukumiintiga, waqtiga." },
+    { "icon": "🛡️", "title": "Ilaalin", "desc": "Magangalyo, rabshadda jinsiga, caawimo sharci oo lacag la'aan ah." },
+    { "icon": "📜", "title": "Jinsiyadda", "desc": "Shuruudaha, CCSE, DELE A2, dukumiintiga, waqtiga." }
+  ]},
+  "tools": { "eyebrow": "QALAB WAX KU OOL AH", "title": "6 qalab oo lacag la'aan ah oo maalinlaha ah", "subtitle": "Liiska hubinta, beddelka lacagta, sameeyaha CV, khariidadda ilaha iyo wax badan.", "cards": [
+    { "icon": "✅", "title": "Liiska imaatinka", "desc": "15 talaabo oo lagama maarmaan ah markaad timaado Isbayn.", "btn": "Fur liiska →" },
+    { "icon": "💱", "title": "Beddelka lacagta", "desc": "Lacagtaada u beddel yuuroo isla markiiba. 50+ lacagood.", "btn": "Fur beddelka →" },
+    { "icon": "📄", "title": "Sameeyaha CV", "desc": "Samee CV xirfadeed daqiiqado gudahood. PDF.", "btn": "Samee CV →" },
+    { "icon": "🗺️", "title": "Khariidadda ilaha", "desc": "NGOs, xafiisyo, xarumaha caafimaadka. Shaandhee nooca.", "btn": "Fur khariidadda →" },
+    { "icon": "📞", "title": "Buugga xiriirka", "desc": "Dhammaan lambarrada muhiimka ah: degdeg, NGOs, dawladda.", "btn": "Arag buugga →" },
+    { "icon": "🏙️", "title": "Kharashka nolosha", "desc": "Is-barbar dhigga kharashka magaalooyinka: kiro, gaadiid, cunto.", "btn": "Is-barbar dhig magaalooyinka →" }
+  ]},
+  "emergency": { "title": "📞 Lambarrada degdegga — kaydi xiriiradan", "items": [
+    { "label": "Degdeg", "number": "112" }, { "label": "Booliska", "number": "091" }, { "label": "Ilaalada Rayidka", "number": "062" }, { "label": "Ambalaaniska", "number": "061" }, { "label": "Dab-demiska", "number": "080" }, { "label": "Rabshadda jinsiga", "number": "016" }, { "label": "Gargaarka carruurta", "number": "116 111" }, { "label": "Caafimaadka maskaxda", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "MARKHAATIYO", "title": "Sheekooyin kuwa horay u bilaabay", "cards": [
+    { "quote": "Koorsadaha AI waxay i caawiyeen inaan shaqo ka helo startup Madrid. ChatGPT isticmaalkiisa ma aqaan, hadda maalin walba waan isticmaalaa.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Liiska hubinta ayaa i badbaadiyay. Haddii aysan jirin, waan iloobi lahaa talaabooyin muhiim ah.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+    { "quote": "CV-geyga halkan ayaan ku sameeyay 5 daqiiqo oo 3 waraysi ayaa la ii yeedhay.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Mustaqbalkaaga Isbayn halkan ayuu ka bilaabanayaa", "subtitle": "Ku biir kumanaan qof oo wax baranaya, shaqaynaya oo ku koraya Gacmo Furan.", "button": "Hadda bilow lacag la'aan" },
+  "footer": { "brand": "🤲 Gacmo Furan", "desc": "Madal waxbarasho oo lacag la'aan ah muhaajiriinta Isbayn. Waxaa sameeyay ❤️ Pedro Belentani Barcelona.", "col1_title": "Madalka", "col1_links": ["Koorsooyin", "Qalabka", "Khariidadda", "Buugga"], "col2_title": "Ilaha", "col2_links": ["Xuquuq iyo hab-maamuus", "Shaqo", "Luqadaha", "Maaliyadda"], "col3_title": "Mashruuca", "col3_links": ["Nagu saabsan", "Xiriir", "Ka qaybgal", "GitHub"], "copyright": "© 2026 Gacmo Furan · Pedro Belentani", "made_with": "❤️ Barcelona lagu sameeyay" },
+  "tools_modal": { "checklist_title": "✅ Liiska imaatinka Isbayn", "checklist_reset": "Dib u dejin liiska", "checklist_progress": "Horumar: {done}/{total} dhammaystiran", "conv_title": "💱 Beddelka lacagta Yuuroo", "conv_amount": "Qaddarka", "conv_from": "Ka lacagta", "conv_result": "Natiiijada €", "cv_title": "📄 Sameeyaha CV xirfadeed", "cv_name": "Magacaaga buuxa", "cv_role": "Booska bartilmaameedka", "cv_exp": "Khibraddaada xirfadeed...", "cv_preview_title": "Muuqaal hordhac", "cv_export": "📥 PDF soo saari", "map_title": "🗺️ Khariidadda ilaha Isbayn", "map_filters": { "all": "Dhammaan", "ong": "NGOs", "gobierno": "Dawladda", "social": "Bulsho" }, "dir_title": "📞 Buugga xiriirka muhiimka", "dir_filters": { "all": "Dhammaan", "emergencia": "Degdeg", "ong": "NGOs", "gobierno": "Dawladda", "social": "Bulsho" }, "cost_title": "🏙️ Kharashka nolosha magaalooyinka", "close": "Xidh" },
+  "toast": { "welcome": "🤲 Ku soo dhawoow Gacmo Furan — {count} koorsooyin la heli karo", "tool_opened": "Qalabka la furay: {name}", "checklist_done": "✓ {item}", "checklist_reset": "Liiska dib loo dejiyay", "number_copied": "Lambarka la koobiyay: {number}", "cv_exported": "CV PDF ahaan loo soo saaray", "map_loaded": "Khariidadda lagu soo raray {count} ilo", "lang_changed": "Luqadda loo beddel {lang}" }
+}

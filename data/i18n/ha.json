@@ -1,0 +1,46 @@
+{
+  "meta": { "code": "ha", "name": "Hausa", "flag": "🇳🇬", "dir": "ltr" },
+  "nav": { "brand": "Buɗaɗɗun Hannuwa", "courses": "Darasi", "rights": "Haƙƙoƙi", "tools": "Kayan aiki", "contacts": "Tuntuɓi", "theme": "🌙", "sfx": "🔊", "start": "Fara kyauta" },
+  "hero": { "eyebrow": "DANDALI NA ILIMI KYAUTA", "title_1": "Gadanku zuwa", "title_highlight": "AI, aiki da haƙƙoƙi", "title_2": "a Spain", "subtitle": "Koyi fasahar ƙirƙira, ƙirƙiri CV na sana'a, san haƙƙoƙinka kuma nemo albarkatun da aka tabbatar. Duka kyauta, cikin yarenka.", "cta_primary": "Bincika darussa", "cta_secondary": "Duba kayan aiki", "stat_courses": "Darasi", "stat_resources": "Albarkatu", "stat_languages": "Yaruka", "stat_cost": "Farashi" },
+  "marquee": { "items": ["FASAHAR ƘIRƘIRA", "CV NA SANA'A", "HAƘƘOƘIN AIKI", "YARUKA 39", "100% KYAUTA", "DARUSSA MAI SHAIDA", "TASWIRAR ALBARKATU", "AIKI A SPAIN"] },
+  "features": { "eyebrow": "ME ZA KA SAMU", "title": "Duk abin da kake bukata don farawa a Spain", "subtitle": "Kayan aiki masu amfani, darussa na gaske da albarkatun da aka tabbatar — waɗanda baƙi suka yi wa baƙi.", "cards": [
+    { "icon": "🤖", "title": "Koyi AI daga farko", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Darussa masu amfani don amfani da AI a aiki da rayuwa.", "badge": "SHAHARARREN" },
+    { "icon": "📝", "title": "Ƙirƙiri CV ɗinka", "desc": "Mai samar da wayo tare da samfuran sana'a. Fitar da PDF.", "badge": "KYAUTA" },
+    { "icon": "⚖️", "title": "San haƙƙoƙinka", "desc": "NIE, rajista, lafiya, aiki, gidaje. Jagorar mataki-mataki.", "badge": "" },
+    { "icon": "🗺️", "title": "Taswirar albarkatu", "desc": "NGOs, ofisoshin hijira, cibiyoyin lafiya a garinku.", "badge": "SABO" },
+    { "icon": "💼", "title": "Nemo aiki", "desc": "Hanyoyin aiki, tambayoyi, sassan da ke ɗaukar ma'aikata.", "badge": "" },
+    { "icon": "🌍", "title": "Cikin yarenka", "desc": "Cikakken fuska cikin yaruka 39.", "badge": "YARUKA 39" }
+  ]},
+  "courses": { "eyebrow": "JERIN DARASI", "title": "115+ darussa kyauta tare da shaida", "subtitle": "Horaswa mai amfani a AI, aiki, yaruka, hanyoyin doka da ƙwarewar dijital.", "search_placeholder": "Bincika darasi...", "search_btn": "Bincika", "tabs": { "all": "Duka", "ia": "🤖 AI", "empleo": "💼 Aiki", "office": "📊 Office", "legal": "⚖️ Doka", "idiomas": "🌍 Yaruka", "digital": "💻 Dijital", "habilidades": "🧠 Ƙwarewa", "finanzas": "💰 Kuɗi" }, "no_results": "Ba a sami darasi ba. Gwada wani bincike.", "lessons": "darussa", "certificate": "✓ Shaida", "prev": "← Na baya", "next": "Na gaba →", "page_info": "{current} / {total} (darasi {count})" },
+  "languages": { "eyebrow": "YARUKA DA YAWA", "title": "Ana samunsa cikin yaruka 39", "subtitle": "Domin bayani ya kamata ya isa ga kowa, komai yaren da kake magana." },
+  "rights": { "eyebrow": "HAƘƘOƘINKA", "title": "Haƙƙoƙi da taimako ga baƙi", "subtitle": "Bayani mai kyau kuma na zamani game da hanyoyi da ayyukan da ake samu a Spain.", "cards": [
+    { "icon": "🆔", "title": "NIE da zama", "desc": "Nema, sabuntawa, alƙawari, takaddun da ake bukata." },
+    { "icon": "🏥", "title": "Lafiyar jama'a", "desc": "Katin lafiya, cibiyoyin likita, gaggawa, yara." },
+    { "icon": "🏠", "title": "Gidaje", "desc": "Haya, kwangila, ajiya, haƙƙoƙin mahaya, taimako." },
+    { "icon": "💼", "title": "Aiki", "desc": "Kwangila, albashi, SEPE, haƙƙoƙin aiki, korar ma'aikata." },
+    { "icon": "📚", "title": "Ilimi", "desc": "Rajistan makaranta, tallafi, amincewa da digirii." },
+    { "icon": "👨‍👩‍👧‍👦", "title": "Haɗa iyali", "desc": "Buƙatu, tsari, takaddun, lokaci." },
+    { "icon": "🛡️", "title": "Kariya", "desc": "Mafaka, tashin hankalin jinsi, taimakon shari'a kyauta." },
+    { "icon": "📜", "title": "Zama ɗan ƙasa", "desc": "Buƙatu, CCSE, DELE A2, takaddun, lokaci." }
+  ]},
+  "tools": { "eyebrow": "KAYAN AIKI MASU AMFANI", "title": "Kayan aiki 6 kyauta na yau da kullum", "subtitle": "Jerin bincike, mai canza kuɗi, mai yin CV, taswirar albarkatu da ƙari.", "cards": [
+    { "icon": "✅", "title": "Jerin isowar", "desc": "Matakan 15 masu mahimmanci idan ka isa Spain.", "btn": "Buɗe jerin →" },
+    { "icon": "💱", "title": "Mai canza kuɗi", "desc": "Canza kuɗinka zuwa Euro nan take. Kuɗi 50+.", "btn": "Buɗe mai canjin →" },
+    { "icon": "📄", "title": "Mai yin CV", "desc": "Ƙirƙiri CV na sana'a cikin mintuna. PDF.", "btn": "Yi CV →" },
+    { "icon": "🗺️", "title": "Taswirar albarkatu", "desc": "NGOs, ofisoshi, cibiyoyin lafiya. Zaɓa ta iri.", "btn": "Buɗe taswira →" },
+    { "icon": "📞", "title": "Littafin tuntuɓi", "desc": "Duk lambobin muhimmai: gaggawa, NGOs, gwamnati.", "btn": "Duba littafin →" },
+    { "icon": "🏙️", "title": "Farashin rayuwa", "desc": "Kwatanta farashin birni: haya, sufuri, abinci.", "btn": "Kwatanta birane →" }
+  ]},
+  "emergency": { "title": "📞 Lambobin gaggawa — adana waɗannan tuntuɓi", "items": [
+    { "label": "Gaggawa", "number": "112" }, { "label": "Yan sanda", "number": "091" }, { "label": "Mai gadi", "number": "062" }, { "label": "Motar asibiti", "number": "061" }, { "label": "Kashe wuta", "number": "080" }, { "label": "Tashin hankali na jinsi", "number": "016" }, { "label": "Taimakon yara", "number": "116 111" }, { "label": "Lafiyar hankali", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "SHAIDU", "title": "Labarun waɗanda suka riga suka fara", "cards": [
+    { "quote": "Darussan AI sun taimake ni samun aiki a startup a Madrid.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Jerin binciken ya cece ni. Ba tare da shi ba, da na manta matakai muhimmai.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+    { "quote": "Na yi CV na a nan cikin mintuna 5 kuma aka kira ni don tambayoyi 3.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Makomarku a Spain ya fara a nan", "subtitle": "Ku haɗu da dubban mutane da ke koyo, aiki da girma tare da Buɗaɗɗun Hannuwa.", "button": "Fara kyauta yanzu" },
+  "footer": { "brand": "🤲 Buɗaɗɗun Hannuwa", "desc": "Dandali na ilimi kyauta ga baƙi a Spain. An yi shi da ❤️ daga Pedro Belentani Barcelona.", "col1_title": "Dandali", "col1_links": ["Darasi", "Kayan aiki", "Taswira", "Littafi"], "col2_title": "Albarkatu", "col2_links": ["Haƙƙoƙi da hanyoyi", "Aiki", "Yaruka", "Kuɗi"], "col3_title": "Aiki", "col3_links": ["Game da mu", "Tuntuɓi", "Bayar da gudummawa", "GitHub"], "copyright": "© 2026 Buɗaɗɗun Hannuwa · Pedro Belentani", "made_with": "An yi shi da ❤️ a Barcelona" },
+  "tools_modal": { "checklist_title": "✅ Jerin isowar Spain", "checklist_reset": "Sake saita jerin", "checklist_progress": "Ci gaba: {done}/{total} an kammala", "conv_title": "💱 Mai canza kuɗi zuwa Euro", "conv_amount": "Adadi", "conv_from": "Daga kuɗi", "conv_result": "Sakamakon €", "cv_title": "📄 Mai yin CV na sana'a", "cv_name": "Cikakken sunanka", "cv_role": "Matsayin da ake so", "cv_exp": "Kwarewar sana'arka...", "cv_preview_title": "Duba", "cv_export": "📥 Fitar PDF", "map_title": "🗺️ Taswirar albarkatu Spain", "map_filters": { "all": "Duka", "ong": "NGOs", "gobierno": "Gwamnati", "social": "Zamantakewa" }, "dir_title": "📞 Littafin tuntuɓi muhimmai", "dir_filters": { "all": "Duka", "emergencia": "Gaggawa", "ong": "NGOs", "gobierno": "Gwamnati", "social": "Zamantakewa" }, "cost_title": "🏙️ Farashin rayuwa ta birni", "close": "Rufe" },
+  "toast": { "welcome": "🤲 Barka da zuwa Buɗaɗɗun Hannuwa — darasi {count} akwai", "tool_opened": "An buɗe kayan aiki: {name}", "checklist_done": "✓ {item}", "checklist_reset": "An sake saita jerin", "number_copied": "An kwafi lambar: {number}", "cv_exported": "An fitar da CV a PDF", "map_loaded": "An ɗora taswira tare da albarkatu {count}", "lang_changed": "An canza yare zuwa {lang}" }
+}

@@ -1,0 +1,340 @@
+{
+  "meta": {
+    "code": "kg",
+    "name": "Kikongo",
+    "flag": "🇨🇩",
+    "dir": "ltr"
+  },
+  "nav": {
+    "courses": "Courses",
+    "rights": "Rights",
+    "tools": "Tools",
+    "contacts": "Contacts",
+    "theme": "🌙",
+    "sfx": "🔊",
+    "start": "Start free",
+    "brand": "Maboko Mazibula"
+  },
+  "hero": {
+    "eyebrow": "FREE EDUCATIONAL PLATFORM",
+    "title_1": "Nzila ya nge",
+    "title_highlight": "AI, kisalu ye ndingila",
+    "title_2": "na Espagne",
+    "subtitle": "Longuka AI, sala CV, zaba ndingila ya nge. Yonso bula futi, mu ndinga ya nge.",
+    "cta_primary": "Courses",
+    "cta_secondary": "Tools",
+    "stat_courses": "Courses",
+    "stat_resources": "Resources",
+    "stat_languages": "Languages",
+    "stat_cost": "Cost"
+  },
+  "marquee": {
+    "items": [
+      "AI",
+      "CV",
+      "RIGHTS",
+      "39 LANGUAGES",
+      "100% FREE",
+      "CERTIFIED COURSES",
+      "RESOURCE MAP",
+      "JOBS IN SPAIN"
+    ]
+  },
+  "features": {
+    "eyebrow": "FEATURES",
+    "title": "Everything you need to start in Spain",
+    "subtitle": "Practical tools, real courses and verified resources.",
+    "cards": [
+      {
+        "icon": "🤖",
+        "title": "Learn AI",
+        "desc": "ChatGPT, Gemini, Copilot, DeepSeek.",
+        "badge": "POPULAR"
+      },
+      {
+        "icon": "📝",
+        "title": "Create your CV",
+        "desc": "Professional CV builder with PDF export.",
+        "badge": "FREE"
+      },
+      {
+        "icon": "⚖️",
+        "title": "Know your rights",
+        "desc": "NIE, healthcare, work, housing guides.",
+        "badge": ""
+      },
+      {
+        "icon": "🗺️",
+        "title": "Resource map",
+        "desc": "NGOs, immigration offices, health centers.",
+        "badge": "NEW"
+      },
+      {
+        "icon": "💼",
+        "title": "Find work",
+        "desc": "Job portals, interviews, labor rights.",
+        "badge": ""
+      },
+      {
+        "icon": "🌍",
+        "title": "In your language",
+        "desc": "Full interface in 39 languages.",
+        "badge": "39"
+      }
+    ]
+  },
+  "courses": {
+    "eyebrow": "COURSES",
+    "title": "115+ free courses with certificate",
+    "subtitle": "AI, employment, languages, legal and digital skills.",
+    "search_placeholder": "Search...",
+    "search_btn": "Search",
+    "tabs": {
+      "all": "All",
+      "ia": "🤖 AI",
+      "empleo": "💼 Jobs",
+      "office": "📊 Office",
+      "legal": "⚖️ Legal",
+      "idiomas": "🌍 Languages",
+      "digital": "💻 Digital",
+      "habilidades": "🧠 Skills",
+      "finanzas": "💰 Finance"
+    },
+    "no_results": "No courses found.",
+    "lessons": "lessons",
+    "certificate": "✓ Certificate",
+    "prev": "← Previous",
+    "next": "Next →",
+    "page_info": "{current} / {total} ({count})"
+  },
+  "languages": {
+    "eyebrow": "MULTILINGUAL",
+    "title": "Available in 39 languages",
+    "subtitle": "Information should reach everyone."
+  },
+  "rights": {
+    "eyebrow": "YOUR RIGHTS",
+    "title": "Rights and aid for immigrants",
+    "subtitle": "Clear info about procedures and services in Spain.",
+    "cards": [
+      {
+        "icon": "🆔",
+        "title": "NIE & residency",
+        "desc": "Application, renewal, documents."
+      },
+      {
+        "icon": "🏥",
+        "title": "Healthcare",
+        "desc": "Health card, medical centers, emergencies."
+      },
+      {
+        "icon": "🏠",
+        "title": "Housing",
+        "desc": "Rental, contracts, tenant rights."
+      },
+      {
+        "icon": "💼",
+        "title": "Employment",
+        "desc": "Contracts, SEPE, labor rights."
+      },
+      {
+        "icon": "📚",
+        "title": "Education",
+        "desc": "School enrollment, scholarships."
+      },
+      {
+        "icon": "👨‍👩‍👧‍👦",
+        "title": "Family reunification",
+        "desc": "Requirements, process, documents."
+      },
+      {
+        "icon": "🛡️",
+        "title": "Protection",
+        "desc": "Asylum, gender violence, legal aid."
+      },
+      {
+        "icon": "📜",
+        "title": "Citizenship",
+        "desc": "Requirements, CCSE, DELE A2."
+      }
+    ]
+  },
+  "tools": {
+    "eyebrow": "TOOLS",
+    "title": "6 free tools for daily life",
+    "subtitle": "Checklist, converter, CV, map.",
+    "cards": [
+      {
+        "icon": "✅",
+        "title": "Arrival checklist",
+        "desc": "15 essential steps.",
+        "btn": "Open →"
+      },
+      {
+        "icon": "💱",
+        "title": "Currency converter",
+        "desc": "Convert to Euro.",
+        "btn": "Open →"
+      },
+      {
+        "icon": "📄",
+        "title": "CV builder",
+        "desc": "Professional CV in minutes.",
+        "btn": "Create →"
+      },
+      {
+        "icon": "🗺️",
+        "title": "Resource map",
+        "desc": "NGOs, offices, health.",
+        "btn": "Open →"
+      },
+      {
+        "icon": "📞",
+        "title": "Contact directory",
+        "desc": "Emergency numbers.",
+        "btn": "View →"
+      },
+      {
+        "icon": "🏙️",
+        "title": "Cost of living",
+        "desc": "Compare cities.",
+        "btn": "Compare →"
+      }
+    ]
+  },
+  "emergency": {
+    "title": "📞 Emergency numbers",
+    "items": [
+      {
+        "label": "Emergency",
+        "number": "112"
+      },
+      {
+        "label": "Police",
+        "number": "091"
+      },
+      {
+        "label": "Civil Guard",
+        "number": "062"
+      },
+      {
+        "label": "Ambulance",
+        "number": "061"
+      },
+      {
+        "label": "Fire",
+        "number": "080"
+      },
+      {
+        "label": "Gender violence",
+        "number": "016"
+      },
+      {
+        "label": "Child helpline",
+        "number": "116 111"
+      },
+      {
+        "label": "Mental health",
+        "number": "024"
+      }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "TESTIMONIALS",
+    "title": "Stories from those who started",
+    "cards": [
+      {
+        "quote": "AI courses helped me get a job at a startup in Madrid.",
+        "name": "María",
+        "origin": "Colombia",
+        "flag": "🇨🇴"
+      },
+      {
+        "quote": "The checklist saved me. Resource map took me to Red Cross.",
+        "name": "Ahmed",
+        "origin": "Morocco",
+        "flag": "🇲🇦"
+      },
+      {
+        "quote": "I made my CV in 5 minutes and got 3 interview calls.",
+        "name": "Olena",
+        "origin": "Ukraine",
+        "flag": "🇺🇦"
+      }
+    ]
+  },
+  "tools_modal": {
+    "checklist_title": "✅ Arrival checklist",
+    "checklist_reset": "Reset",
+    "checklist_progress": "{done}/{total}",
+    "conv_title": "💱 Currency converter",
+    "conv_amount": "Amount",
+    "conv_from": "From",
+    "conv_result": "Result €",
+    "cv_title": "📄 CV Builder",
+    "cv_name": "Full name",
+    "cv_role": "Position",
+    "cv_exp": "Experience...",
+    "cv_preview_title": "Preview",
+    "cv_export": "📥 PDF",
+    "map_title": "🗺️ Resource map",
+    "map_filters": {
+      "all": "All",
+      "ong": "NGOs",
+      "gobierno": "Gov",
+      "social": "Social"
+    },
+    "dir_title": "📞 Contacts",
+    "dir_filters": {
+      "all": "All",
+      "emergencia": "Emergency",
+      "ong": "NGOs",
+      "gobierno": "Gov",
+      "social": "Social"
+    },
+    "cost_title": "🏙️ Cost of living",
+    "close": "Close"
+  },
+  "toast": {
+    "welcome": "🤲 Welcome — {count} courses",
+    "tool_opened": "Opened: {name}",
+    "checklist_done": "✓ {item}",
+    "checklist_reset": "Reset",
+    "number_copied": "Copied: {number}",
+    "cv_exported": "CV exported",
+    "map_loaded": "Map: {count}",
+    "lang_changed": "Language: {lang}"
+  },
+  "cta": {
+    "title": "Your future in Spain starts here",
+    "subtitle": "Join thousands learning and growing with Maboko Mazibula.",
+    "button": "Start free now"
+  },
+  "footer": {
+    "brand": "🤲 Maboko Mazibula",
+    "desc": "Free educational platform for immigrants in Spain. Made with ❤️ by Pedro Belentani from Barcelona.",
+    "col1_title": "Platform",
+    "col1_links": [
+      "Courses",
+      "Tools",
+      "Map",
+      "Directory"
+    ],
+    "col2_title": "Resources",
+    "col2_links": [
+      "Rights",
+      "Employment",
+      "Languages",
+      "Finance"
+    ],
+    "col3_title": "Project",
+    "col3_links": [
+      "About",
+      "Contact",
+      "Contribute",
+      "GitHub"
+    ],
+    "copyright": "© 2026 Maboko Mazibula · Pedro Belentani",
+    "made_with": "Made with ❤️ in Barcelona"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "meta": { "code": "yo", "name": "Yorùbá", "flag": "🇳🇬", "dir": "ltr" },
+  "nav": { "brand": "Ọwọ́ Ṣíṣí", "courses": "Àwọn Ẹ̀kọ́", "rights": "Ẹ̀tọ́", "tools": "Àwọn Irinṣẹ́", "contacts": "Àwọn Olubasọrọ", "theme": "🌙", "sfx": "🔊", "start": "Bẹ̀rẹ̀ ọ̀fẹ́" },
+  "hero": { "eyebrow": "PẸPẸ ẸKỌ́ Ọ̀FẸ́", "title_1": "Àfàrá rẹ sí", "title_highlight": "AI, iṣẹ́ àti ẹ̀tọ́", "title_2": "ní Spain", "subtitle": "Kọ́ ọgbọ́n atọwọ́dá, ṣẹ̀dá CV oníṣẹ́-ọwọ́, mọ̀ ẹ̀tọ́ rẹ kí o sì wá ohun èlò tí a ti fi ìdí múlẹ̀. Gbogbo rẹ̀ lọ́fẹ̀ẹ́, ní èdè rẹ.", "cta_primary": "Ṣàwárí àwọn ẹ̀kọ́", "cta_secondary": "Wo àwọn irinṣẹ́", "stat_courses": "Ẹ̀kọ́", "stat_resources": "Ohun èlò", "stat_languages": "Èdè", "stat_cost": "Owó" },
+  "marquee": { "items": ["ỌGBỌ́N ATỌWỌ́DÁ", "CV ONÍṢẸ́-ỌWỌ́", "ẸTỌ́ IṢẸ́", "ÈDÈ 39", "ỌFẸ́ 100%", "ẸKỌ́ ÌJẸ́RÌÍSÍ", "MAAPU OHUN ÈLÒ", "IṢẸ́ NÍ SPAIN"] },
+  "features": { "eyebrow": "KÍ NI O MÁA RÍ", "title": "Gbogbo ohun tí o nílò láti bẹ̀rẹ̀ ní Spain", "subtitle": "Irinṣẹ́ àmúlò, ẹ̀kọ́ gidi àti ohun èlò tí a fi ìdí múlẹ̀ — tí àwọn aṣíṣẹ̀ ṣe fún àwọn aṣíṣẹ̀.", "cards": [
+    { "icon": "🤖", "title": "Kọ́ AI láti ìbẹ̀rẹ̀", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Ẹ̀kọ́ àmúlò láti lo AI ní iṣẹ́ àti ìgbésí ayé.", "badge": "GBAJÚMỌ̀" },
+    { "icon": "📝", "title": "Ṣẹ̀dá CV rẹ", "desc": "Olùṣẹ̀dá ọlọ́gbọ́n pẹ̀lú àwọn àwòṣe oníṣẹ́-ọwọ́. Ṣe àkóónú sí PDF.", "badge": "ỌFẸ́" },
+    { "icon": "⚖️", "title": "Mọ̀ ẹ̀tọ́ rẹ", "desc": "NIE, ìforúkọsílẹ̀, ìlera, iṣẹ́, ilé. Ìtọ́sọ́nà ìgbésẹ̀-ìgbésẹ̀.", "badge": "" },
+    { "icon": "🗺️", "title": "Maapu ohun èlò", "desc": "Àwọn NGO, ọ́fíìsì ìṣíṣẹ̀, ilé-ìṣẹ́ ìlera ní ìlú rẹ.", "badge": "TUNTUN" },
+    { "icon": "💼", "title": "Wá iṣẹ́", "desc": "Àwọn ibi iṣẹ́, ìfọ̀rọ̀wánilẹ́nuwò, ẹ̀ka tí ń gba ènìyàn.", "badge": "" },
+    { "icon": "🌍", "title": "Ní èdè rẹ", "desc": "Ojú-ewé kíkún ní èdè 39.", "badge": "ÈDÈ 39" }
+  ]},
+  "courses": { "eyebrow": "ÀTÒJỌ ẸKỌ́", "title": "115+ ẹ̀kọ́ ọ̀fẹ́ pẹ̀lú ìjẹ́rìísí", "subtitle": "Ìdánilẹ́kọ̀ọ́ àmúlò ní AI, iṣẹ́, èdè, ìlànà òfin àti ọgbọ́n dígítà.", "search_placeholder": "Wá ẹ̀kọ́...", "search_btn": "Wá", "tabs": { "all": "Gbogbo", "ia": "🤖 AI", "empleo": "💼 Iṣẹ́", "office": "📊 Office", "legal": "⚖️ Òfin", "idiomas": "🌍 Èdè", "digital": "💻 Dígítà", "habilidades": "🧠 Ọgbọ́n", "finanzas": "💰 Owó" }, "no_results": "Kò sí ẹ̀kọ́ tí a rí. Gbìyànjú àwárí míìràn.", "lessons": "ẹ̀kọ́", "certificate": "✓ Ìjẹ́rìísí", "prev": "← Ṣáájú", "next": "Ìtẹ̀lé →", "page_info": "{current} / {total} (ẹ̀kọ́ {count})" },
+  "languages": { "eyebrow": "ÈDÈ PÚPỌ̀", "title": "Wà ní èdè 39", "subtitle": "Nítorí ìmọ̀ gbọ́dọ̀ dé ọ̀dọ̀ gbogbo ènìyàn." },
+  "rights": { "eyebrow": "ẸTỌ́ RẸ", "title": "Ẹ̀tọ́ àti ìrànlọ́wọ́ fún àwọn aṣíṣẹ̀", "subtitle": "Ìmọ̀ tó ṣe kedere tó sì jẹ́ títuntun nípa àwọn ìlànà àti iṣẹ́ tó wà ní Spain.", "cards": [
+    { "icon": "🆔", "title": "NIE àti ibùgbé", "desc": "Ìbéèrè, ìtúnṣe, ìpàdé, àwọn ìwé tó nílò." },
+    { "icon": "🏥", "title": "Ìlera gbogbogbò", "desc": "Káàdì ìlera, ilé-ìṣẹ́ ìlera, pàjáwírì, ọmọdé." },
+    { "icon": "🏠", "title": "Ilé", "desc": "Iyalo, àdéhùn, owó ìdógó, ẹ̀tọ́ ayalo, ìrànlọ́wọ́." },
+    { "icon": "💼", "title": "Iṣẹ́", "desc": "Àdéhùn, owó oṣù, SEPE, ẹ̀tọ́ iṣẹ́, ìyọkúrò." },
+    { "icon": "📚", "title": "Ẹ̀kọ́", "desc": "Ìforúkọsílẹ̀ ilé-ẹ̀kọ́, ẹ̀bùn ẹ̀kọ́, ìmọ̀ sí dígírì." },
+    { "icon": "👨‍👩‍👧‍👦", "title": "Àtúnpàdé ẹbí", "desc": "Àwọn ohun tó nílò, ìlànà, ìwé, àkókò." },
+    { "icon": "🛡️", "title": "Ààbò", "desc": "Ìsábà, ìwà ipá akọ-abo, ìrànlọ́wọ́ òfin ọ̀fẹ́." },
+    { "icon": "📜", "title": "Ọmọ orílẹ̀-èdè", "desc": "Àwọn ohun tó nílò, CCSE, DELE A2, ìwé, àkókò." }
+  ]},
+  "tools": { "eyebrow": "IRINṢẸ́ ÀMÚLÒ", "title": "Irinṣẹ́ 6 ọ̀fẹ́ fún ìgbésí ayé ojoojúmọ́", "subtitle": "Àtòjọ àyẹ̀wò, olùyí owó, olùṣẹ̀dá CV, maapu ohun èlò àti síwájú sí i.", "cards": [
+    { "icon": "✅", "title": "Àtòjọ dédé", "desc": "Ìgbésẹ̀ 15 pàtàkì nígbà tí o bá dé Spain.", "btn": "Ṣí àtòjọ →" },
+    { "icon": "💱", "title": "Olùyí owó", "desc": "Yí owó rẹ padà sí Euro lẹ́sẹ̀kẹsẹ̀. Owó 50+.", "btn": "Ṣí olùyí →" },
+    { "icon": "📄", "title": "Olùṣẹ̀dá CV", "desc": "Ṣẹ̀dá CV oníṣẹ́-ọwọ́ ní ìṣẹ́jú. PDF.", "btn": "Ṣẹ̀dá CV →" },
+    { "icon": "🗺️", "title": "Maapu ohun èlò", "desc": "NGOs, ọ́fíìsì, ilé-ìṣẹ́ ìlera. Yàn ní ìrísí.", "btn": "Ṣí maapu →" },
+    { "icon": "📞", "title": "Ìwé àdírẹ́sì", "desc": "Gbogbo nọ́mbà pàtàkì: pàjáwírì, NGOs, ìjọba.", "btn": "Wo ìwé →" },
+    { "icon": "🏙️", "title": "Owó ìgbésí ayé", "desc": "Ìfiwéra owó ní ìlú: iyalo, ọkọ̀, oúnjẹ.", "btn": "Fiwé àwọn ìlú →" }
+  ]},
+  "emergency": { "title": "📞 Nọ́mbà pàjáwírì — fi àwọn olubasọrọ wọ̀nyí pamọ́", "items": [
+    { "label": "Pàjáwírì", "number": "112" }, { "label": "Ọlọ́pàá", "number": "091" }, { "label": "Ẹṣọ́ Ìbílẹ̀", "number": "062" }, { "label": "Kẹ̀kẹ́ ìwòsàn", "number": "061" }, { "label": "Ọ̀gá Iná", "number": "080" }, { "label": "Ìwà ipá akọ-abo", "number": "016" }, { "label": "Ìrànlọ́wọ́ ọmọdé", "number": "116 111" }, { "label": "Ìlera ọpọlọ", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "ẸRÍSÍSÍ", "title": "Ìtàn àwọn tó ti bẹ̀rẹ̀", "cards": [
+    { "quote": "Àwọn ẹ̀kọ́ AI ràn mí lọ́wọ́ láti rí iṣẹ́ ní startup ní Madrid.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Àtòjọ àyẹ̀wò là mí. Láìsí rẹ̀, ìgbésẹ̀ pàtàkì ni mo bá ti gbàgbé.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+    { "quote": "Mo ṣe CV mi níbí ní ìṣẹ́jú 5, wọ́n sì pe mí fún ìfọ̀rọ̀wánilẹ́nuwò 3.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Ọjọ́ ọ̀la rẹ ní Spain bẹ̀rẹ̀ níbí", "subtitle": "Darapọ̀ mọ́ ẹgbẹẹgbẹ̀rún ènìyàn tí ń kọ́, ṣiṣẹ́ tí ń sì dàgbà pẹ̀lú Ọwọ́ Ṣíṣí.", "button": "Bẹ̀rẹ̀ ọ̀fẹ́ báyìí" },
+  "footer": { "brand": "🤲 Ọwọ́ Ṣíṣí", "desc": "Pẹpẹ ẹ̀kọ́ ọ̀fẹ́ fún àwọn aṣíṣẹ̀ ní Spain. Pedro Belentani ṣe pẹ̀lú ❤️ láti Barcelona.", "col1_title": "Pẹpẹ", "col1_links": ["Ẹ̀kọ́", "Irinṣẹ́", "Maapu", "Ìwé"], "col2_title": "Ohun èlò", "col2_links": ["Ẹ̀tọ́ àti ìlànà", "Iṣẹ́", "Èdè", "Owó"], "col3_title": "Iṣẹ́ àkànṣe", "col3_links": ["Nípa wa", "Olubasọrọ", "Ṣe àfikún", "GitHub"], "copyright": "© 2026 Ọwọ́ Ṣíṣí · Pedro Belentani", "made_with": "A ṣe pẹ̀lú ❤️ ní Barcelona" },
+  "tools_modal": { "checklist_title": "✅ Àtòjọ dédé Spain", "checklist_reset": "Tún àtòjọ ṣe", "checklist_progress": "Ìlọsíwájú: {done}/{total} parí", "conv_title": "💱 Olùyí owó sí Euro", "conv_amount": "Iye", "conv_from": "Láti owó", "conv_result": "Àbájáde ní €", "cv_title": "📄 Olùṣẹ̀dá CV oníṣẹ́-ọwọ́", "cv_name": "Orúkọ rẹ kíkún", "cv_role": "Ipò tó fẹ́", "cv_exp": "Ìrírí iṣẹ́ rẹ...", "cv_preview_title": "Àyẹ̀wò", "cv_export": "📥 Ṣe àkóónú PDF", "map_title": "🗺️ Maapu ohun èlò Spain", "map_filters": { "all": "Gbogbo", "ong": "NGOs", "gobierno": "Ìjọba", "social": "Àwùjọ" }, "dir_title": "📞 Ìwé àdírẹ́sì pàtàkì", "dir_filters": { "all": "Gbogbo", "emergencia": "Pàjáwírì", "ong": "NGOs", "gobierno": "Ìjọba", "social": "Àwùjọ" }, "cost_title": "🏙️ Owó ìgbésí ayé ní ìlú", "close": "Pa dé" },
+  "toast": { "welcome": "🤲 Ẹ kú àbọ̀ sí Ọwọ́ Ṣíṣí — ẹ̀kọ́ {count} wà", "tool_opened": "A ti ṣí irinṣẹ́: {name}", "checklist_done": "✓ {item}", "checklist_reset": "A ti tún àtòjọ ṣe", "number_copied": "A ti da nọ́mbà: {number}", "cv_exported": "A ti ṣe àkóónú CV sí PDF", "map_loaded": "A ti ṣe àgbékalẹ̀ maapu pẹ̀lú ohun èlò {count}", "lang_changed": "A ti yí èdè padà sí {lang}" }
+}

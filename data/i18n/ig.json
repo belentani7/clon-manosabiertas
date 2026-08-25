@@ -1,0 +1,46 @@
+{
+  "meta": { "code": "ig", "name": "Igbo", "flag": "🇳🇬", "dir": "ltr" },
+  "nav": { "brand": "Aka Mepere", "courses": "Ihe Ọmụmụ", "rights": "Ikike", "tools": "Ngwa Ọrụ", "contacts": "Kọntaktị", "theme": "🌙", "sfx": "🔊", "start": "Bido n'efu" },
+  "hero": { "eyebrow": "IKPO MMỤTA N'EFU", "title_1": "Àkwà gị gaa", "title_highlight": "AI, ọrụ na ikike", "title_2": "na Spain", "subtitle": "Mụta ọgụgụ isi ọrụ, mepụta CV ọkachamara, mara ikike gị wee chọta ihe eji eme ihe. Ihe niile n'efu, n'asụsụ gị.", "cta_primary": "Nyochaa ihe ọmụmụ", "cta_secondary": "Lee ngwa ọrụ", "stat_courses": "Ihe Ọmụmụ", "stat_resources": "Ihe Eji Eme", "stat_languages": "Asụsụ", "stat_cost": "Ọnụ ahịa" },
+  "marquee": { "items": ["ỌGỤGỤ ISI ỌRỤ", "CV ỌKACHAMARA", "IKIKE ỌRỤ", "ASỤSỤ 39", "N'EFU 100%", "IHE ỌMỤMỤ NWE ASAMBODO", "MAAPỤ IHE EJI EME", "ỌRỤ NA SPAIN"] },
+  "features": { "eyebrow": "GỊ NỊ ỊGA ACHỌTA", "title": "Ihe niile ị chọrọ ịmalite na Spain", "subtitle": "Ngwa ọrụ bara uru, ihe ọmụmụ n'ezie na ihe eji eme ihe — nke ndị mbịarịrị mepụtara maka ndị mbịarịrị.", "cards": [
+    { "icon": "🤖", "title": "Mụta AI site na mmalite", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Ihe ọmụmụ bara uru.", "badge": "AMA AMA" },
+    { "icon": "📝", "title": "Mepụta CV gị zuru oke", "desc": "Onye nrụpụta smart nwere ndebiri ọkachamara. Bubata n'ụdị PDF.", "badge": "N'EFU" },
+    { "icon": "⚖️", "title": "Mara ikike gị", "desc": "NIE, ndebanye aha, ahụ ike, ọrụ, ụlọ. Ntuziaka nzọụkwụ.", "badge": "" },
+    { "icon": "🗺️", "title": "Maapụ ihe eji eme", "desc": "NGOs, ọfịs ndị mbịarịrị, ebe ahụ ike n'obodo gị.", "badge": "ỌHỤRỤ" },
+    { "icon": "💼", "title": "Chọta ọrụ", "desc": "Ụzọ ọrụ, ajụjụ ọnụ, ngalaba na-anabata ndị ọrụ.", "badge": "" },
+    { "icon": "🌍", "title": "N'asụsụ gị", "desc": "Ihu zuru oke n'asụsụ 39.", "badge": "ASỤSỤ 39" }
+  ]},
+  "courses": { "eyebrow": "NDEPỤTA IHE ỌMỤMỤ", "title": "115+ ihe ọmụmụ n'efu nwere asambodo", "subtitle": "Ọzụzụ bara uru na AI, ọrụ, asụsụ, usoro iwu na nkà dijitalụ.", "search_placeholder": "Chọọ ihe ọmụmụ...", "search_btn": "Chọọ", "tabs": { "all": "Niile", "ia": "🤖 AI", "empleo": "💼 Ọrụ", "office": "📊 Office", "legal": "⚖️ Iwu", "idiomas": "🌍 Asụsụ", "digital": "💻 Dijitalụ", "habilidades": "🧠 Nkà", "finanzas": "💰 Ego" }, "no_results": "Achọtaghị ihe ọmụmụ. Nwaa nchọgharị ọzọ.", "lessons": "ihe ọmụmụ", "certificate": "✓ Asambodo", "prev": "← Nke gara aga", "next": "Nke ọzọ →", "page_info": "{current} / {total} (ihe ọmụmụ {count})" },
+  "languages": { "eyebrow": "ỌTỤ TỤ ASỤSỤ", "title": "Dị n'asụsụ 39", "subtitle": "N'ihi na ozi kwesịrị iru onye ọ bụla, n'agbanyeghị asụsụ gị." },
+  "rights": { "eyebrow": "IKIKE GỊ", "title": "Ikike na enyemaka maka ndị mbịarịrị", "subtitle": "Ozi doro anya na nke ọhụrụ banyere usoro na ọrụ dị na Spain.", "cards": [
+    { "icon": "🆔", "title": "NIE na obibi", "desc": "Ntinye, mweghachi, nzukọ, akwụkwọ achọrọ." },
+    { "icon": "🏥", "title": "Ahụ ike ọha", "desc": "Kaadị ahụ ike, ebe ahụ ike, mberede, nwa." },
+    { "icon": "🏠", "title": "Ụlọ", "desc": "Ịgba ụgwọ, nkwekọrịta, ego nchekwa, ikike onye na-agba ụgwọ." },
+    { "icon": "💼", "title": "Ọrụ", "desc": "Nkwekọrịta, akwụkwọ ụgwọ, SEPE, ikike ọrụ, ịchụpụ." },
+    { "icon": "📚", "title": "Mmụta", "desc": "Ndebanye aha ụlọ akwụkwọ, ego mmụta, nnabata asambodo." },
+    { "icon": "👨‍👩‍👧‍👦", "title": "Mweghachite ezinụlọ", "desc": "Ihe achọrọ, usoro, akwụkwọ, oge." },
+    { "icon": "🛡️", "title": "Nchekwa", "desc": "Ebe nchekwa, ime ihe ike oke, enyemaka iwu n'efu." },
+    { "icon": "📜", "title": "Ọdịdị ala", "desc": "Ihe achọrọ, CCSE, DELE A2, akwụkwọ, oge." }
+  ]},
+  "tools": { "eyebrow": "NGWA ỌRỤ BARA URU", "title": "Ngwa ọrụ 6 n'efu maka ndụ kwa ụbọchị", "subtitle": "Ndepụta nlele, onye mgbanwe ego, onye nrụpụta CV, maapụ ihe eji eme ihe.", "cards": [
+    { "icon": "✅", "title": "Ndepụta ịbịarụ", "desc": "Nzọụkwụ 15 dị mkpa mgbe ị bịarụ Spain.", "btn": "Mepee ndepụta →" },
+    { "icon": "💱", "title": "Onye mgbanwe ego", "desc": "Gbanwee ego gị gaa Euro ozugbo. Ego 50+.", "btn": "Mepee onye mgbanwe →" },
+    { "icon": "📄", "title": "Onye nrụpụta CV", "desc": "Mepụta CV ọkachamara n'ime nkeji. PDF.", "btn": "Mepụta CV →" },
+    { "icon": "🗺️", "title": "Maapụ ihe eji eme", "desc": "NGOs, ọfịs, ebe ahụ ike. Họrọ site n'ụdị.", "btn": "Mepee maapụ →" },
+    { "icon": "📞", "title": "Akwụkwọ kọntaktị", "desc": "Nọmbà niile dị mkpa: mberede, NGOs, gọọmentị.", "btn": "Lee akwụkwọ →" },
+    { "icon": "🏙️", "title": "Ọnụ ahịa ndụ", "desc": "Ntụnyere ọnụ ahịa obodo: ụgwọ ụlọ, njem, nri.", "btn": "Tụnyere obodo →" }
+  ]},
+  "emergency": { "title": "📞 Nọmbà mberede — chekwaa kọntaktị ndị a", "items": [
+    { "label": "Mberede", "number": "112" }, { "label": "Ndị uwe ojii", "number": "091" }, { "label": "Ndị nche obodo", "number": "062" }, { "label": "Ụgbọ ala ọgwụ", "number": "061" }, { "label": "Ndị ọkụ", "number": "080" }, { "label": "Ime ihe ike oke", "number": "016" }, { "label": "Enyemaka ụmụaka", "number": "116 111" }, { "label": "Ahụ ike uche", "number": "024" }
+  ]},
+  "testimonials": { "eyebrow": "AMA AMA", "title": "Akụkọ ndị malitere", "cards": [
+    { "quote": "Ihe ọmụmụ AI nyeere m aka ịchọta ọrụ na startup na Madrid.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+    { "quote": "Ndepụta nlele zọpụtara m. Ọ bụrụ na ọ dịghị, m ga-echefuru nzọụkwụ dị mkpa.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+    { "quote": "Emere m CV m ebe a n'ime nkeji 5 a kpọkwara m maka ajụjụ ọnụ 3.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+  ]},
+  "cta": { "title": "Ọdịnihu gị na Spain malitere ebe a", "subtitle": "Jikọọ na ọtụtụ puku ndị na-amụ ihe, na-arụ ọrụ ma na-eto eto na Aka Mepere.", "button": "Bido n'efu ugbu a" },
+  "footer": { "brand": "🤲 Aka Mepere", "desc": "Ikpo mmụta n'efu maka ndị mbịarịrị na Spain. Pedro Belentani mere ya site na ❤️ na Barcelona.", "col1_title": "Ikpo", "col1_links": ["Ihe Ọmụmụ", "Ngwa Ọrụ", "Maapụ", "Akwụkwọ"], "col2_title": "Ihe Eji Eme", "col2_links": ["Ikike na usoro", "Ọrụ", "Asụsụ", "Ego"], "col3_title": "Ọrụ", "col3_links": ["Maka anyị", "Kọntaktị", "Tinye aka", "GitHub"], "copyright": "© 2026 Aka Mepere · Pedro Belentani", "made_with": "Emere ya site na ❤️ na Barcelona" },
+  "tools_modal": { "checklist_title": "✅ Ndepụta ịbịarụ Spain", "checklist_reset": "Tọgharia ndepụta", "checklist_progress": "Ọganihu: {done}/{total} emechara", "conv_title": "💱 Onye mgbanwe ego Euro", "conv_amount": "Ego ole", "conv_from": "Site n'ego", "conv_result": "Nsonaazụ na €", "cv_title": "📄 Onye nrụpụta CV ọkachamara", "cv_name": "Aha gị zuru oke", "cv_role": "Ọkwá lekwasịrị anya", "cv_exp": "Ahụmịhe ọrụ gị...", "cv_preview_title": "Nlele", "cv_export": "📥 Bubata PDF", "map_title": "🗺️ Maapụ ihe eji eme Spain", "map_filters": { "all": "Niile", "ong": "NGOs", "gobierno": "Gọọmentị", "social": "Mmekọrịta" }, "dir_title": "📞 Akwụkwọ kọntaktị dị mkpa", "dir_filters": { "all": "Niile", "emergencia": "Mberede", "ong": "NGOs", "gobierno": "Gọọmentị", "social": "Mmekọrịta" }, "cost_title": "🏙️ Ọnụ ahịa ndụ obodo", "close": "Mechie" },
+  "toast": { "welcome": "🤲 Nnọọ na Aka Mepere — ihe ọmụmụ {count} dị", "tool_opened": "Emepere ngwa ọrụ: {name}", "checklist_done": "✓ {item}", "checklist_reset": "Etọghariala ndepụta", "number_copied": "Edetụrụla nọmbà: {number}", "cv_exported": "Ebuputala CV dịka PDF", "map_loaded": "Ebugorila maapụ nwere ihe eji eme {count}", "lang_changed": "Agbanweela asụsụ gaa {lang}" }
+}

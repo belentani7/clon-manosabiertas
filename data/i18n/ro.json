@@ -1,0 +1,169 @@
+{
+  "meta": { "code": "ro", "name": "Română", "flag": "🇷🇴", "dir": "ltr" },
+  "nav": {
+    "brand": "Mâini Deschise",
+    "courses": "Cursuri",
+    "rights": "Drepturi",
+    "tools": "Instrumente",
+    "contacts": "Contacte",
+    "theme": "🌙",
+    "sfx": "🔊",
+    "start": "Începe gratuit"
+  },
+  "hero": {
+    "eyebrow": "PLATFORMĂ EDUCAȚIONALĂ GRATUITĂ",
+    "title_1": "Podul tău către",
+    "title_highlight": "IA, angajare și drepturi",
+    "title_2": "în Spania",
+    "subtitle": "Învață inteligență artificială, creează-ți CV-ul profesional, cunoaște-ți drepturile și găsește resurse verificate. Totul gratuit, în limba ta.",
+    "cta_primary": "Explorează cursurile",
+    "cta_secondary": "Vezi instrumentele",
+    "stat_courses": "Cursuri",
+    "stat_resources": "Resurse",
+    "stat_languages": "Limbi",
+    "stat_cost": "Cost"
+  },
+  "marquee": {
+    "items": ["INTELIGENȚĂ ARTIFICIALĂ", "CV PROFESIONAL", "DREPTURI DE MUNCĂ", "39 LIMBI", "100% GRATUIT", "CURSURI CERTIFICATE", "HARTA RESURSELOR", "LOCURI DE MUNCĂ ÎN SPANIA"]
+  },
+  "features": {
+    "eyebrow": "CE VEI GĂSI",
+    "title": "Tot ce ai nevoie pentru a începe în Spania",
+    "subtitle": "Instrumente practice, cursuri reale și resurse verificate — create de și pentru imigranți.",
+    "cards": [
+      { "icon": "🤖", "title": "Învață IA de la zero", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Cursuri practice pentru a folosi IA la serviciu și în viața de zi cu zi.", "badge": "POPULAR" },
+      { "icon": "📝", "title": "Creează CV-ul perfect", "desc": "Generator inteligent cu șabloane profesionale. Export în PDF gata de trimis.", "badge": "GRATUIT" },
+      { "icon": "⚖️", "title": "Cunoaște-ți drepturile", "desc": "NIE, înregistrare, sănătate, muncă, locuință. Ghiduri pas cu pas actualizate.", "badge": "" },
+      { "icon": "🗺️", "title": "Harta resurselor", "desc": "ONG-uri, birouri de imigrare, centre de sănătate geolocalizate în orașul tău.", "badge": "NOU" },
+      { "icon": "💼", "title": "Găsește un loc de muncă", "desc": "Portaluri de angajare, interviuri, sectoare care angajează, drepturi de muncă.", "badge": "" },
+      { "icon": "🌍", "title": "În limba ta", "desc": "Interfață completă în 39 de limbi. Arabă, chineză, hindi, ucraineană, franceză și altele.", "badge": "39 LIMBI" }
+    ]
+  },
+  "courses": {
+    "eyebrow": "CATALOG CURSURI",
+    "title": "115+ cursuri gratuite cu certificat",
+    "subtitle": "Formare practică în IA, angajare, limbi, proceduri legale și competențe digitale.",
+    "search_placeholder": "Caută cursuri...",
+    "search_btn": "Caută",
+    "tabs": {
+      "all": "Toate",
+      "ia": "🤖 IA",
+      "empleo": "💼 Muncă",
+      "office": "📊 Office",
+      "legal": "⚖️ Juridic",
+      "idiomas": "🌍 Limbi",
+      "digital": "💻 Digital",
+      "habilidades": "🧠 Competențe",
+      "finanzas": "💰 Finanțe"
+    },
+    "no_results": "Nu s-au găsit cursuri. Încearcă altă căutare.",
+    "lessons": "lecții",
+    "certificate": "✓ Certificat",
+    "prev": "← Anterior",
+    "next": "Următor →",
+    "page_info": "{current} / {total} ({count} cursuri)"
+  },
+  "languages": {
+    "eyebrow": "MULTILINGV",
+    "title": "Disponibil în 39 de limbi",
+    "subtitle": "Pentru că informația trebuie să ajungă la toată lumea, indiferent de limba vorbită."
+  },
+  "rights": {
+    "eyebrow": "DREPTURILE TALE",
+    "title": "Drepturi și ajutoare pentru imigranți",
+    "subtitle": "Informații clare și actualizate despre procedurile și serviciile disponibile în Spania.",
+    "cards": [
+      { "icon": "🆔", "title": "NIE și rezidență", "desc": "Cerere, reînnoire, programare, documente necesare." },
+      { "icon": "🏥", "title": "Sănătate publică", "desc": "Card sanitar, centre medicale, urgențe, pediatrie." },
+      { "icon": "🏠", "title": "Locuință", "desc": "Chirie, contracte, garanții, drepturile chiriașului, ajutoare." },
+      { "icon": "💼", "title": "Angajare", "desc": "Contracte, fluturași de salariu, SEPE, drepturi de muncă, concediere." },
+      { "icon": "📚", "title": "Educație", "desc": "Înscriere școlară, burse, recunoașterea diplomelor." },
+      { "icon": "👨‍👩‍👧‍👦", "title": "Reunificarea familiei", "desc": "Cerințe, proces, documente, termene." },
+      { "icon": "🛡️", "title": "Protecție", "desc": "Azil, violență de gen, asistență juridică gratuită." },
+      { "icon": "📜", "title": "Cetățenie", "desc": "Cerințe, CCSE, DELE A2, documente, termene." }
+    ]
+  },
+  "tools": {
+    "eyebrow": "INSTRUMENTE PRACTICE",
+    "title": "6 instrumente gratuite pentru viața de zi cu zi",
+    "subtitle": "Checklist, convertor valutar, creator de CV, harta resurselor și altele.",
+    "cards": [
+      { "icon": "✅", "title": "Checklist de sosire", "desc": "Cei 15 pași esențiali la sosirea în Spania.", "btn": "Deschide checklist →" },
+      { "icon": "💱", "title": "Convertor valutar", "desc": "Convertește moneda ta în euro instant. 50+ monede.", "btn": "Deschide convertorul →" },
+      { "icon": "📄", "title": "Creator de CV", "desc": "Creează-ți CV-ul profesional în câteva minute. Export PDF.", "btn": "Creează CV-ul →" },
+      { "icon": "🗺️", "title": "Harta resurselor", "desc": "ONG-uri, birouri, centre de sănătate. Filtrează după tip.", "btn": "Deschide harta →" },
+      { "icon": "📞", "title": "Director contacte", "desc": "Toate numerele importante: urgențe, ONG-uri, guvern.", "btn": "Vezi directorul →" },
+      { "icon": "🏙️", "title": "Costul vieții", "desc": "Comparare cheltuieli pe orașul: chirie, transport, mâncare.", "btn": "Compară orașe →" }
+    ]
+  },
+  "emergency": {
+    "title": "📞 Numere de urgență — salvează aceste contacte",
+    "items": [
+      { "label": "Urgențe", "number": "112" },
+      { "label": "Poliție", "number": "091" },
+      { "label": "Garda Civilă", "number": "062" },
+      { "label": "Ambulanță", "number": "061" },
+      { "label": "Pompieri", "number": "080" },
+      { "label": "Violență de gen", "number": "016" },
+      { "label": "Ajutor minori", "number": "116 111" },
+      { "label": "Sănătate mintală", "number": "024" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "TESTIMONIALE",
+    "title": "Povești ale celor care au început deja",
+    "cards": [
+      { "quote": "Cursurile de IA m-au ajutat să obțin un loc de muncă la un startup din Madrid. Nu știam să folosesc ChatGPT și acum îl folosesc zilnic.", "name": "María", "origin": "Columbia", "flag": "🇨🇴" },
+      { "quote": "Checklistul m-a salvat. Fără el aș fi uitat pași importanți. Harta resurselor m-a dus direct la Crucea Roșie.", "name": "Ahmed", "origin": "Maroc", "flag": "🇲🇦" },
+      { "quote": "Mi-am făcut CV-ul aici în 5 minute și am fost chemat la 3 interviuri. Secțiunea de drepturi de muncă m-a ajutat să negociez primul contract.", "name": "Olena", "origin": "Ucraina", "flag": "🇺🇦" }
+    ]
+  },
+  "cta": {
+    "title": "Viitorul tău în Spania începe aici",
+    "subtitle": "Alătură-te miilor de persoane care învață, lucrează și cresc cu Mâini Deschise.",
+    "button": "Începe gratuit acum"
+  },
+  "footer": {
+    "brand": "🤲 Mâini Deschise",
+    "desc": "Platformă educațională gratuită pentru imigranți în Spania. Creat cu ❤️ de Pedro Belentani din Barcelona.",
+    "col1_title": "Platformă",
+    "col1_links": ["Cursuri", "Instrumente", "Harta resurselor", "Director"],
+    "col2_title": "Resurse",
+    "col2_links": ["Drepturi și proceduri", "Angajare", "Limbi", "Finanțe"],
+    "col3_title": "Proiect",
+    "col3_links": ["Despre noi", "Contact", "Contribuie", "GitHub"],
+    "copyright": "© 2026 Mâini Deschise · Pedro Belentani",
+    "made_with": "Creat cu ❤️ în Barcelona"
+  },
+  "tools_modal": {
+    "checklist_title": "✅ Checklist de sosire în Spania",
+    "checklist_reset": "Resetează checklist",
+    "checklist_progress": "Progres: {done}/{total} completate",
+    "conv_title": "💱 Convertor valutar în Euro",
+    "conv_amount": "Sumă",
+    "conv_from": "Din moneda",
+    "conv_result": "Rezultat în €",
+    "cv_title": "📄 Creator de CV profesional",
+    "cv_name": "Numele tău complet",
+    "cv_role": "Poziția dorită",
+    "cv_exp": "Experiența ta profesională...",
+    "cv_preview_title": "Previzualizare",
+    "cv_export": "📥 Export PDF",
+    "map_title": "🗺️ Harta resurselor în Spania",
+    "map_filters": { "all": "Toate", "ong": "ONG-uri", "gobierno": "Guvern", "social": "Social" },
+    "dir_title": "📞 Director contacte esențiale",
+    "dir_filters": { "all": "Toate", "emergencia": "Urgențe", "ong": "ONG-uri", "gobierno": "Guvern", "social": "Social" },
+    "cost_title": "🏙️ Costul vieții pe orașe",
+    "close": "Închide"
+  },
+  "toast": {
+    "welcome": "🤲 Bine ai venit la Mâini Deschise — {count} cursuri disponibile",
+    "tool_opened": "Instrument deschis: {name}",
+    "checklist_done": "✓ {item}",
+    "checklist_reset": "Checklist resetat",
+    "number_copied": "Număr copiat: {number}",
+    "cv_exported": "CV exportat ca PDF",
+    "map_loaded": "Hartă încărcată cu {count} resurse",
+    "lang_changed": "Limba schimbată în {lang}"
+  }
+}
