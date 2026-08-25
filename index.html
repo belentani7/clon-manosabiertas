@@ -205,6 +205,19 @@ img { max-width: 100%; display: block; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
+/* ─── RTL SUPPORT ─── */
+[dir="rtl"] { text-align: right; }
+[dir="rtl"] .navbar-nav { flex-direction: row-reverse; }
+[dir="rtl"] .hero-actions { flex-direction: row-reverse; }
+[dir="rtl"] .feature-card::before { transform-origin: right; }
+[dir="rtl"] .right-card { flex-direction: row-reverse; }
+[dir="rtl"] .toast-container { right: auto; left: 20px; }
+[dir="rtl"] .toast { flex-direction: row-reverse; }
+[dir="rtl"] .emergency-item { flex-direction: row-reverse; }
+[dir="rtl"] .directory-card { flex-direction: row-reverse; }
+[dir="rtl"] .section-header { text-align: center; }
+[dir="rtl"] .marquee-track { direction: ltr; }
+
 /* ─── LAYOUT ─── */
 .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 32px); }
 .section { padding: clamp(48px, 8vw, 96px) 0; }
@@ -694,15 +707,15 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
       <span class="hands">🤲</span> Manos Abiertas
     </a>
     <ul class="navbar-nav" role="menubar">
-      <li role="none"><a href="#aprende-ia" role="menuitem">Aprende IA</a></li>
-      <li role="none"><a href="#cursos" role="menuitem">Cursos</a></li>
-      <li role="none"><a href="#derechos" role="menuitem">Derechos</a></li>
-      <li role="none"><a href="#herramientas" role="menuitem">Herramientas</a></li>
-      <li role="none"><a href="#contactos" role="menuitem">Contactos</a></li>
+      <li role="none"><a href="#aprende-ia" role="menuitem" data-i18n="nav.courses">Cursos</a></li>
+      <li role="none"><a href="#derechos" role="menuitem" data-i18n="nav.rights">Derechos</a></li>
+      <li role="none"><a href="#herramientas" role="menuitem" data-i18n="nav.tools">Herramientas</a></li>
+      <li role="none"><a href="#contactos" role="menuitem" data-i18n="nav.contacts">Contactos</a></li>
     </ul>
     <div class="navbar-actions">
+      <button class="lang-btn" id="theme-toggle" aria-label="Cambiar tema" style="font-size:1rem;padding:6px 10px">🌙</button>
       <button class="lang-btn" id="lang-toggle" aria-label="Cambiar idioma">🌍 ES</button>
-      <a href="#aprende-ia" class="cta-nav">Empezar gratis</a>
+      <a href="#aprende-ia" class="cta-nav" data-i18n="nav.start">Empezar gratis</a>
     </div>
     <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
   </div>
@@ -716,18 +729,18 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
   <canvas id="shader-bg" aria-hidden="true"></canvas>
   <canvas class="hero-canvas" id="hero-particles" aria-hidden="true"></canvas>
   <div class="container hero-content">
-    <div class="hero-eyebrow"><span class="dot"></span> 100% GRATUITO · 39 IDIOMAS</div>
-    <h1>Tu puente hacia la <span class="highlight">inteligencia artificial</span>, el empleo y tus derechos</h1>
-    <p class="hero-sub">Plataforma educativa gratuita para inmigrantes en España. Aprende IA, crea tu CV profesional, conoce tus derechos y encuentra empleo.</p>
+    <div class="hero-eyebrow" data-i18n="hero.eyebrow"><span class="dot"></span> 100% GRATUITO · 39 IDIOMAS</div>
+    <h1><span data-i18n="hero.title_1">Tu puente hacia la</span> <span class="highlight" data-i18n="hero.title_highlight">inteligencia artificial, el empleo y tus derechos</span> <span data-i18n="hero.title_2">en España</span></h1>
+    <p class="hero-sub" data-i18n="hero.subtitle">Plataforma educativa gratuita para inmigrantes en España. Aprende IA, crea tu CV profesional, conoce tus derechos y encuentra empleo.</p>
     <div class="hero-actions">
-      <a href="#aprende-ia" class="btn btn-primary">🤖 Aprender IA gratis</a>
-      <a href="#cv-builder" class="btn btn-outline">📝 Crear mi CV</a>
+      <a href="#aprende-ia" class="btn btn-primary" data-i18n="hero.cta_primary">🤖 Explorar cursos</a>
+      <a href="#cv-builder" class="btn btn-outline" data-i18n="hero.cta_secondary">📝 Ver herramientas</a>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num" data-count="39">0</div><div class="hero-stat-label">Idiomas</div></div>
-      <div class="hero-stat"><div class="hero-stat-num" data-count="3686">0</div><div class="hero-stat-label">Recursos</div></div>
-      <div class="hero-stat"><div class="hero-stat-num" data-count="115">0</div><div class="hero-stat-label">Cursos</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Gratis</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="39">0</div><div class="hero-stat-label" data-i18n="hero.stat_languages">Idiomas</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="3686">0</div><div class="hero-stat-label" data-i18n="hero.stat_resources">Recursos</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" data-count="115">0</div><div class="hero-stat-label" data-i18n="hero.stat_courses">Cursos</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label" data-i18n="hero.stat_cost">Gratis</div></div>
     </div>
   </div>
 </section>
@@ -750,9 +763,9 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 <section class="section" id="aprende-ia">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">Todo lo que necesitas</div>
-      <h2>Una plataforma, todas las herramientas</h2>
-      <p>Desde aprender IA hasta conseguir empleo — todo gratuito, en tu idioma, sin necesidad de conocimientos previos.</p>
+      <div class="section-eyebrow" data-i18n="features.eyebrow">Todo lo que necesitas</div>
+      <h2 data-i18n="features.title">Una plataforma, todas las herramientas</h2>
+      <p data-i18n="features.subtitle">Desde aprender IA hasta conseguir empleo — todo gratuito, en tu idioma, sin necesidad de conocimientos previos.</p>
     </div>
     <div class="features-grid">
       <div class="feature-card reveal" data-accent="orange">
@@ -796,9 +809,9 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 <section class="section courses-section" id="cursos">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">Biblioteca de cursos</div>
-      <h2>115+ cursos con certificado gratuito</h2>
-      <p>Cursos prácticos diseñados para inmigrantes. Sin conocimientos previos. En tu idioma.</p>
+      <div class="section-eyebrow" data-i18n="courses.eyebrow">Biblioteca de cursos</div>
+      <h2 data-i18n="courses.title">115+ cursos con certificado gratuito</h2>
+      <p data-i18n="courses.subtitle">Cursos prácticos diseñados para inmigrantes. Sin conocimientos previos. En tu idioma.</p>
     </div>
     <div class="search-bar reveal"><input id="course-search" type="search" placeholder="Busca: ChatGPT, CV, Excel, NIE, español..." aria-label="Buscar cursos"><button class="btn btn-outline" style="padding:10px 18px;min-height:auto" id="course-search-btn">Buscar</button></div>
     <div class="courses-tabs reveal">
@@ -821,50 +834,50 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 <section class="section" id="idiomas">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">Sin barreras</div>
-      <h2>Disponible en 39 idiomas</h2>
-      <p>Si sabes usar WhatsApp, puedes usar esta plataforma. Todo traducido, todo accesible.</p>
+      <div class="section-eyebrow" data-i18n="languages.eyebrow">Sin barreras</div>
+      <h2 data-i18n="languages.title">Disponible en 39 idiomas</h2>
+      <p data-i18n="languages.subtitle">Si sabes usar WhatsApp, puedes usar esta plataforma. Todo traducido, todo accesible.</p>
     </div>
     <div class="lang-grid reveal">
-      <button class="lang-chip active">🇪🇸 Español</button>
-      <button class="lang-chip">🇬🇧 English</button>
-      <button class="lang-chip">🇫🇷 Français</button>
-      <button class="lang-chip">🇵🇹 Português</button>
-      <button class="lang-chip">🇸🇦 العربية</button>
-      <button class="lang-chip">🇨🇳 中文</button>
-      <button class="lang-chip">🇺🇦 Українська</button>
-      <button class="lang-chip">🇷🇴 Română</button>
-      <button class="lang-chip">🇮🇳 हिन्दी</button>
-      <button class="lang-chip">🇧🇩 বাংলা</button>
-      <button class="lang-chip">🇰🇪 Kiswahili</button>
-      <button class="lang-chip">🇪🇹 አማርኛ</button>
-      <button class="lang-chip">🇵🇰 اردو</button>
-      <button class="lang-chip">🇵🇭 Tagalog</button>
-      <button class="lang-chip">🇸🇳 Wolof</button>
-      <button class="lang-chip">🇸🇴 Soomaali</button>
-      <button class="lang-chip">🇳🇬 Hausa</button>
-      <button class="lang-chip">🇳🇬 Yorùbá</button>
-      <button class="lang-chip">🇳🇬 Igbo</button>
-      <button class="lang-chip">🇿🇦 isiZulu</button>
-      <button class="lang-chip">🇷🇼 Kinyarwanda</button>
-      <button class="lang-chip">🇪🇷 ትግርኛ</button>
-      <button class="lang-chip">🇪🇹 Afaan Oromoo</button>
-      <button class="lang-chip">🇨🇩 Lingala</button>
-      <button class="lang-chip">🇨🇩 Kikongo</button>
-      <button class="lang-chip">🇸🇳 Fulfulde</button>
-      <button class="lang-chip">🇲🇱 Bambara</button>
-      <button class="lang-chip">🇬🇭 Ewe</button>
-      <button class="lang-chip">🇬🇭 Akan</button>
-      <button class="lang-chip">🇬🇭 Twi</button>
-      <button class="lang-chip">🇵🇾 Guaraní</button>
-      <button class="lang-chip">🇧🇴 Aymara</button>
-      <button class="lang-chip">🇵🇪 Quechua</button>
-      <button class="lang-chip">🇭🇹 Kreyòl</button>
-      <button class="lang-chip">🇲🇬 Malagasy</button>
-      <button class="lang-chip">🇲🇲 မြန်မာ</button>
-      <button class="lang-chip">🇰🇭 ខ្មែរ</button>
-      <button class="lang-chip">🇱🇦 ລາວ</button>
-      <button class="lang-chip">🇳🇵 नेपाली</button>
+      <button class="lang-chip active" data-lang="es">🇪🇸 Español</button>
+      <button class="lang-chip" data-lang="en">🇬🇧 English</button>
+      <button class="lang-chip" data-lang="fr">🇫🇷 Français</button>
+      <button class="lang-chip" data-lang="pt">🇵🇹 Português</button>
+      <button class="lang-chip" data-lang="ar">🇸🇦 العربية</button>
+      <button class="lang-chip" data-lang="zh">🇨🇳 中文</button>
+      <button class="lang-chip" data-lang="uk">🇺🇦 Українська</button>
+      <button class="lang-chip" data-lang="ro">🇷🇴 Română</button>
+      <button class="lang-chip" data-lang="hi">🇮🇳 हिन्दी</button>
+      <button class="lang-chip" data-lang="bn">🇧🇩 বাংলা</button>
+      <button class="lang-chip" data-lang="sw">🇰🇪 Kiswahili</button>
+      <button class="lang-chip" data-lang="am">🇪🇹 አማርኛ</button>
+      <button class="lang-chip" data-lang="ur">🇵🇰 اردو</button>
+      <button class="lang-chip" data-lang="tl">🇵🇭 Filipino</button>
+      <button class="lang-chip" data-lang="wo">🇸🇳 Wolof</button>
+      <button class="lang-chip" data-lang="so">🇸🇴 Soomaali</button>
+      <button class="lang-chip" data-lang="ha">🇳🇬 Hausa</button>
+      <button class="lang-chip" data-lang="yo">🇳🇬 Yorùbá</button>
+      <button class="lang-chip" data-lang="ig">🇳🇬 Igbo</button>
+      <button class="lang-chip" data-lang="zu">🇿🇦 isiZulu</button>
+      <button class="lang-chip" data-lang="rw">🇷🇼 Kinyarwanda</button>
+      <button class="lang-chip" data-lang="ti">🇪🇷 ትግርኛ</button>
+      <button class="lang-chip" data-lang="om">🇪🇹 Afaan Oromoo</button>
+      <button class="lang-chip" data-lang="ln">🇨🇩 Lingala</button>
+      <button class="lang-chip" data-lang="kg">🇨🇩 Kikongo</button>
+      <button class="lang-chip" data-lang="ff">🇸🇳 Fulfulde</button>
+      <button class="lang-chip" data-lang="bm">🇲🇱 Bambara</button>
+      <button class="lang-chip" data-lang="ee">🇬🇭 Ewe</button>
+      <button class="lang-chip" data-lang="ak">🇬🇭 Akan</button>
+      <button class="lang-chip" data-lang="tw">🇬🇭 Twi</button>
+      <button class="lang-chip" data-lang="gn">🇵🇾 Guaraní</button>
+      <button class="lang-chip" data-lang="ay">🇧🇴 Aymara</button>
+      <button class="lang-chip" data-lang="qu">🇵🇪 Quechua</button>
+      <button class="lang-chip" data-lang="ht">🇭🇹 Kreyòl</button>
+      <button class="lang-chip" data-lang="mg">🇲🇬 Malagasy</button>
+      <button class="lang-chip" data-lang="my">🇲🇲 မြန်မာ</button>
+      <button class="lang-chip" data-lang="km">🇰🇭 ខ្មែរ</button>
+      <button class="lang-chip" data-lang="lo">🇱🇦 ລາວ</button>
+      <button class="lang-chip" data-lang="ne">🇳🇵 नेपाली</button>
     </div>
   </div>
 </section>
@@ -873,9 +886,9 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 <section class="section" id="derechos" style="background:var(--warm-cream)">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">Conoce tus derechos</div>
-      <h2>Guía completa de derechos y trámites</h2>
-      <p>Todo lo que necesitas saber para vivir, trabajar y prosperar en España. Actualizado constantemente.</p>
+      <div class="section-eyebrow" data-i18n="rights.eyebrow">Conoce tus derechos</div>
+      <h2 data-i18n="rights.title">Guía completa de derechos y trámites</h2>
+      <p data-i18n="rights.subtitle">Todo lo que necesitas saber para vivir, trabajar y prosperar en España. Actualizado constantemente.</p>
     </div>
     <div class="rights-grid">
       <div class="right-card reveal">
@@ -918,7 +931,7 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 <section class="section" id="herramientas">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">Herramientas prácticas</div>
+      <div class="section-eyebrow" data-i18n="tools.eyebrow">Herramientas prácticas</div>
       <h2>Todo lo que necesitas en un lugar</h2>
       <p>Calculadoras, checklists, guías interactivas — diseñadas para resolver tus problemas reales.</p>
     </div>
@@ -981,7 +994,7 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 <section class="section testimonials-section">
   <div class="container">
     <div class="section-header reveal">
-      <div class="section-eyebrow">Historias reales</div>
+      <div class="section-eyebrow" data-i18n="testimonials.eyebrow">Historias reales</div>
       <h2>Miles de personas ya lo están usando</h2>
     </div>
     <div class="testimonials-grid">
@@ -1004,9 +1017,9 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 <!-- CTA -->
 <section class="cta-section">
   <div class="container">
-    <h2>Comienza hoy tu camino</h2>
-    <p>No necesitas conocimientos previos. Si sabes usar WhatsApp, puedes usar esta plataforma.</p>
-    <a href="#aprende-ia" class="btn btn-white">🚀 Empezar gratis ahora</a>
+    <h2 data-i18n="cta.title">Comienza hoy tu camino</h2>
+    <p data-i18n="cta.subtitle">No necesitas conocimientos previos. Si sabes usar WhatsApp, puedes usar esta plataforma.</p>
+    <a href="#aprende-ia" class="btn btn-white" data-i18n="cta.button">🚀 Empezar gratis ahora</a>
   </div>
 </section>
 
@@ -1776,8 +1789,11 @@ document.querySelectorAll('.feature-card,.course-card,.tool-card').forEach(el=>e
 /* ── Theme persistence ── */
 (function(){
   const KEY='ma_theme'; const saved=localStorage.getItem(KEY); if(saved) document.documentElement.setAttribute('data-theme',saved);
-  document.getElementById('lang-toggle')?.addEventListener('click',()=>{ const cur=document.documentElement.getAttribute('data-theme'); const next=cur==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',next); localStorage.setItem(KEY,next); if(sfxOn) sfx.whoosh(); });
+  document.getElementById('theme-toggle')?.addEventListener('click',()=>{ const cur=document.documentElement.getAttribute('data-theme'); const next=cur==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',next); localStorage.setItem(KEY,next); if(sfxOn) sfx.whoosh(); });
 })();
 </script>
+
+<!-- i18n Engine (39 languages + TTS) -->
+<script src="/js/i18n.js" defer></script>
 </body>
 </html>

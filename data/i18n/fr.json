@@ -1,0 +1,169 @@
+{
+  "meta": { "code": "fr", "name": "Français", "flag": "🇫🇷", "dir": "ltr" },
+  "nav": {
+    "brand": "Mains Ouvertes",
+    "courses": "Cours",
+    "rights": "Droits",
+    "tools": "Outils",
+    "contacts": "Contacts",
+    "theme": "🌙",
+    "sfx": "🔊",
+    "start": "Commencer gratuitement"
+  },
+  "hero": {
+    "eyebrow": "PLATEFORME ÉDUCATIVE GRATUITE",
+    "title_1": "Votre pont vers",
+    "title_highlight": "l'IA, l'emploi et vos droits",
+    "title_2": "en Espagne",
+    "subtitle": "Apprenez l'intelligence artificielle, créez votre CV professionnel, connaissez vos droits et trouvez des ressources vérifiées. Tout est gratuit, dans votre langue.",
+    "cta_primary": "Explorer les cours",
+    "cta_secondary": "Voir les outils",
+    "stat_courses": "Cours",
+    "stat_resources": "Ressources",
+    "stat_languages": "Langues",
+    "stat_cost": "Coût"
+  },
+  "marquee": {
+    "items": ["INTELLIGENCE ARTIFICIELLE", "CV PROFESSIONNEL", "DROITS DU TRAVAIL", "39 LANGUES", "100% GRATUIT", "COURS CERTIFIÉS", "CARTE DES RESSOURCES", "EMPLOI EN ESPAGNE"]
+  },
+  "features": {
+    "eyebrow": "QUE TROUVEREZ-VOUS ?",
+    "title": "Tout ce dont vous avez besoin pour commencer en Espagne",
+    "subtitle": "Outils pratiques, cours réels et ressources vérifiées — conçus par et pour les immigrants.",
+    "cards": [
+      { "icon": "🤖", "title": "Apprendre l'IA de zéro", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Cours pratiques pour utiliser l'IA au travail et au quotidien.", "badge": "POPULAIRE" },
+      { "icon": "📝", "title": "Créez votre CV parfait", "desc": "Générateur intelligent avec modèles professionnels. Exportez en PDF prêt à envoyer.", "badge": "GRATUIT" },
+      { "icon": "⚖️", "title": "Connaissez vos droits", "desc": "NIE, inscription, santé, travail, logement. Guides étape par étape mis à jour.", "badge": "" },
+      { "icon": "🗺️", "title": "Carte des ressources", "desc": "ONG, bureaux d'immigration, centres de santé géolocalisés dans votre ville.", "badge": "NOUVEAU" },
+      { "icon": "💼", "title": "Trouver un emploi", "desc": "Portails d'emploi, entretiens, secteurs qui recrutent, droits du travail.", "badge": "" },
+      { "icon": "🌍", "title": "Dans votre langue", "desc": "Interface complète en 39 langues. Arabe, chinois, hindi, ukrainien, français et plus.", "badge": "39 LANGUES" }
+    ]
+  },
+  "courses": {
+    "eyebrow": "CATALOGUE DE COURS",
+    "title": "115+ cours gratuits avec certificat",
+    "subtitle": "Formation pratique en IA, emploi, langues, procédures légales et compétences numériques.",
+    "search_placeholder": "Rechercher des cours...",
+    "search_btn": "Rechercher",
+    "tabs": {
+      "all": "Tous",
+      "ia": "🤖 IA",
+      "empleo": "💼 Emploi",
+      "office": "📊 Office",
+      "legal": "⚖️ Juridique",
+      "idiomas": "🌍 Langues",
+      "digital": "💻 Numérique",
+      "habilidades": "🧠 Compétences",
+      "finanzas": "💰 Finances"
+    },
+    "no_results": "Aucun cours trouvé. Essayez une autre recherche.",
+    "lessons": "leçons",
+    "certificate": "✓ Certificat",
+    "prev": "← Précédent",
+    "next": "Suivant →",
+    "page_info": "{current} / {total} ({count} cours)"
+  },
+  "languages": {
+    "eyebrow": "MULTILINGUE",
+    "title": "Disponible en 39 langues",
+    "subtitle": "Parce que l'information doit atteindre tout le monde, quelle que soit votre langue."
+  },
+  "rights": {
+    "eyebrow": "VOS DROITS",
+    "title": "Droits et aides pour les immigrants",
+    "subtitle": "Informations claires et actualisées sur les démarches et services disponibles en Espagne.",
+    "cards": [
+      { "icon": "🆔", "title": "NIE et résidence", "desc": "Demande, renouvellement, rendez-vous, documents requis." },
+      { "icon": "🏥", "title": "Santé publique", "desc": "Carte sanitaire, centres de santé, urgences, pédiatrie." },
+      { "icon": "🏠", "title": "Logement", "desc": "Location, contrats, cautions, droits du locataire, aides." },
+      { "icon": "💼", "title": "Emploi", "desc": "Contrats, fiches de paie, SEPE, droits du travail, licenciement." },
+      { "icon": "📚", "title": "Éducation", "desc": "Scolarisation, bourses, reconnaissance des diplômes." },
+      { "icon": "👨‍👩‍👧‍👦", "title": "Regroupement familial", "desc": "Conditions, processus, documents, délais." },
+      { "icon": "🛡️", "title": "Protection", "desc": "Asile, violences de genre, aide juridique gratuite." },
+      { "icon": "📜", "title": "Nationalité", "desc": "Conditions, CCSE, DELE A2, documents, délais." }
+    ]
+  },
+  "tools": {
+    "eyebrow": "OUTILS PRATIQUES",
+    "title": "6 outils gratuits pour votre quotidien",
+    "subtitle": "Checklist, convertisseur de devises, créateur de CV, carte des ressources et plus.",
+    "cards": [
+      { "icon": "✅", "title": "Checklist d'arrivée", "desc": "Les 15 étapes essentielles à votre arrivée en Espagne.", "btn": "Ouvrir la checklist →" },
+      { "icon": "💱", "title": "Convertisseur de devises", "desc": "Convertissez votre monnaie en euros instantanément. 50+ devises.", "btn": "Ouvrir le convertisseur →" },
+      { "icon": "📄", "title": "Créateur de CV", "desc": "Créez votre CV professionnel en quelques minutes. Export PDF.", "btn": "Créer mon CV →" },
+      { "icon": "🗺️", "title": "Carte des ressources", "desc": "ONG, bureaux, centres de santé géolocalisés. Filtrer par type.", "btn": "Ouvrir la carte →" },
+      { "icon": "📞", "title": "Annuaire des contacts", "desc": "Tous les numéros importants : urgences, ONG, gouvernement.", "btn": "Voir l'annuaire →" },
+      { "icon": "🏙️", "title": "Coût de la vie", "desc": "Comparaison des dépenses par ville : loyer, transport, alimentation.", "btn": "Comparer les villes →" }
+    ]
+  },
+  "emergency": {
+    "title": "📞 Numéros d'urgence — sauvegardez ces contacts",
+    "items": [
+      { "label": "Urgences", "number": "112" },
+      { "label": "Police", "number": "091" },
+      { "label": "Garde civile", "number": "062" },
+      { "label": "Ambulance", "number": "061" },
+      { "label": "Pompiers", "number": "080" },
+      { "label": "Violence de genre", "number": "016" },
+      { "label": "Aide aux mineurs", "number": "116 111" },
+      { "label": "Santé mentale", "number": "024" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "TÉMOIGNAGES",
+    "title": "Histoires de ceux qui ont déjà commencé",
+    "cards": [
+      { "quote": "Les cours d'IA m'ont aidé à trouver un emploi dans une startup à Madrid. Je ne savais pas utiliser ChatGPT et maintenant je l'utilise tous les jours.", "name": "María", "origin": "Colombie", "flag": "🇨🇴" },
+      { "quote": "La checklist m'a sauvé. Sans elle, j'aurais oublié des étapes importantes. La carte des ressources m'a amené directement à la Croix-Rouge.", "name": "Ahmed", "origin": "Maroc", "flag": "🇲🇦" },
+      { "quote": "J'ai fait mon CV ici en 5 minutes et j'ai été appelé pour 3 entretiens. La section droits du travail m'a aidé à négocier mon premier contrat.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+    ]
+  },
+  "cta": {
+    "title": "Votre avenir en Espagne commence ici",
+    "subtitle": "Rejoignez des milliers de personnes qui apprennent, travaillent et grandissent avec Mains Ouvertes.",
+    "button": "Commencer gratuitement"
+  },
+  "footer": {
+    "brand": "🤲 Mains Ouvertes",
+    "desc": "Plateforme éducative gratuite pour les immigrants en Espagne. Fait avec ❤️ par Pedro Belentani depuis Barcelone.",
+    "col1_title": "Plateforme",
+    "col1_links": ["Cours", "Outils", "Carte des ressources", "Annuaire"],
+    "col2_title": "Ressources",
+    "col2_links": ["Droits et démarches", "Emploi", "Langues", "Finances"],
+    "col3_title": "Projet",
+    "col3_links": ["À propos", "Contact", "Contribuer", "GitHub"],
+    "copyright": "© 2026 Mains Ouvertes · Pedro Belentani",
+    "made_with": "Fait avec ❤️ à Barcelone"
+  },
+  "tools_modal": {
+    "checklist_title": "✅ Checklist d'arrivée en Espagne",
+    "checklist_reset": "Réinitialiser la checklist",
+    "checklist_progress": "Progrès : {done}/{total} complétés",
+    "conv_title": "💱 Convertisseur de devises en Euro",
+    "conv_amount": "Montant",
+    "conv_from": "Devise source",
+    "conv_result": "Résultat en €",
+    "cv_title": "📄 Créateur de CV professionnel",
+    "cv_name": "Votre nom complet",
+    "cv_role": "Poste visé",
+    "cv_exp": "Votre expérience professionnelle...",
+    "cv_preview_title": "Aperçu",
+    "cv_export": "📥 Exporter PDF",
+    "map_title": "🗺️ Carte des ressources en Espagne",
+    "map_filters": { "all": "Tous", "ong": "ONG", "gobierno": "Gouvernement", "social": "Social" },
+    "dir_title": "📞 Annuaire des contacts essentiels",
+    "dir_filters": { "all": "Tous", "emergencia": "Urgence", "ong": "ONG", "gobierno": "Gouvernement", "social": "Social" },
+    "cost_title": "🏙️ Coût de la vie par ville",
+    "close": "Fermer"
+  },
+  "toast": {
+    "welcome": "🤲 Bienvenue sur Mains Ouvertes — {count} cours disponibles",
+    "tool_opened": "Outil ouvert : {name}",
+    "checklist_done": "✓ {item}",
+    "checklist_reset": "Checklist réinitialisée",
+    "number_copied": "Numéro copié : {number}",
+    "cv_exported": "CV exporté en PDF",
+    "map_loaded": "Carte chargée avec {count} ressources",
+    "lang_changed": "Langue changée en {lang}"
+  }
+}

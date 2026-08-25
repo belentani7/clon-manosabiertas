@@ -1,0 +1,169 @@
+{
+  "meta": { "code": "en", "name": "English", "flag": "🇬🇧", "dir": "ltr" },
+  "nav": {
+    "brand": "Open Hands",
+    "courses": "Courses",
+    "rights": "Rights",
+    "tools": "Tools",
+    "contacts": "Contacts",
+    "theme": "🌙",
+    "sfx": "🔊",
+    "start": "Start free"
+  },
+  "hero": {
+    "eyebrow": "FREE EDUCATIONAL PLATFORM",
+    "title_1": "Your bridge to",
+    "title_highlight": "AI, employment & rights",
+    "title_2": "in Spain",
+    "subtitle": "Learn artificial intelligence, create your professional CV, know your rights and find verified resources. All free, in your language.",
+    "cta_primary": "Explore courses",
+    "cta_secondary": "View tools",
+    "stat_courses": "Courses",
+    "stat_resources": "Resources",
+    "stat_languages": "Languages",
+    "stat_cost": "Cost"
+  },
+  "marquee": {
+    "items": ["ARTIFICIAL INTELLIGENCE", "PROFESSIONAL CV", "LABOR RIGHTS", "39 LANGUAGES", "100% FREE", "CERTIFIED COURSES", "RESOURCE MAP", "JOBS IN SPAIN"]
+  },
+  "features": {
+    "eyebrow": "WHAT YOU'LL FIND",
+    "title": "Everything you need to start in Spain",
+    "subtitle": "Practical tools, real courses and verified resources — designed by and for immigrants.",
+    "cards": [
+      { "icon": "🤖", "title": "Learn AI from scratch", "desc": "ChatGPT, Gemini, Copilot, DeepSeek. Practical courses to use AI in your work and daily life.", "badge": "POPULAR" },
+      { "icon": "📝", "title": "Create your perfect CV", "desc": "Smart generator with professional templates. Export as a ready-to-send PDF.", "badge": "FREE" },
+      { "icon": "⚖️", "title": "Know your rights", "desc": "NIE, registration, healthcare, work, housing. Updated step-by-step guides.", "badge": "" },
+      { "icon": "🗺️", "title": "Resource map", "desc": "NGOs, immigration offices, health centers geolocated in your city.", "badge": "NEW" },
+      { "icon": "💼", "title": "Find employment", "desc": "Job portals, interviews, hiring sectors, labor rights.", "badge": "" },
+      { "icon": "🌍", "title": "In your language", "desc": "Full interface in 39 languages. Arabic, Chinese, Hindi, Ukrainian, French and more.", "badge": "39 LANGUAGES" }
+    ]
+  },
+  "courses": {
+    "eyebrow": "COURSE CATALOG",
+    "title": "115+ free courses with certificate",
+    "subtitle": "Practical training in AI, employment, languages, legal procedures and digital skills.",
+    "search_placeholder": "Search courses...",
+    "search_btn": "Search",
+    "tabs": {
+      "all": "All",
+      "ia": "🤖 AI",
+      "empleo": "💼 Jobs",
+      "office": "📊 Office",
+      "legal": "⚖️ Legal",
+      "idiomas": "🌍 Languages",
+      "digital": "💻 Digital",
+      "habilidades": "🧠 Skills",
+      "finanzas": "💰 Finance"
+    },
+    "no_results": "No courses found. Try another search.",
+    "lessons": "lessons",
+    "certificate": "✓ Certificate",
+    "prev": "← Previous",
+    "next": "Next →",
+    "page_info": "{current} / {total} ({count} courses)"
+  },
+  "languages": {
+    "eyebrow": "MULTILINGUAL",
+    "title": "Available in 39 languages",
+    "subtitle": "Because information should reach everyone, no matter what language you speak."
+  },
+  "rights": {
+    "eyebrow": "YOUR RIGHTS",
+    "title": "Rights and aid for immigrants",
+    "subtitle": "Clear and updated information about the procedures and services available to you in Spain.",
+    "cards": [
+      { "icon": "🆔", "title": "NIE & residency", "desc": "Application, renewal, appointments, required documents." },
+      { "icon": "🏥", "title": "Public healthcare", "desc": "Health card, medical centers, emergencies, pediatrics." },
+      { "icon": "🏠", "title": "Housing", "desc": "Rental, contracts, deposits, tenant rights, aid." },
+      { "icon": "💼", "title": "Employment", "desc": "Contracts, payslips, SEPE, labor rights, dismissal." },
+      { "icon": "📚", "title": "Education", "desc": "School enrollment, scholarships, degree recognition." },
+      { "icon": "👨‍👩‍👧‍👦", "title": "Family reunification", "desc": "Requirements, process, documents, deadlines." },
+      { "icon": "🛡️", "title": "Protection", "desc": "Asylum, gender violence, free legal aid." },
+      { "icon": "📜", "title": "Citizenship", "desc": "Requirements, CCSE, DELE A2, documents, deadlines." }
+    ]
+  },
+  "tools": {
+    "eyebrow": "PRACTICAL TOOLS",
+    "title": "6 free tools for your daily life",
+    "subtitle": "Checklist, currency converter, CV builder, resource map and more.",
+    "cards": [
+      { "icon": "✅", "title": "Arrival checklist", "desc": "The 15 essential steps upon arriving in Spain. Save your progress.", "btn": "Open checklist →" },
+      { "icon": "💱", "title": "Currency converter", "desc": "Convert your currency to euros instantly. 50+ currencies with updated rates.", "btn": "Open converter →" },
+      { "icon": "📄", "title": "CV builder", "desc": "Create your professional CV in minutes. Export as real PDF.", "btn": "Create my CV →" },
+      { "icon": "🗺️", "title": "Resource map", "desc": "NGOs, offices, health centers geolocated. Filter by type.", "btn": "Open map →" },
+      { "icon": "📞", "title": "Contact directory", "desc": "All important phone numbers: emergencies, NGOs, government.", "btn": "View directory →" },
+      { "icon": "🏙️", "title": "Cost of living", "desc": "Expense comparison by city: rent, transport, food.", "btn": "Compare cities →" }
+    ]
+  },
+  "emergency": {
+    "title": "📞 Emergency numbers — save these contacts",
+    "items": [
+      { "label": "Emergencies", "number": "112" },
+      { "label": "Police", "number": "091" },
+      { "label": "Civil Guard", "number": "062" },
+      { "label": "Ambulance", "number": "061" },
+      { "label": "Fire dept.", "number": "080" },
+      { "label": "Gender violence", "number": "016" },
+      { "label": "Child helpline", "number": "116 111" },
+      { "label": "Mental health", "number": "024" }
+    ]
+  },
+  "testimonials": {
+    "eyebrow": "TESTIMONIALS",
+    "title": "Stories from those who already started",
+    "cards": [
+      { "quote": "The AI courses helped me get a job at a startup in Madrid. I had no idea how to use ChatGPT and now I use it every day.", "name": "María", "origin": "Colombia", "flag": "🇨🇴" },
+      { "quote": "The checklist saved me. Without it I would have forgotten important steps in the registration process. The resource map took me straight to Red Cross.", "name": "Ahmed", "origin": "Morocco", "flag": "🇲🇦" },
+      { "quote": "I made my CV here in 5 minutes and got called for 3 interviews. The labor rights section helped me negotiate my first contract.", "name": "Olena", "origin": "Ukraine", "flag": "🇺🇦" }
+    ]
+  },
+  "cta": {
+    "title": "Your future in Spain starts here",
+    "subtitle": "Join thousands of people who are already learning, working and growing with Open Hands.",
+    "button": "Start free now"
+  },
+  "footer": {
+    "brand": "🤲 Open Hands",
+    "desc": "Free educational platform for immigrants in Spain. Made with ❤️ by Pedro Belentani from Barcelona.",
+    "col1_title": "Platform",
+    "col1_links": ["Courses", "Tools", "Resource map", "Directory"],
+    "col2_title": "Resources",
+    "col2_links": ["Rights & procedures", "Employment", "Languages", "Finance"],
+    "col3_title": "Project",
+    "col3_links": ["About us", "Contact", "Contribute", "GitHub"],
+    "copyright": "© 2026 Open Hands · Pedro Belentani",
+    "made_with": "Made with ❤️ in Barcelona"
+  },
+  "tools_modal": {
+    "checklist_title": "✅ Arrival checklist for Spain",
+    "checklist_reset": "Reset checklist",
+    "checklist_progress": "Progress: {done}/{total} completed",
+    "conv_title": "💱 Currency converter to Euro",
+    "conv_amount": "Amount",
+    "conv_from": "From currency",
+    "conv_result": "Result in €",
+    "cv_title": "📄 Professional CV builder",
+    "cv_name": "Your full name",
+    "cv_role": "Target position",
+    "cv_exp": "Your professional experience...",
+    "cv_preview_title": "Preview",
+    "cv_export": "📥 Export PDF",
+    "map_title": "🗺️ Resource map in Spain",
+    "map_filters": { "all": "All", "ong": "NGOs", "gobierno": "Government", "social": "Social" },
+    "dir_title": "📞 Essential contacts directory",
+    "dir_filters": { "all": "All", "emergencia": "Emergency", "ong": "NGOs", "gobierno": "Government", "social": "Social" },
+    "cost_title": "🏙️ Cost of living by city",
+    "close": "Close"
+  },
+  "toast": {
+    "welcome": "🤲 Welcome to Open Hands — {count} courses available",
+    "tool_opened": "Tool opened: {name}",
+    "checklist_done": "✓ {item}",
+    "checklist_reset": "Checklist reset",
+    "number_copied": "Number copied: {number}",
+    "cv_exported": "CV exported as PDF",
+    "map_loaded": "Map loaded with {count} resources",
+    "lang_changed": "Language changed to {lang}"
+  }
+}
