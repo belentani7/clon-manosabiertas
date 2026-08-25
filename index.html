@@ -16,6 +16,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<!-- V3 Motion: Lenis (self-hosted fallback via CDN, CSP-safe) + GSAP 3.13 (100% gratis 2026) -->
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script" crossorigin>
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script" crossorigin>
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
@@ -579,6 +582,27 @@ img { max-width: 100%; display: block; }
 .reveal { opacity: 0; transform: translateY(24px); transition: all 0.7s var(--ease-spring); }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* ═══ V3 — LENIS + GSAP + SHADER LAYER (unifica ADN motion) ═══ */
+html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
+.lenis.lenis-smooth [data-lenis-prevent]{overscroll-behavior:contain}
+#shader-bg{position:absolute;inset:0;z-index:0;opacity:0.45;pointer-events:none;mix-blend-mode:screen}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) #shader-bg{opacity:0.6}}
+:root[data-theme="dark"] #shader-bg{opacity:0.6}
+.hero{isolation:isolate}
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--primary),#FF8C42);width:0;z-index:200;transition:width 0.08s linear}
+.search-bar{display:flex;gap:8px;max-width:560px;margin:0 auto 24px}
+.search-bar input{flex:1;padding:12px 16px;border:1px solid var(--border);border-radius:var(--radius-pill);font:inherit;background:var(--surface);color:var(--text-1)}
+.search-bar input:focus{outline:none;border-color:var(--primary);box-shadow:0 0 0 3px var(--primary-dim)}
+.tool-modal{position:fixed;inset:0;background:rgba(10,10,20,0.45);backdrop-filter:blur(10px);display:none;align-items:center;justify-content:center;z-index:300;padding:20px}
+.tool-modal.open{display:flex}
+.tool-modal-inner{background:var(--surface);border-radius:var(--radius-lg);max-width:560px;width:100%;padding:28px;box-shadow:var(--glass-shadow-lg);max-height:90vh;overflow:auto}
+.checklist-item{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);font-size:0.92rem}
+.checklist-item input{width:18px;height:18px;accent-color:var(--primary)}
+.converter-row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.converter-row input,.converter-row select{padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font:inherit;background:var(--surface)}
+.sfx-toggle{position:fixed;bottom:16px;right:16px;z-index:90;width:44px;height:44px;border-radius:50%;background:var(--surface);border:1px solid var(--border);box-shadow:var(--glass-shadow);display:flex;align-items:center;justify-content:center;font-size:1.1rem}
+.pulse-dot::after{content:'';position:absolute;inset:-4px;border:1px solid var(--primary);border-radius:50%;animation:pulse-soft 2s infinite}
+
 /* ═══ RESPONSIVE ═══ */
 @media (max-width: 768px) {
   .navbar-nav { display: none; }
@@ -619,8 +643,12 @@ img { max-width: 100%; display: block; }
   </div>
 </nav>
 
+<div class="progress-bar" id="progress" aria-hidden="true"></div>
+<button class="sfx-toggle" id="sfx-toggle" aria-label="Activar sonido" title="Sonido">🔊</button>
+
 <!-- HERO -->
 <section class="hero" id="inicio">
+  <canvas id="shader-bg" aria-hidden="true"></canvas>
   <canvas class="hero-canvas" id="hero-particles" aria-hidden="true"></canvas>
   <div class="container hero-content">
     <div class="hero-eyebrow"><span class="dot"></span> 100% GRATUITO · 39 IDIOMAS</div>
@@ -707,16 +735,17 @@ img { max-width: 100%; display: block; }
       <h2>115+ cursos con certificado gratuito</h2>
       <p>Cursos prácticos diseñados para inmigrantes. Sin conocimientos previos. En tu idioma.</p>
     </div>
+    <div class="search-bar reveal"><input id="course-search" type="search" placeholder="Busca: ChatGPT, CV, Excel, NIE, español..." aria-label="Buscar cursos"><button class="btn btn-outline" style="padding:10px 18px;min-height:auto" id="course-search-btn">Buscar</button></div>
     <div class="courses-tabs reveal">
-      <button class="tab-btn active">Todos</button>
-      <button class="tab-btn">🤖 IA</button>
-      <button class="tab-btn">💼 Empleo</button>
-      <button class="tab-btn">📊 Office</button>
-      <button class="tab-btn">⚖️ Legal</button>
-      <button class="tab-btn">🌍 Idiomas</button>
+      <button class="tab-btn active" data-filter="all">Todos</button>
+      <button class="tab-btn" data-filter="ia">🤖 IA</button>
+      <button class="tab-btn" data-filter="empleo">💼 Empleo</button>
+      <button class="tab-btn" data-filter="office">📊 Office</button>
+      <button class="tab-btn" data-filter="legal">⚖️ Legal</button>
+      <button class="tab-btn" data-filter="idiomas">🌍 Idiomas</button>
     </div>
-    <div class="courses-grid">
-      <article class="course-card reveal">
+    <div class="courses-grid" id="courses-grid">
+      <article class="course-card reveal" data-cat="ia" data-title="ChatGPT desde cero">
         <div class="course-thumb" style="background:linear-gradient(135deg,#FF6B35,#FF8C42)">🤖</div>
         <div class="course-body">
           <h3>ChatGPT desde cero</h3>
@@ -724,7 +753,7 @@ img { max-width: 100%; display: block; }
           <div class="course-meta"><span>12 lecciones · 4h</span><span class="cert">✓ Certificado</span></div>
         </div>
       </article>
-      <article class="course-card reveal">
+      <article class="course-card reveal" data-cat="empleo" data-title="Crea tu CV perfecto">
         <div class="course-thumb" style="background:linear-gradient(135deg,#1A6FC4,#4A9FE5)">📝</div>
         <div class="course-body">
           <h3>Crea tu CV perfecto</h3>
@@ -732,7 +761,7 @@ img { max-width: 100%; display: block; }
           <div class="course-meta"><span>8 lecciones · 2h</span><span class="cert">✓ Certificado</span></div>
         </div>
       </article>
-      <article class="course-card reveal">
+      <article class="course-card reveal" data-cat="office" data-title="Excel para principiantes">
         <div class="course-thumb" style="background:linear-gradient(135deg,#22A06B,#4ECB71)">📊</div>
         <div class="course-body">
           <h3>Excel para principiantes</h3>
@@ -740,7 +769,7 @@ img { max-width: 100%; display: block; }
           <div class="course-meta"><span>15 lecciones · 6h</span><span class="cert">✓ Certificado</span></div>
         </div>
       </article>
-      <article class="course-card reveal">
+      <article class="course-card reveal" data-cat="ia" data-title="Gemini Claude AI">
         <div class="course-thumb" style="background:linear-gradient(135deg,#8B5CF6,#A78BFA)">🧠</div>
         <div class="course-body">
           <h3>Gemini & Claude AI</h3>
@@ -748,7 +777,7 @@ img { max-width: 100%; display: block; }
           <div class="course-meta"><span>10 lecciones · 3h</span><span class="cert">✓ Certificado</span></div>
         </div>
       </article>
-      <article class="course-card reveal">
+      <article class="course-card reveal" data-cat="legal" data-title="Tus derechos en España">
         <div class="course-thumb" style="background:linear-gradient(135deg,#E34935,#FF6B6B)">⚖️</div>
         <div class="course-body">
           <h3>Tus derechos en España</h3>
@@ -756,7 +785,7 @@ img { max-width: 100%; display: block; }
           <div class="course-meta"><span>20 lecciones · 5h</span><span class="cert">✓ Certificado</span></div>
         </div>
       </article>
-      <article class="course-card reveal">
+      <article class="course-card reveal" data-cat="idiomas" data-title="Español para inmigrantes">
         <div class="course-thumb" style="background:linear-gradient(135deg,#FF9500,#FFB347)">🇪🇸</div>
         <div class="course-body">
           <h3>Español para inmigrantes</h3>
@@ -874,14 +903,14 @@ img { max-width: 100%; display: block; }
       <p>Calculadoras, checklists, guías interactivas — diseñadas para resolver tus problemas reales.</p>
     </div>
     <div class="tools-grid">
-      <div class="tool-card reveal">
+      <div class="tool-card reveal" data-tool="checklist">
         <h3>📋 Checklist de trámites</h3>
-        <p>Lista paso a paso de todo lo que necesitas hacer al llegar a España. Marca lo completado.</p>
+        <p>Lista paso a paso de todo lo que necesitas hacer al llegar a España. Marca lo completado. Se guarda automáticamente.</p>
         <span class="tool-btn">Abrir checklist →</span>
       </div>
-      <div class="tool-card reveal">
+      <div class="tool-card reveal" data-tool="converter">
         <h3>💱 Conversor de moneda</h3>
-        <p>Convierte tu moneda local a euros al instante. Tasas actualizadas en tiempo real.</p>
+        <p>Convierte tu moneda local a euros al instante. Tasas BCE aproximadas (offline).</p>
         <span class="tool-btn">Usar conversor →</span>
       </div>
       <div class="tool-card reveal">
@@ -889,9 +918,9 @@ img { max-width: 100%; display: block; }
         <p>¿Cuánto cuesta vivir en Madrid, Barcelona, Valencia? Guía ciudad por ciudad.</p>
         <span class="tool-btn">Ver guía →</span>
       </div>
-      <div class="tool-card reveal">
+      <div class="tool-card reveal" data-tool="cv">
         <h3>📄 Generador de CV</h3>
-        <p>Crea un CV profesional con IA en 5 minutos. Plantillas adaptadas al mercado español.</p>
+        <p>Crea un CV profesional con IA en 5 minutos. Plantillas adaptadas al mercado español. Exporta PDF.</p>
         <span class="tool-btn">Crear CV →</span>
       </div>
       <div class="tool-card reveal">
@@ -960,6 +989,35 @@ img { max-width: 100%; display: block; }
     <a href="#aprende-ia" class="btn btn-white">🚀 Empezar gratis ahora</a>
   </div>
 </section>
+
+<!-- TOOL MODALS (V3 world-class interactivity) -->
+<div class="tool-modal" id="modal-checklist" role="dialog" aria-modal="true" aria-label="Checklist de trámites">
+  <div class="tool-modal-inner">
+    <h3 style="margin-bottom:8px">📋 Checklist de llegada</h3><p style="color:var(--text-3);font-size:0.88rem;margin-bottom:12px">Tu progreso se guarda en este dispositivo.</p>
+    <div id="checklist"></div>
+    <div style="display:flex;gap:8px;margin-top:16px"><button class="btn btn-primary" id="checklist-close" style="flex:1">Cerrar</button><button class="btn btn-outline" id="checklist-reset">Reiniciar</button></div>
+  </div>
+</div>
+<div class="tool-modal" id="modal-converter" role="dialog" aria-modal="true" aria-label="Conversor">
+  <div class="tool-modal-inner">
+    <h3 style="margin-bottom:12px">💱 Conversor a Euros</h3>
+    <div class="converter-row"><input id="conv-amount" type="number" value="100" style="width:120px"><select id="conv-from"></select><span>→ EUR</span><strong id="conv-result" style="font-size:1.3rem;color:var(--primary)">—</strong></div>
+    <p style="font-size:0.78rem;color:var(--text-4);margin-top:10px">Tasas aproximadas BCE (offline). Para transferencias usa Wise/Revolut.</p>
+    <button class="btn btn-primary" id="conv-close" style="margin-top:16px;width:100%">Cerrar</button>
+  </div>
+</div>
+<div class="tool-modal" id="modal-cv" role="dialog" aria-modal="true" aria-label="Generador CV">
+  <div class="tool-modal-inner">
+    <h3 style="margin-bottom:12px">📄 Generador CV rápido</h3>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <input id="cv-name" placeholder="Nombre completo" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px">
+      <input id="cv-role" placeholder="Puesto objetivo (ej: Camarero, Limpieza, Atención cliente)" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px">
+      <textarea id="cv-exp" placeholder="Experiencia breve (ej: 2 años en hostelería en Bogotá)" rows="3" style="padding:10px 12px;border:1px solid var(--border);border-radius:8px"></textarea>
+    </div>
+    <div id="cv-preview" style="margin-top:14px;padding:16px;background:var(--warm-cream);border-radius:8px;font-size:0.88rem;white-space:pre-wrap"></div>
+    <div style="display:flex;gap:8px;margin-top:12px"><button class="btn btn-primary" id="cv-print" style="flex:1">Imprimir / PDF</button><button class="btn btn-outline" id="cv-close">Cerrar</button></div>
+  </div>
+</div>
 
 </main>
 
@@ -1152,6 +1210,9 @@ img { max-width: 100%; display: block; }
   });
 })();
 
+/* ═══ PROGRESS BAR ═══ */
+(function(){ const bar=document.getElementById('progress'); if(!bar) return; addEventListener('scroll',()=>{ const h=document.documentElement; const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100; bar.style.width=pct+'%'; },{passive:true}); })();
+
 /* ═══ SMOOTH SCROLL ═══ */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
@@ -1169,6 +1230,101 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     }
   });
 });
+</script>
+
+<!-- V3 Motion Stack: Lenis + GSAP + WebGL Shader + SFX + World-Class Tools -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+/* ── LENIS smooth scroll (Steven-renovation pattern, CSP-safe via CDN) ── */
+let lenis=null; try{ if(window.Lenis){ lenis=new Lenis({autoRaf:true, lerp:0.08}); } }catch(e){}
+
+/* ── GSAP ScrollTrigger: reveal upgrade (preserves IntersectionObserver fallback) ── */
+try{
+  if(window.gsap && window.ScrollTrigger){ gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach(el=>{
+      gsap.fromTo(el,{y:24,opacity:0},{y:0,opacity:1,duration:0.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
+    });
+  }
+}catch(e){}
+
+/* ── WebGL Shader backdrop (magic/shader.html ADN, subtle overlay) ── */
+(function(){
+  const c=document.getElementById('shader-bg'); if(!c) return;
+  const gl=c.getContext('webgl',{alpha:true}); if(!gl) return;
+  const vert='attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  const frag='precision highp float;uniform vec2 uR;uniform float uT;void main(){vec2 uv=(gl_FragCoord.xy*2.0-uR)/uR.y;float t=uT*0.06;float c=sin(uv.x*2.5+t)+sin(uv.y*3.5-t*1.2)+sin((uv.x+uv.y)*2.0+t*0.6)+sin(length(uv)*5.0-t*0.9);vec3 a=vec3(0.99,0.42,0.18);vec3 b=vec3(0.66,0.12,0.97);vec3 c3=vec3(0.05,0.45,1.0);vec3 col=mix(a,b,smoothstep(-1.0,1.0,c));col=mix(col,c3,smoothstep(1.2,2.2,c)*0.35);float vign=1.0-length(uv)*0.28;gl_FragColor=vec4(col*vign*0.22,0.9);}';
+  const buf=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,buf); gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,3,-1,-1,3]),gl.STATIC_DRAW);
+  function sh(t,s){const x=gl.createShader(t);gl.shaderSource(x,s);gl.compileShader(x);return x;}
+  const pr=gl.createProgram(); gl.attachShader(pr,sh(gl.VERTEX_SHADER,vert)); gl.attachShader(pr,sh(gl.FRAGMENT_SHADER,frag)); gl.linkProgram(pr); gl.useProgram(pr);
+  const a=gl.getAttribLocation(pr,'p'); gl.enableVertexAttribArray(a); gl.vertexAttribPointer(a,2,gl.FLOAT,false,0,0);
+  const uR=gl.getUniformLocation(pr,'uR'),uT=gl.getUniformLocation(pr,'uT');
+  function rs(){ c.width=c.parentElement.offsetWidth; c.height=c.parentElement.offsetHeight; gl.viewport(0,0,c.width,c.height); gl.uniform2f(uR,c.width,c.height); }
+  addEventListener('resize',rs); rs();
+  (function loop(t){ gl.uniform1f(uT,t/1000); gl.drawArrays(gl.TRIANGLES,0,3); requestAnimationFrame(loop); })(0);
+})();
+
+/* ── Procedural SFX (magic/sfx.html) ── */
+let sfxCtx=null, sfxOn=false;
+function ac(){ if(!sfxCtx) sfxCtx=new (window.AudioContext||window.webkitAudioContext)(); if(sfxCtx.state==='suspended') sfxCtx.resume(); return sfxCtx; }
+function tone(f,t0,dur,type,vol,slide){const c=ac(),o=c.createOscillator(),g=c.createGain();o.type=type||'sine';o.frequency.setValueAtTime(f,t0);if(slide)o.frequency.exponentialRampToValueAtTime(slide,t0+dur);g.gain.setValueAtTime(0.0001,t0);g.gain.exponentialRampToValueAtTime(vol||0.16,t0+0.01);g.gain.exponentialRampToValueAtTime(0.0001,t0+dur);o.connect(g).connect(c.destination);o.start(t0);o.stop(t0+dur+0.02);}
+const sfx={ chime(){const t=ac().currentTime;[523,659,784].forEach((f,i)=>tone(f,t+i*0.07,0.6,'sine',0.12));}, pop(){const t=ac().currentTime;tone(900,t,0.08,'sine',0.2,180);}, whoosh(){const t=ac().currentTime;tone(120,t,0.5,'sawtooth',0.08,600);} };
+document.getElementById('sfx-toggle')?.addEventListener('click',e=>{ sfxOn=!sfxOn; e.currentTarget.textContent=sfxOn?'🔈':'🔊'; e.currentTarget.setAttribute('aria-label',sfxOn?'Sonido activado':'Sonido desactivado'); if(sfxOn){ac(); sfx.chime();} });
+document.querySelectorAll('.feature-card,.course-card,.tool-card').forEach(el=>el.addEventListener('mouseenter',()=>{ if(sfxOn) sfx.pop(); }));
+
+/* ── Course search + filter (world-class) ── */
+(function(){
+  const grid=document.getElementById('courses-grid'); if(!grid) return;
+  const cards=[...grid.querySelectorAll('.course-card')];
+  const tabs=document.querySelectorAll('.tab-btn');
+  const input=document.getElementById('course-search');
+  function apply(){ const f=document.querySelector('.tab-btn.active')?.dataset.filter||'all'; const q=(input.value||'').toLowerCase().trim();
+    cards.forEach(c=>{ const cat=c.dataset.cat||''; const title=(c.dataset.title||c.textContent).toLowerCase(); const matchCat=f==='all'||cat===f; const matchQ=!q||title.includes(q); c.style.display=(matchCat&&matchQ)?'':'none'; });
+  }
+  tabs.forEach(b=>b.addEventListener('click',()=>{ tabs.forEach(x=>x.classList.remove('active')); b.classList.add('active'); apply(); if(sfxOn) sfx.pop(); }));
+  input?.addEventListener('input',apply);
+  document.getElementById('course-search-btn')?.addEventListener('click',apply);
+})();
+
+/* ── Tools: checklist (persistente), converter, CV ── */
+(function(){
+  const checklistData=['Empadronamiento','Solicitar NIE / TIE','Tarjeta sanitaria (SIP)','Abrir cuenta bancaria','Inscribir hijos en colegio','Buscar vivienda / contrato','Alta en Seguridad Social','CV + búsqueda empleo'];
+  const ckEl=document.getElementById('checklist');
+  const KEY='ma_checklist_v1';
+  function load(){ try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch{return []} }
+  function save(v){ localStorage.setItem(KEY,JSON.stringify(v)); }
+  function render(){ const done=new Set(load()); ckEl.innerHTML=''; checklistData.forEach((t,i)=>{ const row=document.createElement('label'); row.className='checklist-item'; row.innerHTML='<input type="checkbox" '+(done.has(i)?'checked':'')+' data-i="'+i+'"> <span>'+t+'</span>'; ckEl.appendChild(row); }); ckEl.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{ const cur=new Set(load()); const i=parseInt(inp.dataset.i); if(inp.checked) cur.add(i); else cur.delete(i); save([...cur]); if(sfxOn) sfx.pop(); })); }
+  render();
+  const m1=document.getElementById('modal-checklist'), m2=document.getElementById('modal-converter'), m3=document.getElementById('modal-cv');
+  const open=(m)=>{m.classList.add('open'); if(sfxOn) sfx.chime();}; const close=(m)=>m.classList.remove('open');
+  document.querySelector('[data-tool="checklist"]')?.addEventListener('click',()=>open(m1));
+  document.querySelector('[data-tool="converter"]')?.addEventListener('click',()=>open(m2));
+  document.querySelector('[data-tool="cv"]')?.addEventListener('click',()=>open(m3));
+  document.getElementById('checklist-close')?.addEventListener('click',()=>close(m1));
+  document.getElementById('checklist-reset')?.addEventListener('click',()=>{ localStorage.removeItem(KEY); render(); });
+  [m1,m2,m3].forEach(m=>m?.addEventListener('click',e=>{ if(e.target===m) close(m); }));
+  // converter
+  const rates={USD:0.92, GBP:1.17, ARS:0.00095, COP:0.00022, VES:0.025, PEN:0.24, MXN:0.052, BRL:0.17, MAD:0.092, XOF:0.00152, UAH:0.022, RON:0.20};
+  const sel=document.getElementById('conv-from'), amt=document.getElementById('conv-amount'), res=document.getElementById('conv-result');
+  if(sel){ Object.keys(rates).forEach(k=>{ const o=document.createElement('option'); o.value=k; o.textContent=k; sel.appendChild(o); }); sel.value='USD';
+    function upd(){ const r=rates[sel.value]||1; const v=parseFloat(amt.value)||0; res.textContent=(v*r).toFixed(2)+' €'; }
+    sel.addEventListener('change',upd); amt.addEventListener('input',upd); upd();
+  }
+  document.getElementById('conv-close')?.addEventListener('click',()=>close(m2));
+  // CV
+  const n=document.getElementById('cv-name'), role=document.getElementById('cv-role'), exp=document.getElementById('cv-exp'), prev=document.getElementById('cv-preview');
+  function cvUpd(){ const name=n.value||'Tu nombre'; const r=role.value||'Puesto objetivo'; const e=exp.value||'Experiencia'; prev.textContent=name.toUpperCase()+'\n'+r+'\n────────────\n'+e+'\n\n✔ Disponible · ✔ Permiso trabajo (indicar) · ✔ Contacto: tu@email.com · tu teléfono\n\nObjetivo: aportar compromiso y aprendizaje rápido. Formación complementaria vía Manos Abiertas (certificados).'; }
+  [n,role,exp].forEach(x=>x?.addEventListener('input',cvUpd)); cvUpd();
+  document.getElementById('cv-print')?.addEventListener('click',()=>window.print());
+  document.getElementById('cv-close')?.addEventListener('click',()=>close(m3));
+})();
+
+/* ── Theme persistence ── */
+(function(){
+  const KEY='ma_theme'; const saved=localStorage.getItem(KEY); if(saved) document.documentElement.setAttribute('data-theme',saved);
+  document.getElementById('lang-toggle')?.addEventListener('click',()=>{ const cur=document.documentElement.getAttribute('data-theme'); const next=cur==='dark'?'light':'dark'; document.documentElement.setAttribute('data-theme',next); localStorage.setItem(KEY,next); if(sfxOn) sfx.whoosh(); });
+})();
 </script>
 </body>
 </html>
