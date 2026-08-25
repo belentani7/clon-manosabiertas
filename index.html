@@ -7,6 +7,8 @@
 <meta name="description" content="Plataforma educativa gratuita para inmigrantes en España: aprende IA, crea CV, conoce tus derechos, encuentra empleo. 39 idiomas, 3686+ recursos verificados, 115+ cursos con certificado.">
 <meta name="theme-color" content="#FF6B35">
 <meta name="robots" content="index, follow">
+<link rel="manifest" href="/manifest.json">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤲</text></svg>">
 <meta property="og:title" content="Manos Abiertas — Plataforma Educativa para Inmigrantes en España">
 <meta property="og:description" content="Aprende IA, crea tu CV, conoce tus derechos. 39 idiomas, 3686+ recursos, 100% gratis.">
 <meta property="og:type" content="website">
@@ -16,9 +18,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
-<!-- V3 Motion: Lenis (self-hosted fallback via CDN, CSP-safe) + GSAP 3.13 (100% gratis 2026) -->
+<!-- V3 Motion: Lenis + GSAP 3.13 (100% gratis 2026) -->
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" as="script" crossorigin>
 <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" as="script" crossorigin>
+<!-- Leaflet (map, no API key needed) -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin>
+<!-- jsPDF for CV export -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js" defer></script>
 
 <!-- Schema.org structured data -->
 <script type="application/ld+json">
@@ -615,6 +621,65 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
   .footer-grid { grid-template-columns: 1fr; }
   .emergency-grid { grid-template-columns: 1fr; }
 }
+
+/* ═══ TOAST NOTIFICATIONS ═══ */
+.toast-container { position: fixed; top: 80px; right: 20px; z-index: 500; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+.toast {
+  background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+  padding: 14px 20px; box-shadow: var(--glass-shadow-lg); pointer-events: auto;
+  display: flex; align-items: center; gap: 10px; font-size: 0.88rem; min-width: 280px; max-width: 400px;
+  animation: toast-in 0.4s var(--ease-spring); transition: all 0.3s var(--ease-spring);
+}
+.toast.removing { animation: toast-out 0.3s ease-in forwards; }
+.toast-icon { font-size: 1.2rem; flex-shrink: 0; }
+.toast-body { flex: 1; }
+.toast-close { font-size: 1rem; opacity: 0.4; cursor: pointer; padding: 4px; }
+.toast-close:hover { opacity: 1; }
+.toast.success { border-left: 3px solid var(--ok); }
+.toast.error { border-left: 3px solid var(--critical); }
+.toast.info { border-left: 3px solid var(--info); }
+.toast.warning { border-left: 3px solid var(--warn); }
+@keyframes toast-in { from { opacity: 0; transform: translateX(100px); } to { opacity: 1; transform: translateX(0); } }
+@keyframes toast-out { from { opacity: 1; transform: translateX(0); } to { opacity: 0; transform: translateX(100px); } }
+
+/* ═══ MAP ═══ */
+.map-container { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--glass-border); height: 400px; margin-top: 16px; }
+.map-container .leaflet-container { height: 100%; width: 100%; }
+.map-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.map-filter-btn { font-size: 0.78rem; padding: 6px 14px; border-radius: var(--radius-pill); border: 1px solid var(--border); background: var(--surface); color: var(--text-2); cursor: pointer; transition: all var(--dur-fast); }
+.map-filter-btn:hover, .map-filter-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* ═══ DIRECTORY ═══ */
+.directory-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+.directory-card {
+  display: flex; align-items: center; gap: 14px; padding: 16px;
+  background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--radius-md);
+  transition: all var(--dur-fast); cursor: pointer;
+}
+.directory-card:hover { border-color: var(--border-hover); box-shadow: var(--glass-shadow); transform: translateY(-2px); }
+.directory-icon { font-size: 1.5rem; flex-shrink: 0; }
+.directory-info h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 2px; }
+.directory-info .phone { font-family: var(--font-mono); font-size: 0.88rem; color: var(--primary); font-weight: 600; }
+.directory-info p { font-size: 0.78rem; color: var(--text-3); margin-top: 2px; }
+.directory-filters { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 16px; }
+
+/* ═══ PAGINATION ═══ */
+.pagination { display: flex; justify-content: center; align-items: center; gap: 6px; margin-top: 24px; }
+.page-btn {
+  font-size: 0.82rem; padding: 8px 14px; border-radius: var(--radius-sm);
+  border: 1px solid var(--border); background: var(--surface); color: var(--text-2); cursor: pointer;
+  transition: all var(--dur-fast);
+}
+.page-btn:hover, .page-btn.active { background: var(--primary); color: white; border-color: var(--primary); }
+.page-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.page-info { font-size: 0.78rem; color: var(--text-3); margin: 0 8px; }
+
+/* ═══ COST OF LIVING ═══ */
+.col-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+.col-card { background: var(--surface); border: 1px solid var(--glass-border); border-radius: var(--radius-md); padding: 20px; }
+.col-card h4 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+.col-row { display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid var(--border); font-size: 0.88rem; }
+.col-row:last-child { border-bottom: none; font-weight: 700; color: var(--primary); }
 </style>
 </head>
 <body>
@@ -745,55 +810,10 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
       <button class="tab-btn" data-filter="idiomas">🌍 Idiomas</button>
     </div>
     <div class="courses-grid" id="courses-grid">
-      <article class="course-card reveal" data-cat="ia" data-title="ChatGPT desde cero">
-        <div class="course-thumb" style="background:linear-gradient(135deg,#FF6B35,#FF8C42)">🤖</div>
-        <div class="course-body">
-          <h3>ChatGPT desde cero</h3>
-          <p>Aprende a usar ChatGPT para trabajo, estudios y vida diaria. 12 lecciones prácticas.</p>
-          <div class="course-meta"><span>12 lecciones · 4h</span><span class="cert">✓ Certificado</span></div>
-        </div>
-      </article>
-      <article class="course-card reveal" data-cat="empleo" data-title="Crea tu CV perfecto">
-        <div class="course-thumb" style="background:linear-gradient(135deg,#1A6FC4,#4A9FE5)">📝</div>
-        <div class="course-body">
-          <h3>Crea tu CV perfecto</h3>
-          <p>Generador de CV con IA. Plantillas profesionales. Descarga en PDF.</p>
-          <div class="course-meta"><span>8 lecciones · 2h</span><span class="cert">✓ Certificado</span></div>
-        </div>
-      </article>
-      <article class="course-card reveal" data-cat="office" data-title="Excel para principiantes">
-        <div class="course-thumb" style="background:linear-gradient(135deg,#22A06B,#4ECB71)">📊</div>
-        <div class="course-body">
-          <h3>Excel para principiantes</h3>
-          <p>Domina las hojas de cálculo. Fórmulas, tablas, gráficos paso a paso.</p>
-          <div class="course-meta"><span>15 lecciones · 6h</span><span class="cert">✓ Certificado</span></div>
-        </div>
-      </article>
-      <article class="course-card reveal" data-cat="ia" data-title="Gemini Claude AI">
-        <div class="course-thumb" style="background:linear-gradient(135deg,#8B5CF6,#A78BFA)">🧠</div>
-        <div class="course-body">
-          <h3>Gemini & Claude AI</h3>
-          <p>Las alternativas a ChatGPT. Cuándo usar cada una y cómo sacar el máximo.</p>
-          <div class="course-meta"><span>10 lecciones · 3h</span><span class="cert">✓ Certificado</span></div>
-        </div>
-      </article>
-      <article class="course-card reveal" data-cat="legal" data-title="Tus derechos en España">
-        <div class="course-thumb" style="background:linear-gradient(135deg,#E34935,#FF6B6B)">⚖️</div>
-        <div class="course-body">
-          <h3>Tus derechos en España</h3>
-          <p>NIE, empadronamiento, sanidad, trabajo, vivienda. Todo lo que necesitas saber.</p>
-          <div class="course-meta"><span>20 lecciones · 5h</span><span class="cert">✓ Certificado</span></div>
-        </div>
-      </article>
-      <article class="course-card reveal" data-cat="idiomas" data-title="Español para inmigrantes">
-        <div class="course-thumb" style="background:linear-gradient(135deg,#FF9500,#FFB347)">🇪🇸</div>
-        <div class="course-body">
-          <h3>Español para inmigrantes</h3>
-          <p>Desde nivel A1. Conversación, gramática, vocabulario laboral.</p>
-          <div class="course-meta"><span>30 lecciones · 12h</span><span class="cert">✓ Certificado</span></div>
-        </div>
-      </article>
+      <!-- Courses loaded dynamically from /data/courses.json -->
+      <div style="text-align:center;padding:40px;color:var(--text-3)">Cargando cursos...</div>
     </div>
+    <div class="pagination" id="courses-pagination"></div>
   </div>
 </section>
 
@@ -913,22 +933,22 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
         <p>Convierte tu moneda local a euros al instante. Tasas BCE aproximadas (offline).</p>
         <span class="tool-btn">Usar conversor →</span>
       </div>
-      <div class="tool-card reveal">
+      <div class="tool-card reveal" data-tool="cost">
         <h3>🏷️ Costo de vida</h3>
         <p>¿Cuánto cuesta vivir en Madrid, Barcelona, Valencia? Guía ciudad por ciudad.</p>
         <span class="tool-btn">Ver guía →</span>
       </div>
       <div class="tool-card reveal" data-tool="cv">
         <h3>📄 Generador de CV</h3>
-        <p>Crea un CV profesional con IA en 5 minutos. Plantillas adaptadas al mercado español. Exporta PDF.</p>
+        <p>Crea un CV profesional con IA en 5 minutos. Plantillas adaptadas al mercado español. Exporta a PDF real.</p>
         <span class="tool-btn">Crear CV →</span>
       </div>
-      <div class="tool-card reveal">
+      <div class="tool-card reveal" data-tool="map">
         <h3>📍 Mapa de recursos</h3>
-        <p>Encuentra ONGs, centros de acogida, oficinas de extranjería cerca de ti.</p>
+        <p>Encuentra ONGs, centros de acogida, oficinas de extranjería cerca de ti. Mapa interactivo.</p>
         <span class="tool-btn">Ver mapa →</span>
       </div>
-      <div class="tool-card reveal">
+      <div class="tool-card reveal" data-tool="directory">
         <h3>📞 Directorio útil</h3>
         <p>Teléfonos, direcciones y horarios de servicios esenciales para inmigrantes.</p>
         <span class="tool-btn">Ver directorio →</span>
@@ -1019,7 +1039,53 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
   </div>
 </div>
 
+<!-- MAP MODAL -->
+<div class="tool-modal" id="modal-map" role="dialog" aria-modal="true" aria-label="Mapa de recursos">
+  <div class="tool-modal-inner" style="max-width:700px">
+    <h3 style="margin-bottom:8px">📍 Mapa de recursos para inmigrantes</h3>
+    <p style="color:var(--text-3);font-size:0.82rem;margin-bottom:12px">ONGs, oficinas de extranjería, centros de acogida en toda España.</p>
+    <div class="map-filters" id="map-filters">
+      <button class="map-filter-btn active" data-filter="all">Todos</button>
+      <button class="map-filter-btn" data-filter="ong">🤝 ONGs</button>
+      <button class="map-filter-btn" data-filter="gobierno">🏛️ Gobierno</button>
+      <button class="map-filter-btn" data-filter="social">💜 Social</button>
+    </div>
+    <div class="map-container" id="map-container"></div>
+    <button class="btn btn-primary" id="map-close" style="margin-top:16px;width:100%">Cerrar</button>
+  </div>
+</div>
+
+<!-- DIRECTORY MODAL -->
+<div class="tool-modal" id="modal-directory" role="dialog" aria-modal="true" aria-label="Directorio útil">
+  <div class="tool-modal-inner" style="max-width:700px">
+    <h3 style="margin-bottom:8px">📞 Directorio de contactos esenciales</h3>
+    <p style="color:var(--text-3);font-size:0.82rem;margin-bottom:12px">Toca un contacto para copiar el número. Guarda los que necesites.</p>
+    <div class="directory-filters" id="dir-filters">
+      <button class="map-filter-btn active" data-filter="all">Todos</button>
+      <button class="map-filter-btn" data-filter="emergencia">🚨 Emergencia</button>
+      <button class="map-filter-btn" data-filter="ong">🤝 ONGs</button>
+      <button class="map-filter-btn" data-filter="gobierno">🏛️ Gobierno</button>
+      <button class="map-filter-btn" data-filter="social">💜 Social</button>
+    </div>
+    <div class="directory-grid" id="directory-grid"></div>
+    <button class="btn btn-primary" id="dir-close" style="margin-top:16px;width:100%">Cerrar</button>
+  </div>
+</div>
+
+<!-- COST OF LIVING MODAL -->
+<div class="tool-modal" id="modal-cost" role="dialog" aria-modal="true" aria-label="Costo de vida">
+  <div class="tool-modal-inner" style="max-width:700px">
+    <h3 style="margin-bottom:8px">🏷️ Costo de vida por ciudad</h3>
+    <p style="color:var(--text-3);font-size:0.82rem;margin-bottom:12px">Estimaciones mensuales en euros (2026). Datos aproximados para planificar tu presupuesto.</p>
+    <div class="col-grid" id="col-grid"></div>
+    <button class="btn btn-primary" id="cost-close" style="margin-top:16px;width:100%">Cerrar</button>
+  </div>
+</div>
+
 </main>
+
+<!-- TOAST CONTAINER -->
+<div class="toast-container" id="toast-container" aria-live="polite"></div>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -1065,13 +1131,168 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 </footer>
 
 <script>
-/* ═══ HERO PARTICLES (noiacore-os Canvas2D) ═══ */
+/* ═══════════════════════════════════════════════════════════════
+   MANOS ABIERTAS V3 — World-Class App Runtime
+   All original code preserved + new features added
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── TOAST SYSTEM (dashboard-grade notifications) ── */
+const Toast = {
+  container: null,
+  init() { this.container = document.getElementById('toast-container'); },
+  show(message, type = 'info', duration = 4000) {
+    if (!this.container) this.init();
+    const icons = { success: '✅', error: '❌', info: 'ℹ️', warning: '⚠️' };
+    const toast = document.createElement('div');
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `<span class="toast-icon">${icons[type] || 'ℹ️'}</span><span class="toast-body">${message}</span><button class="toast-close" aria-label="Cerrar">✕</button>`;
+    toast.querySelector('.toast-close').addEventListener('click', () => this.remove(toast));
+    this.container.appendChild(toast);
+    if (duration > 0) setTimeout(() => this.remove(toast), duration);
+    return toast;
+  },
+  remove(toast) {
+    if (!toast || !toast.parentElement) return;
+    toast.classList.add('removing');
+    setTimeout(() => toast.remove(), 300);
+  },
+  success(msg, dur) { return this.show(msg, 'success', dur); },
+  error(msg, dur) { return this.show(msg, 'error', dur); },
+  info(msg, dur) { return this.show(msg, 'info', dur); },
+  warning(msg, dur) { return this.show(msg, 'warning', dur); }
+};
+
+/* ── DATA STORE (loads courses.json + resources.json) ── */
+const DataStore = {
+  courses: [],
+  categories: {},
+  resources: null,
+  async init() {
+    try {
+      const [coursesRes, resourcesRes] = await Promise.all([
+        fetch('/data/courses.json').then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch('/data/resources.json').then(r => r.ok ? r.json() : null).catch(() => null)
+      ]);
+      if (coursesRes) {
+        this.courses = coursesRes.courses || [];
+        this.categories = coursesRes.categories || {};
+      }
+      if (resourcesRes) this.resources = resourcesRes;
+    } catch (e) { console.warn('[DataStore] Using fallback data'); }
+    // Fallback: if fetch fails, keep 6 hardcoded courses
+    if (!this.courses.length) {
+      this.courses = [
+        {id:'chatgpt-desde-cero',title:'ChatGPT desde cero',cat:'ia',level:'beginner',duration:'4h',lessons:12,cert:true,desc:'Aprende a usar ChatGPT para trabajo, estudios y vida diaria.',tags:['ChatGPT','IA']},
+        {id:'cv-perfecto',title:'Crea tu CV perfecto',cat:'empleo',level:'beginner',duration:'2h',lessons:8,cert:true,desc:'Generador de CV con IA. Plantillas profesionales.',tags:['CV','empleo']},
+        {id:'excel-principiantes',title:'Excel para principiantes',cat:'office',level:'beginner',duration:'6h',lessons:15,cert:true,desc:'Hojas de cálculo desde cero. Fórmulas, tablas, gráficos.',tags:['Excel','Office']},
+        {id:'gemini-claude-ai',title:'Gemini & Claude AI',cat:'ia',level:'beginner',duration:'3h',lessons:10,cert:true,desc:'Las alternativas a ChatGPT.',tags:['Gemini','Claude']},
+        {id:'nie-documentacion',title:'Tus derechos en España',cat:'legal',level:'beginner',duration:'5h',lessons:20,cert:true,desc:'NIE, empadronamiento, sanidad, trabajo.',tags:['derechos','legal']},
+        {id:'espanol-a1',title:'Español para inmigrantes',cat:'idiomas',level:'beginner',duration:'12h',lessons:30,cert:true,desc:'Desde nivel A1.',tags:['español','idiomas']}
+      ];
+      this.categories = {ia:{icon:'🤖',color:'#FF6B35'},empleo:{icon:'💼',color:'#1A6FC4'},office:{icon:'📊',color:'#22A06B'},legal:{icon:'⚖️',color:'#E34935'},idiomas:{icon:'🌍',color:'#FF9500'},digital:{icon:'💻',color:'#8B5CF6'},habilidades:{icon:'🧠',color:'#0EA5E9'},finanzas:{icon:'💰',color:'#C6922A'}};
+    }
+  }
+};
+
+/* ── COURSE CATALOG (dynamic, with search + filter + pagination) ── */
+const CourseCatalog = {
+  grid: null, pagination: null, searchInput: null,
+  currentFilter: 'all', currentSearch: '', currentPage: 1,
+  perPage: 9,
+
+  init() {
+    this.grid = document.getElementById('courses-grid');
+    this.pagination = document.getElementById('courses-pagination');
+    this.searchInput = document.getElementById('course-search');
+    if (!this.grid) return;
+    // Tab buttons
+    document.querySelectorAll('.tab-btn[data-filter]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        this.currentFilter = btn.dataset.filter;
+        this.currentPage = 1;
+        this.render();
+      });
+    });
+    // Search
+    if (this.searchInput) {
+      this.searchInput.addEventListener('input', () => {
+        this.currentSearch = this.searchInput.value.toLowerCase().trim();
+        this.currentPage = 1;
+        this.render();
+      });
+    }
+    const searchBtn = document.getElementById('course-search-btn');
+    if (searchBtn) searchBtn.addEventListener('click', () => { this.currentPage = 1; this.render(); });
+    this.render();
+  },
+
+  getFiltered() {
+    let courses = DataStore.courses;
+    if (this.currentFilter !== 'all') courses = courses.filter(c => c.cat === this.currentFilter);
+    if (this.currentSearch) {
+      courses = courses.filter(c => {
+        const hay = `${c.title} ${c.desc} ${(c.tags||[]).join(' ')}`.toLowerCase();
+        return this.currentSearch.split(' ').every(t => hay.includes(t));
+      });
+    }
+    return courses;
+  },
+
+  render() {
+    const filtered = this.getFiltered();
+    const totalPages = Math.ceil(filtered.length / this.perPage);
+    if (this.currentPage > totalPages) this.currentPage = Math.max(1, totalPages);
+    const start = (this.currentPage - 1) * this.perPage;
+    const page = filtered.slice(start, start + this.perPage);
+
+    if (!page.length) {
+      this.grid.innerHTML = '<div style="text-align:center;padding:40px;color:var(--text-3);grid-column:1/-1">No se encontraron cursos. Intenta otra búsqueda.</div>';
+      this.pagination.innerHTML = '';
+      return;
+    }
+
+    const catColors = {ia:['#FF6B35','#FF8C42'],empleo:['#1A6FC4','#4A9FE5'],office:['#22A06B','#4ECB71'],legal:['#E34935','#FF6B6B'],idiomas:['#FF9500','#FFB347'],digital:['#8B5CF6','#A78BFA'],habilidades:['#0EA5E9','#38BDF8'],finanzas:['#C6922A','#DAA520']};
+    const catIcons = DataStore.categories;
+
+    this.grid.innerHTML = page.map(c => {
+      const colors = catColors[c.cat] || ['#FF6B35','#FF8C42'];
+      const icon = catIcons[c.cat]?.icon || '📚';
+      return `<article class="course-card reveal visible" data-cat="${c.cat}" data-title="${c.title}">
+        <div class="course-thumb" style="background:linear-gradient(135deg,${colors[0]},${colors[1]})">${icon}</div>
+        <div class="course-body">
+          <h3>${c.title}</h3>
+          <p>${c.desc}</p>
+          <div class="course-meta"><span>${c.lessons} lecciones · ${c.duration}</span>${c.cert ? '<span class="cert">✓ Certificado</span>' : ''}</div>
+        </div>
+      </article>`;
+    }).join('');
+
+    // Pagination
+    if (totalPages <= 1) { this.pagination.innerHTML = ''; return; }
+    let pHtml = `<button class="page-btn" ${this.currentPage<=1?'disabled':''} data-page="${this.currentPage-1}">← Anterior</button>`;
+    pHtml += `<span class="page-info">${this.currentPage} / ${totalPages} (${filtered.length} cursos)</span>`;
+    pHtml += `<button class="page-btn" ${this.currentPage>=totalPages?'disabled':''} data-page="${this.currentPage+1}">Siguiente →</button>`;
+    this.pagination.innerHTML = pHtml;
+    this.pagination.querySelectorAll('.page-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (btn.disabled) return;
+        this.currentPage = parseInt(btn.dataset.page);
+        this.render();
+        this.grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    });
+  }
+};
+
+/* ── HERO PARTICLES (noiacore-os Canvas2D) ── */
 (function(){
   const c = document.getElementById('hero-particles');
   if (!c) return;
   const ctx = c.getContext('2d');
-  let pts = [], mx = 0, my = 0;
-  const N = 80;
+  let pts = [], mx = -1000, my = -1000;
+  const N = window.innerWidth < 768 ? 40 : 80;
 
   function resize() {
     c.width = c.parentElement.offsetWidth;
@@ -1094,73 +1315,57 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
 
   function render() {
     ctx.clearRect(0, 0, c.width, c.height);
+    const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
+      (window.matchMedia('(prefers-color-scheme: dark)').matches &&
+       document.documentElement.getAttribute('data-theme') !== 'light');
+
     for (const p of pts) {
       p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = c.width;
-      if (p.x > c.width) p.x = 0;
-      if (p.y < 0) p.y = c.height;
-      if (p.y > c.height) p.y = 0;
+      // Mouse repulsion
+      const dx = mx - p.x, dy = my - p.y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 120) { p.x -= dx/dist * 0.4; p.y -= dy/dist * 0.4; }
+      if (p.x < 0) p.x = c.width; if (p.x > c.width) p.x = 0;
+      if (p.y < 0) p.y = c.height; if (p.y > c.height) p.y = 0;
 
-      const isDark = document.documentElement.getAttribute('data-theme') === 'dark' ||
-        (window.matchMedia('(prefers-color-scheme: dark)').matches &&
-         document.documentElement.getAttribute('data-theme') !== 'light');
-
-      ctx.fillStyle = isDark
-        ? `rgba(255,107,53,${p.a})`
-        : `rgba(255,107,53,${p.a * 0.5})`;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.s, 0, Math.PI * 2);
-      ctx.fill();
+      ctx.fillStyle = isDark ? `rgba(255,107,53,${p.a})` : `rgba(255,107,53,${p.a*0.5})`;
+      ctx.beginPath(); ctx.arc(p.x, p.y, p.s, 0, Math.PI*2); ctx.fill();
     }
 
-    // Connections
     ctx.lineWidth = 0.3;
     for (let i = 0; i < pts.length; i++) {
-      for (let j = i + 1; j < pts.length; j++) {
+      for (let j = i+1; j < pts.length; j++) {
         const d = Math.hypot(pts[i].x - pts[j].x, pts[i].y - pts[j].y);
         if (d < 100) {
-          ctx.strokeStyle = `rgba(255,107,53,${(1 - d / 100) * 0.08})`;
-          ctx.beginPath();
-          ctx.moveTo(pts[i].x, pts[i].y);
-          ctx.lineTo(pts[j].x, pts[j].y);
-          ctx.stroke();
+          ctx.strokeStyle = `rgba(255,107,53,${(1-d/100)*0.08})`;
+          ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke();
         }
       }
     }
-
     requestAnimationFrame(render);
   }
 
-  resize();
-  init();
-  render();
+  resize(); init(); render();
   addEventListener('resize', () => { resize(); init(); });
-  addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
 })();
 
-/* ═══ NAVBAR SCROLL ═══ */
+/* ── NAVBAR SCROLL ── */
 (function(){
   const nav = document.getElementById('navbar');
   let ticking = false;
   addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        nav.classList.toggle('scrolled', scrollY > 20);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  });
+    if (!ticking) { requestAnimationFrame(() => { nav.classList.toggle('scrolled', scrollY > 20); ticking = false; }); ticking = true; }
+  }, { passive: true });
 })();
 
-/* ═══ COUNTER ANIMATION ═══ */
+/* ── COUNTER ANIMATION ── */
 (function(){
   const counters = document.querySelectorAll('[data-count]');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      const el = entry.target;
-      const target = parseInt(el.dataset.count);
+      const el = entry.target, target = parseInt(el.dataset.count);
       if (isNaN(target)) return;
       let current = 0;
       const step = Math.max(1, Math.floor(target / 60));
@@ -1175,20 +1380,15 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
   counters.forEach(c => io.observe(c));
 })();
 
-/* ═══ SCROLL REVEAL ═══ */
+/* ── SCROLL REVEAL (IntersectionObserver fallback, GSAP upgrade below) ── */
 (function(){
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        io.unobserve(entry.target);
-      }
-    });
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); io.unobserve(entry.target); } });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();
 
-/* ═══ MOBILE MENU ═══ */
+/* ── MOBILE MENU ── */
 (function(){
   const btn = document.getElementById('menu-toggle');
   const nav = document.querySelector('.navbar-nav');
@@ -1210,46 +1410,346 @@ html.lenis{height:auto} .lenis.lenis-smooth{scroll-behavior:auto}
   });
 })();
 
-/* ═══ PROGRESS BAR ═══ */
-(function(){ const bar=document.getElementById('progress'); if(!bar) return; addEventListener('scroll',()=>{ const h=document.documentElement; const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100; bar.style.width=pct+'%'; },{passive:true}); })();
+/* ── PROGRESS BAR ── */
+(function(){ const bar=document.getElementById('progress'); if(!bar) return; addEventListener('scroll',()=>{ const h=document.documentElement; bar.style.width=((h.scrollTop/(h.scrollHeight-h.clientHeight))*100)+'%'; },{passive:true}); })();
 
-/* ═══ SMOOTH SCROLL ═══ */
+/* ── SMOOTH SCROLL ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
     if (target) {
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      // Close mobile menu if open
       const nav = document.querySelector('.navbar-nav');
-      if (nav && nav.style.position === 'absolute') {
-        nav.style.display = 'none';
-        nav.style.position = '';
-        document.getElementById('menu-toggle').textContent = '☰';
-      }
+      if (nav && nav.style.position === 'absolute') { nav.style.display = 'none'; nav.style.position = ''; document.getElementById('menu-toggle').textContent = '☰'; }
     }
   });
 });
+
+/* ── TOOL MODALS (checklist, converter, CV — preserved + enhanced) ── */
+(function(){
+  // Modal open/close
+  document.querySelectorAll('[data-tool]').forEach(card => {
+    card.addEventListener('click', () => {
+      const tool = card.dataset.tool;
+      const modal = document.getElementById('modal-' + tool);
+      if (modal) {
+        modal.classList.add('open');
+        Toast.info('Herramienta abierta: ' + card.querySelector('h3').textContent.replace(/^[^\s]+ /, ''));
+        // Init map on first open
+        if (tool === 'map' && !modal.dataset.inited) { MapTool.init(); modal.dataset.inited = '1'; }
+        if (tool === 'directory' && !modal.dataset.inited) { DirectoryTool.init(); modal.dataset.inited = '1'; }
+        if (tool === 'cost' && !modal.dataset.inited) { CostTool.init(); modal.dataset.inited = '1'; }
+      }
+    });
+  });
+  // Close buttons
+  ['checklist-close','conv-close','cv-close','map-close','dir-close','cost-close'].forEach(id => {
+    const btn = document.getElementById(id);
+    if (btn) btn.addEventListener('click', () => btn.closest('.tool-modal').classList.remove('open'));
+  });
+  // Click outside to close
+  document.querySelectorAll('.tool-modal').forEach(modal => {
+    modal.addEventListener('click', e => { if (e.target === modal) modal.classList.remove('open'); });
+  });
+  // Escape key
+  addEventListener('keydown', e => { if (e.key === 'Escape') document.querySelectorAll('.tool-modal.open').forEach(m => m.classList.remove('open')); });
+})();
+
+/* ── CHECKLIST (preserved — localStorage persistence) ── */
+(function(){
+  const items = [
+    'Llegar a España y registrar entrada',
+    'Obtener cita para empadronamiento',
+    'Empadronarse en tu ayuntamiento',
+    'Solicitar tarjeta sanitaria',
+    'Solicitar NIE / TIE',
+    'Abrir cuenta bancaria',
+    'Obtener número de teléfono español',
+    'Darse de alta en SEPE',
+    'Buscar vivienda (alquiler temporal → fijo)',
+    'Traducir y apostillar documentos',
+    'Homologar títulos (si aplica)',
+    'Inscribir hijos en colegio (si aplica)',
+    'Obtener certificado digital o cl@ve',
+    'Solicitar tarjeta de transporte',
+    'Conocer los contactos de emergencia'
+  ];
+  const container = document.getElementById('checklist');
+  if (!container) return;
+  const key = 'ma-checklist-v3';
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(key) || '{}'); } catch(e) {}
+
+  function render() {
+    const done = Object.values(state).filter(Boolean).length;
+    container.innerHTML = `<div style="font-size:0.78rem;color:var(--text-3);margin-bottom:8px">Progreso: ${done}/${items.length} completados</div>` +
+      items.map((item, i) => `<label class="checklist-item"><input type="checkbox" ${state[i]?'checked':''} data-idx="${i}"><span${state[i]?' style="text-decoration:line-through;opacity:0.5"':''}>${item}</span></label>`).join('');
+    container.querySelectorAll('input').forEach(cb => {
+      cb.addEventListener('change', () => {
+        state[cb.dataset.idx] = cb.checked;
+        localStorage.setItem(key, JSON.stringify(state));
+        render();
+        if (cb.checked) Toast.success('✓ ' + items[cb.dataset.idx]);
+      });
+    });
+  }
+  render();
+  const resetBtn = document.getElementById('checklist-reset');
+  if (resetBtn) resetBtn.addEventListener('click', () => { state = {}; localStorage.removeItem(key); render(); Toast.info('Checklist reiniciada'); });
+})();
+
+/* ── CONVERTER (preserved — offline rates from resources.json) ── */
+(function(){
+  const fromSel = document.getElementById('conv-from');
+  const amountEl = document.getElementById('conv-amount');
+  const resultEl = document.getElementById('conv-result');
+  if (!fromSel) return;
+
+  const defaultRates = {"USD":0.92,"GBP":1.17,"BRL":0.17,"COP":0.00022,"VES":0.025,"PEN":0.25,"ARS":0.0009,"MXN":0.053,"MAD":0.092,"XOF":0.0015,"NGN":0.00060,"UAH":0.024,"RON":0.20,"CNY":0.13,"INR":0.011,"PKR":0.0033,"BDT":0.0084,"PHP":0.016};
+
+  function getRates() {
+    return DataStore.resources?.currency_rates || defaultRates;
+  }
+
+  function populateSelect() {
+    const rates = getRates();
+    fromSel.innerHTML = Object.keys(rates).filter(k => k !== '_note').sort().map(cur => `<option value="${cur}">${cur}</option>`).join('');
+    fromSel.value = 'USD';
+  }
+
+  function convert() {
+    const rates = getRates();
+    const cur = fromSel.value;
+    const amount = parseFloat(amountEl.value) || 0;
+    const rate = rates[cur] || 1;
+    resultEl.textContent = (amount * rate).toFixed(2) + ' €';
+  }
+
+  populateSelect(); convert();
+  fromSel.addEventListener('change', convert);
+  amountEl.addEventListener('input', convert);
+})();
+
+/* ── CV BUILDER (enhanced with jsPDF real PDF export) ── */
+(function(){
+  const nameEl = document.getElementById('cv-name');
+  const roleEl = document.getElementById('cv-role');
+  const expEl = document.getElementById('cv-exp');
+  const preview = document.getElementById('cv-preview');
+  const printBtn = document.getElementById('cv-print');
+  if (!nameEl) return;
+
+  function updatePreview() {
+    const name = nameEl.value || 'Tu nombre';
+    const role = roleEl.value || 'Puesto objetivo';
+    const exp = expEl.value || 'Tu experiencia...';
+    preview.innerHTML = `<div style="border-bottom:2px solid var(--primary);padding-bottom:8px;margin-bottom:10px"><strong style="font-size:1.2rem;color:var(--primary)">${name}</strong><br><span style="color:var(--text-2)">${role}</span></div><div style="margin-bottom:8px"><strong>Perfil profesional</strong><br>Profesional motivado con experiencia en ${role.toLowerCase() || 'mi campo'}. Busco oportunidades para contribuir con mis habilidades y crecer profesionalmente en España.</div><div style="margin-bottom:8px"><strong>Experiencia</strong><br>${exp.replace(/\n/g, '<br>')}</div><div><strong>Habilidades</strong><br>• Trabajo en equipo • Puntualidad • Adaptabilidad • Comunicación • ${role || 'Competencias técnicas'}</div>`;
+  }
+
+  [nameEl, roleEl, expEl].forEach(el => el.addEventListener('input', updatePreview));
+  updatePreview();
+
+  printBtn.addEventListener('click', () => {
+    // Try jsPDF first
+    if (window.jspdf) {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      const name = nameEl.value || 'Tu nombre';
+      const role = roleEl.value || 'Puesto objetivo';
+      const exp = expEl.value || 'Tu experiencia';
+
+      // Header bar
+      doc.setFillColor(255, 107, 53);
+      doc.rect(0, 0, 210, 38, 'F');
+      doc.setTextColor(255, 255, 255);
+      doc.setFontSize(22);
+      doc.text(name, 20, 22);
+      doc.setFontSize(12);
+      doc.text(role, 20, 32);
+
+      // Body
+      doc.setTextColor(26, 26, 46);
+      let y = 50;
+      doc.setFontSize(13);
+      doc.setFont(undefined, 'bold');
+      doc.text('Perfil profesional', 20, y);
+      y += 8;
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      const profileText = `Profesional motivado con experiencia en ${role.toLowerCase() || 'mi campo'}. Busco oportunidades para contribuir con mis habilidades y crecer profesionalmente en España.`;
+      const profileLines = doc.splitTextToSize(profileText, 170);
+      doc.text(profileLines, 20, y);
+      y += profileLines.length * 5 + 10;
+
+      doc.setFontSize(13);
+      doc.setFont(undefined, 'bold');
+      doc.text('Experiencia', 20, y);
+      y += 8;
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      const expLines = doc.splitTextToSize(exp, 170);
+      doc.text(expLines, 20, y);
+      y += expLines.length * 5 + 10;
+
+      doc.setFontSize(13);
+      doc.setFont(undefined, 'bold');
+      doc.text('Habilidades', 20, y);
+      y += 8;
+      doc.setFontSize(10);
+      doc.setFont(undefined, 'normal');
+      const skills = ['Trabajo en equipo', 'Puntualidad', 'Adaptabilidad', 'Comunicación', role || 'Competencias técnicas'];
+      skills.forEach(s => { doc.text('• ' + s, 22, y); y += 6; });
+
+      // Footer
+      doc.setFontSize(7);
+      doc.setTextColor(150, 150, 150);
+      doc.text('Generado con ManosAbiertas — mismanosabiertas.netlify.app', 20, 285);
+
+      doc.save(`CV-${name.replace(/\s+/g, '-')}.pdf`);
+      Toast.success('CV exportado como PDF');
+    } else {
+      // Fallback: print
+      window.print();
+      Toast.info('Usa Ctrl+P para guardar como PDF');
+    }
+  });
+})();
+
+/* ── MAP TOOL (Leaflet, no API key) ── */
+const MapTool = {
+  map: null,
+  markers: [],
+  init() {
+    if (!window.L) {
+      // Load Leaflet dynamically
+      const script = document.createElement('script');
+      script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+      script.onload = () => this.create();
+      document.head.appendChild(script);
+    } else {
+      this.create();
+    }
+  },
+  create() {
+    const container = document.getElementById('map-container');
+    if (!container || this.map) return;
+    this.map = L.map(container).setView([40.4168, -3.7038], 6);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap',
+      maxZoom: 18
+    }).addTo(this.map);
+
+    const resources = DataStore.resources?.map_resources || [];
+    const typeColors = { ong: '#22A06B', gobierno: '#1A6FC4', social: '#8B5CF6' };
+
+    resources.forEach(r => {
+      const color = typeColors[r.type] || '#FF6B35';
+      const marker = L.circleMarker([r.lat, r.lng], { radius: 8, fillColor: color, color: '#fff', weight: 2, fillOpacity: 0.85 })
+        .bindPopup(`<strong>${r.name}</strong><br>${r.addr || ''}<br>📞 <a href="tel:${(r.phone||'').replace(/\s/g,'')}">${r.phone||''}</a><br><em>${r.city}</em>`)
+        .addTo(this.map);
+      marker._maType = r.type;
+      this.markers.push(marker);
+    });
+
+    // Filters
+    document.querySelectorAll('#map-filters .map-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#map-filters .map-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        this.markers.forEach(m => {
+          if (filter === 'all' || m._maType === filter) { m.addTo(this.map); } else { m.remove(); }
+        });
+      });
+    });
+
+    // Fix map size after modal opens
+    setTimeout(() => this.map.invalidateSize(), 300);
+    Toast.success('Mapa cargado con ' + resources.length + ' recursos');
+  }
+};
+
+/* ── DIRECTORY TOOL ── */
+const DirectoryTool = {
+  init() {
+    const grid = document.getElementById('directory-grid');
+    const entries = DataStore.resources?.directory || [];
+    if (!grid || !entries.length) return;
+
+    const render = (filter) => {
+      const items = filter === 'all' ? entries : entries.filter(e => e.cat === filter);
+      grid.innerHTML = items.map(e => `<div class="directory-card" data-phone="${e.phone}" tabindex="0" role="button" aria-label="Llamar a ${e.name}: ${e.phone}">
+        <span class="directory-icon">${e.icon}</span>
+        <div class="directory-info"><h4>${e.name}</h4><div class="phone">${e.phone}</div><p>${e.desc}</p></div>
+      </div>`).join('');
+      grid.querySelectorAll('.directory-card').forEach(card => {
+        card.addEventListener('click', () => {
+          const phone = card.dataset.phone.replace(/\s/g, '');
+          if (navigator.clipboard) { navigator.clipboard.writeText(phone).then(() => Toast.success('Número copiado: ' + card.dataset.phone)); }
+          else { Toast.info('Número: ' + card.dataset.phone); }
+        });
+      });
+    };
+    render('all');
+
+    document.querySelectorAll('#dir-filters .map-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('#dir-filters .map-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        render(btn.dataset.filter);
+      });
+    });
+  }
+};
+
+/* ── COST OF LIVING TOOL ── */
+const CostTool = {
+  init() {
+    const grid = document.getElementById('col-grid');
+    const data = DataStore.resources?.cost_of_living;
+    if (!grid || !data) return;
+    const labels = { alquiler_piso_compartido: '🏠 Habitación compartida', alquiler_estudio: '🏢 Estudio/piso', supermercado: '🛒 Supermercado', transporte: '🚌 Transporte', movil: '📱 Móvil', total_estimado: '💰 TOTAL estimado' };
+    grid.innerHTML = Object.entries(data).map(([city, costs]) => {
+      const rows = Object.entries(costs).map(([k, v]) => `<div class="col-row"><span>${labels[k] || k}</span><span>${v}</span></div>`).join('');
+      return `<div class="col-card"><h4>📍 ${city}</h4>${rows}</div>`;
+    }).join('');
+  }
+};
+
+/* ── PWA SERVICE WORKER REGISTRATION ── */
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/sw.js', { scope: '/' })
+    .then(reg => console.log('[PWA] SW registered:', reg.scope))
+    .catch(err => console.warn('[PWA] SW failed:', err));
+}
+
+/* ── APP INIT ── */
+(async function init() {
+  await DataStore.init();
+  CourseCatalog.init();
+  Toast.info('🤲 Bienvenido a Manos Abiertas — ' + DataStore.courses.length + ' cursos disponibles', 'info', 3500);
+})();
 </script>
 
-<!-- V3 Motion Stack: Lenis + GSAP + WebGL Shader + SFX + World-Class Tools -->
+<!-- V3 Motion Stack: Lenis + GSAP + WebGL Shader -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
 <script>
-/* ── LENIS smooth scroll (Steven-renovation pattern, CSP-safe via CDN) ── */
+/* ── LENIS smooth scroll ── */
 let lenis=null; try{ if(window.Lenis){ lenis=new Lenis({autoRaf:true, lerp:0.08}); } }catch(e){}
 
-/* ── GSAP ScrollTrigger: reveal upgrade (preserves IntersectionObserver fallback) ── */
+/* ── GSAP ScrollTrigger: reveal upgrade ── */
 try{
   if(window.gsap && window.ScrollTrigger){ gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('.reveal').forEach(el=>{
+    gsap.utils.toArray('.reveal:not(.visible)').forEach(el=>{
       gsap.fromTo(el,{y:24,opacity:0},{y:0,opacity:1,duration:0.7,ease:'power3.out',scrollTrigger:{trigger:el,start:'top 88%',once:true}});
     });
   }
 }catch(e){}
 
-/* ── WebGL Shader backdrop (magic/shader.html ADN, subtle overlay) ── */
+/* ── WebGL Shader backdrop (magic/shader.html ADN) ── */
 (function(){
   const c=document.getElementById('shader-bg'); if(!c) return;
   const gl=c.getContext('webgl',{alpha:true}); if(!gl) return;
@@ -1272,53 +1772,6 @@ function tone(f,t0,dur,type,vol,slide){const c=ac(),o=c.createOscillator(),g=c.c
 const sfx={ chime(){const t=ac().currentTime;[523,659,784].forEach((f,i)=>tone(f,t+i*0.07,0.6,'sine',0.12));}, pop(){const t=ac().currentTime;tone(900,t,0.08,'sine',0.2,180);}, whoosh(){const t=ac().currentTime;tone(120,t,0.5,'sawtooth',0.08,600);} };
 document.getElementById('sfx-toggle')?.addEventListener('click',e=>{ sfxOn=!sfxOn; e.currentTarget.textContent=sfxOn?'🔈':'🔊'; e.currentTarget.setAttribute('aria-label',sfxOn?'Sonido activado':'Sonido desactivado'); if(sfxOn){ac(); sfx.chime();} });
 document.querySelectorAll('.feature-card,.course-card,.tool-card').forEach(el=>el.addEventListener('mouseenter',()=>{ if(sfxOn) sfx.pop(); }));
-
-/* ── Course search + filter (world-class) ── */
-(function(){
-  const grid=document.getElementById('courses-grid'); if(!grid) return;
-  const cards=[...grid.querySelectorAll('.course-card')];
-  const tabs=document.querySelectorAll('.tab-btn');
-  const input=document.getElementById('course-search');
-  function apply(){ const f=document.querySelector('.tab-btn.active')?.dataset.filter||'all'; const q=(input.value||'').toLowerCase().trim();
-    cards.forEach(c=>{ const cat=c.dataset.cat||''; const title=(c.dataset.title||c.textContent).toLowerCase(); const matchCat=f==='all'||cat===f; const matchQ=!q||title.includes(q); c.style.display=(matchCat&&matchQ)?'':'none'; });
-  }
-  tabs.forEach(b=>b.addEventListener('click',()=>{ tabs.forEach(x=>x.classList.remove('active')); b.classList.add('active'); apply(); if(sfxOn) sfx.pop(); }));
-  input?.addEventListener('input',apply);
-  document.getElementById('course-search-btn')?.addEventListener('click',apply);
-})();
-
-/* ── Tools: checklist (persistente), converter, CV ── */
-(function(){
-  const checklistData=['Empadronamiento','Solicitar NIE / TIE','Tarjeta sanitaria (SIP)','Abrir cuenta bancaria','Inscribir hijos en colegio','Buscar vivienda / contrato','Alta en Seguridad Social','CV + búsqueda empleo'];
-  const ckEl=document.getElementById('checklist');
-  const KEY='ma_checklist_v1';
-  function load(){ try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch{return []} }
-  function save(v){ localStorage.setItem(KEY,JSON.stringify(v)); }
-  function render(){ const done=new Set(load()); ckEl.innerHTML=''; checklistData.forEach((t,i)=>{ const row=document.createElement('label'); row.className='checklist-item'; row.innerHTML='<input type="checkbox" '+(done.has(i)?'checked':'')+' data-i="'+i+'"> <span>'+t+'</span>'; ckEl.appendChild(row); }); ckEl.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{ const cur=new Set(load()); const i=parseInt(inp.dataset.i); if(inp.checked) cur.add(i); else cur.delete(i); save([...cur]); if(sfxOn) sfx.pop(); })); }
-  render();
-  const m1=document.getElementById('modal-checklist'), m2=document.getElementById('modal-converter'), m3=document.getElementById('modal-cv');
-  const open=(m)=>{m.classList.add('open'); if(sfxOn) sfx.chime();}; const close=(m)=>m.classList.remove('open');
-  document.querySelector('[data-tool="checklist"]')?.addEventListener('click',()=>open(m1));
-  document.querySelector('[data-tool="converter"]')?.addEventListener('click',()=>open(m2));
-  document.querySelector('[data-tool="cv"]')?.addEventListener('click',()=>open(m3));
-  document.getElementById('checklist-close')?.addEventListener('click',()=>close(m1));
-  document.getElementById('checklist-reset')?.addEventListener('click',()=>{ localStorage.removeItem(KEY); render(); });
-  [m1,m2,m3].forEach(m=>m?.addEventListener('click',e=>{ if(e.target===m) close(m); }));
-  // converter
-  const rates={USD:0.92, GBP:1.17, ARS:0.00095, COP:0.00022, VES:0.025, PEN:0.24, MXN:0.052, BRL:0.17, MAD:0.092, XOF:0.00152, UAH:0.022, RON:0.20};
-  const sel=document.getElementById('conv-from'), amt=document.getElementById('conv-amount'), res=document.getElementById('conv-result');
-  if(sel){ Object.keys(rates).forEach(k=>{ const o=document.createElement('option'); o.value=k; o.textContent=k; sel.appendChild(o); }); sel.value='USD';
-    function upd(){ const r=rates[sel.value]||1; const v=parseFloat(amt.value)||0; res.textContent=(v*r).toFixed(2)+' €'; }
-    sel.addEventListener('change',upd); amt.addEventListener('input',upd); upd();
-  }
-  document.getElementById('conv-close')?.addEventListener('click',()=>close(m2));
-  // CV
-  const n=document.getElementById('cv-name'), role=document.getElementById('cv-role'), exp=document.getElementById('cv-exp'), prev=document.getElementById('cv-preview');
-  function cvUpd(){ const name=n.value||'Tu nombre'; const r=role.value||'Puesto objetivo'; const e=exp.value||'Experiencia'; prev.textContent=name.toUpperCase()+'\n'+r+'\n────────────\n'+e+'\n\n✔ Disponible · ✔ Permiso trabajo (indicar) · ✔ Contacto: tu@email.com · tu teléfono\n\nObjetivo: aportar compromiso y aprendizaje rápido. Formación complementaria vía Manos Abiertas (certificados).'; }
-  [n,role,exp].forEach(x=>x?.addEventListener('input',cvUpd)); cvUpd();
-  document.getElementById('cv-print')?.addEventListener('click',()=>window.print());
-  document.getElementById('cv-close')?.addEventListener('click',()=>close(m3));
-})();
 
 /* ── Theme persistence ── */
 (function(){

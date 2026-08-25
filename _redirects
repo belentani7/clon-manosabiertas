@@ -1,0 +1,3 @@
+# Manos Abiertas — Netlify Redirects
+# SPA fallback (all routes → index.html)
+/*    /index.html   200
