@@ -1,141 +1,146 @@
-/* ═══════════════════════════════════════════════════════════════
-   MANOS ABIERTAS — Lead Capture API Server
-   Port: 3847 (configurable via PORT env)
-
-   Endpoints:
-   - GET  /api/leads          → List all leads
-   - POST /api/leads          → Create a new lead
-   - GET  /api/health         → Health check
-   - GET  /api/stats          → Basic stats
-
-   Run: node lead-capture-server.js
-   PM2:  pm2 start lead-capture-server.js --name leads-api
-   ═══════════════════════════════════════════════════════════════ */
-
-const http = require('http');
+// Lead Capture Server v2 — ManosAbiertas
+// PM2: pm2 start backend/lead-capture-server.js --name leads-api
+const express = require('express');
+const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
-const PORT = process.env.PORT || 3847;
+const app = express();
+app.use(cors({ origin: '*', credentials: true }));
+app.use(express.json());
+
 const LEADS_FILE = path.join(__dirname, 'leads.json');
-const N8N_WEBHOOK = process.env.N8N_WEBHOOK || 'http://localhost:5678/webhook/leads';
+const LEADS_ARCHIVE = path.join(__dirname, `leads-archive-${new Date().getFullYear()}.jsonl`);
 
-// ── Helpers ──
-function readLeads() {
-  try { return JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8')); }
-  catch { return []; }
-}
-
-function writeLeads(leads) {
-  fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2), 'utf8');
-}
-
-function parseBody(req) {
-  return new Promise((resolve, reject) => {
-    let body = '';
-    req.on('data', chunk => { body += chunk; if (body.length > 1e5) reject(new Error('Too large')); });
-    req.on('end', () => { try { resolve(JSON.parse(body)); } catch { reject(new Error('Invalid JSON')); } });
-    req.on('error', reject);
-  });
-}
-
-function cors(res) {
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-}
-
-function json(res, data, status = 200) {
-  cors(res);
-  res.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8' });
-  res.end(JSON.stringify(data));
-}
-
-// ── Forward to n8n (fire-and-forget) ──
-function forwardToN8n(lead) {
+// Load or init leads
+function getLeads() {
   try {
-    const url = new URL(N8N_WEBHOOK);
-    const postData = JSON.stringify(lead);
-    const options = {
-      hostname: url.hostname,
-      port: url.port || (url.protocol === 'https:' ? 443 : 80),
-      path: url.pathname,
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Content-Length': Buffer.byteLength(postData) }
-    };
-    const req = http.request(options, () => {});
-    req.on('error', err => console.warn('[n8n] webhook failed:', err.message));
-    req.write(postData);
-    req.end();
-  } catch (e) { console.warn('[n8n] forward error:', e.message); }
+    return JSON.parse(fs.readFileSync(LEADS_FILE, 'utf8'));
+  } catch {
+    return { leads: [], stats: { total: 0, converted: 0, emailed: 0 }, lastUpdate: new Date().toISOString() };
+  }
 }
 
-// ── Server ──
-const server = http.createServer(async (req, res) => {
-  const { method, url: reqUrl } = req;
+// Save lead
+function saveLead(email, data) {
+  const leads = getLeads();
+  const newLead = {
+    id: `lead_${crypto.randomBytes(8).toString('hex')}`,
+    email,
+    ...data,
+    timestamp: new Date().toISOString(),
+    status: 'new',
+    score: calculateLeadScore(data),
+    tags: extractTags(data)
+  };
+  
+  leads.leads.push(newLead);
+  leads.stats.total = leads.leads.length;
+  leads.lastUpdate = new Date().toISOString();
+  
+  fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2));
+  
+  // Archive to JSONL
+  fs.appendFileSync(LEADS_ARCHIVE, JSON.stringify(newLead) + '\n');
+  
+  // Webhook to n8n (non-blocking)
+  fetch('http://localhost:5678/webhook/leads', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newLead)
+  }).catch(() => console.warn('[WEBHOOK] n8n unreachable'));
+  
+  return newLead;
+}
 
-  // CORS preflight
-  if (method === 'OPTIONS') { cors(res); res.writeHead(204); res.end(); return; }
+// Score lead quality
+function calculateLeadScore(data) {
+  let score = 0;
+  if (data.email) score += 30;
+  if (data.phone) score += 20;
+  if (data.course) score += 15;
+  if (data.city) score += 10;
+  if (data.interests && data.interests.length > 0) score += 15;
+  if (data.unemployed) score += 10;
+  return Math.min(100, score);
+}
 
-  // Routes
-  if (reqUrl === '/api/health' && method === 'GET') {
-    return json(res, { status: 'ok', uptime: process.uptime(), timestamp: new Date().toISOString() });
+// Extract tags from data
+function extractTags(data) {
+  const tags = [];
+  if (data.unemployed) tags.push('unemployed');
+  if (data.interests) tags.push(...data.interests);
+  if (data.city) tags.push(`city:${data.city}`);
+  return tags;
+}
+
+// API: POST /api/leads
+app.post('/api/leads', (req, res) => {
+  const { email, phone, name, course, city, interests, unemployed } = req.body;
+  
+  if (!email || !email.includes('@')) {
+    return res.status(400).json({ error: 'Valid email required' });
   }
-
-  if (reqUrl === '/api/leads' && method === 'GET') {
-    const leads = readLeads();
-    return json(res, { total: leads.length, leads });
-  }
-
-  if (reqUrl === '/api/leads' && method === 'POST') {
-    try {
-      const body = await parseBody(req);
-      if (!body.email) return json(res, { error: 'Email is required' }, 400);
-
-      const lead = {
-        id: `lead_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`,
-        email: body.email,
-        name: body.name || '',
-        source: body.source || 'website',
-        interest: body.interest || '',
-        language: body.language || 'es',
-        city: body.city || '',
-        created: new Date().toISOString(),
-        status: 'new'
-      };
-
-      const leads = readLeads();
-      // Prevent duplicate emails within 24h
-      const recent = leads.find(l => l.email === lead.email && (Date.now() - new Date(l.created).getTime()) < 86400000);
-      if (recent) return json(res, { error: 'Lead already registered recently', lead: recent }, 409);
-
-      leads.push(lead);
-      writeLeads(leads);
-      forwardToN8n(lead);
-
-      console.log(`[Lead] New: ${lead.email} (${lead.source})`);
-      return json(res, { success: true, lead }, 201);
-    } catch (e) {
-      return json(res, { error: e.message }, 400);
-    }
-  }
-
-  if (reqUrl === '/api/stats' && method === 'GET') {
-    const leads = readLeads();
-    const today = new Date().toISOString().slice(0, 10);
-    const todayLeads = leads.filter(l => l.created.startsWith(today));
-    const bySrc = {};
-    leads.forEach(l => { bySrc[l.source] = (bySrc[l.source] || 0) + 1; });
-    return json(res, { total: leads.length, today: todayLeads.length, bySource: bySrc });
-  }
-
-  // 404
-  json(res, { error: 'Not found' }, 404);
+  
+  const lead = saveLead(email, { phone, name, course, city, interests, unemployed });
+  
+  res.json({
+    success: true,
+    message: '✅ Lead registrado. Recibirás un email pronto.',
+    lead: { id: lead.id, score: lead.score }
+  });
 });
 
-server.listen(PORT, () => {
-  console.log(`\n🤲 Manos Abiertas — Lead Capture API`);
-  console.log(`   Port: ${PORT}`);
-  console.log(`   Health: http://localhost:${PORT}/api/health`);
-  console.log(`   n8n webhook: ${N8N_WEBHOOK}\n`);
+// API: GET /api/leads (admin)
+app.get('/api/leads', (req, res) => {
+  const { key } = req.query;
+  if (key !== process.env.ADMIN_KEY) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  const leads = getLeads();
+  res.json(leads);
+});
+
+// API: PATCH /api/leads/:id (update status)
+app.patch('/api/leads/:id', (req, res) => {
+  const { key } = req.query;
+  if (key !== process.env.ADMIN_KEY) {
+    return res.status(401).json({ error: 'Unauthorized' });
+  }
+  
+  const { status, notes } = req.body;
+  const leads = getLeads();
+  const lead = leads.leads.find(l => l.id === req.params.id);
+  
+  if (!lead) return res.status(404).json({ error: 'Lead not found' });
+  
+  lead.status = status || lead.status;
+  lead.notes = notes || lead.notes;
+  lead.updatedAt = new Date().toISOString();
+  
+  fs.writeFileSync(LEADS_FILE, JSON.stringify(leads, null, 2));
+  res.json({ success: true, lead });
+});
+
+// API: GET /api/stats
+app.get('/api/stats', (req, res) => {
+  const leads = getLeads();
+  const stats = {
+    total: leads.leads.length,
+    new: leads.leads.filter(l => l.status === 'new').length,
+    contacted: leads.leads.filter(l => l.status === 'contacted').length,
+    converted: leads.leads.filter(l => l.status === 'converted').length,
+    avgScore: (leads.leads.reduce((sum, l) => sum + l.score, 0) / leads.leads.length || 0).toFixed(1),
+    topCourses: [...new Set(leads.leads.map(l => l.course))].slice(0, 5),
+    topCities: [...new Set(leads.leads.map(l => l.city))].slice(0, 5)
+  };
+  res.json(stats);
+});
+
+const PORT = process.env.PORT || 3847;
+app.listen(PORT, () => {
+  console.log(`✅ Lead Capture API running on :${PORT}`);
+  console.log(`📊 Leads DB: ${LEADS_FILE}`);
+  console.log(`🔗 Webhook to n8n: http://localhost:5678/webhook/leads`);
 });
