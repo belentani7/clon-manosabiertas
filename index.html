@@ -7,7 +7,7 @@
 <meta name="description" content="Plataforma educativa gratuita para inmigrantes en España: aprende IA, crea CV, conoce tus derechos, encuentra empleo. 39 idiomas, 3686+ recursos verificados, 115+ cursos con certificado.">
 <meta name="theme-color" content="#FF6B35">
 <meta name="robots" content="index, follow">
-<link rel="manifest" href="/manifest.json">
+<link rel="manifest" href="manifest.json">
 <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤲</text></svg>">
 <meta property="og:title" content="Manos Abiertas — Plataforma Educativa para Inmigrantes en España">
 <meta property="og:description" content="Aprende IA, crea tu CV, conoce tus derechos. 39 idiomas, 3686+ recursos, 100% gratis.">
@@ -1183,8 +1183,8 @@ const DataStore = {
   async init() {
     try {
       const [coursesRes, resourcesRes] = await Promise.all([
-        fetch('/data/courses.json').then(r => r.ok ? r.json() : null).catch(() => null),
-        fetch('/data/resources.json').then(r => r.ok ? r.json() : null).catch(() => null)
+        fetch('data/courses.json').then(r => r.ok ? r.json() : null).catch(() => null),
+        fetch('data/resources.json').then(r => r.ok ? r.json() : null).catch(() => null)
       ]);
       if (coursesRes) {
         this.courses = coursesRes.courses || [];
@@ -1732,7 +1732,7 @@ const CostTool = {
 
 /* ── PWA SERVICE WORKER REGISTRATION ── */
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js', { scope: '/' })
+  navigator.serviceWorker.register('sw.js', { scope: './' })
     .then(reg => console.log('[PWA] SW registered:', reg.scope))
     .catch(err => console.warn('[PWA] SW failed:', err));
 }
@@ -1794,6 +1794,6 @@ document.querySelectorAll('.feature-card,.course-card,.tool-card').forEach(el=>e
 </script>
 
 <!-- i18n Engine (39 languages + TTS) -->
-<script src="/js/i18n.js" defer></script>
+<script src="js/i18n.js" defer></script>
 </body>
 </html>

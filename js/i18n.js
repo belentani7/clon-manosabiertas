@@ -109,7 +109,8 @@ const I18n = {
     this.loading.add(code);
 
     try {
-      const res = await fetch(`/data/i18n/${code}.json`);
+      const base = document.querySelector('base')?.href || window.location.href.replace(/\/[^/]*$/, '/');
+      const res = await fetch(new URL(`data/i18n/${code}.json`, base));
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       this.translations[code] = await res.json();
     } catch (err) {

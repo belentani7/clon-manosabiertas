@@ -2,7 +2,7 @@
   "name": "Manos Abiertas — Plataforma Educativa",
   "short_name": "ManosAbiertas",
   "description": "Plataforma educativa gratuita para inmigrantes en España. Aprende IA, crea tu CV, conoce tus derechos. 39 idiomas.",
-  "start_url": "/",
+  "start_url": "./",
   "display": "standalone",
   "orientation": "any",
   "background_color": "#FEFCF8",

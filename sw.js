@@ -8,11 +8,11 @@ const STATIC_CACHE = 'ma-static-v3';
 const DATA_CACHE = 'ma-data-v3';
 
 const PRECACHE_URLS = [
-  '/',
-  '/index.html',
-  '/manifest.json',
-  '/data/courses.json',
-  '/data/resources.json'
+  './',
+  'index.html',
+  'manifest.json',
+  'data/courses.json',
+  'data/resources.json'
 ];
 
 const CDN_URLS = [
@@ -64,7 +64,7 @@ self.addEventListener('fetch', event => {
   if (!url.protocol.startsWith('http')) return;
 
   // Data files (JSON): stale-while-revalidate
-  if (url.pathname.startsWith('/data/') || url.pathname.endsWith('.json')) {
+  if (url.pathname.includes('/data/') || url.pathname.endsWith('.json')) {
     event.respondWith(staleWhileRevalidate(request, DATA_CACHE));
     return;
   }
@@ -76,7 +76,7 @@ self.addEventListener('fetch', event => {
   }
 
   // HTML: stale-while-revalidate
-  if (request.headers.get('accept')?.includes('text/html') || url.pathname === '/') {
+  if (request.headers.get('accept')?.includes('text/html') || url.pathname.endsWith('/')) {
     event.respondWith(staleWhileRevalidate(request, CACHE_NAME));
     return;
   }
